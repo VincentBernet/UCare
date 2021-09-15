@@ -33,7 +33,7 @@ git pull origin master
 ```
 ```markdown
 # TODO
- 
+ ```
  Pour ensuite installer tous les composants nécessaires à l'application :
 ```
 npm install
