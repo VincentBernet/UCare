@@ -1,10 +1,12 @@
 # UCare
 
-Yuka Like
+_Yuka Like_
 
-*** Speech de présentation ***
+De nos jours, de plus en plus de personnes suivent un régime particulier, avec différentes restrictions alimentaires liées à leurs allergies, convictions ou sens moral.
 
-Lorem ipsum dolor sit amet. Hic consectetur voluptatem et sunt reprehenderit sit unde odio eum ratione consequuntur et Quis voluptatem aut consequatur accusantium. Aut inventore dolorem et mollitia nihil quo quisquam fugiat. Est distinctio rerum et nesciunt consequatur qui atque ratione cum velit placeat qui earum asperiores ab voluptas magnam eos quod commodi. Eos sunt officia aut voluptatem perspiciatis non dolore distinctio sed quibusdam laboriosam.
+Ils ont besoin de savoir facilement si les produits qu’ils souhaitent consommer sont conformes à leur régime, sans perdre leur temps à vérifier chaque ingrédient un par un sur une étiquette parfois difficilement lisible.
+
+Cette application sera destinée à tous ceux qui se retrouvent dans ces besoins et sera disponible sur téléphone.
 
 ## Application
 
@@ -70,8 +72,7 @@ Sur cette application, nous avons implémenté de multiples fonctionnalités tel
 
 ## Equipe
 
-> Cette application a été réalisée par 7 étudiants dans le cadre de leur cursus d'ingénieur à l'EFREI PARIS : <br> 
-
+> Cette application a été réalisée par 7 étudiants dans le cadre de leur cursus d'ingénieur à l'EFREI PARIS : <br>
 
 -  Diogo Gabriel & Thomas Damasse
 -  Matthieu Gédéon & Marie Léonie & Maria Sadek
