@@ -16,6 +16,7 @@ Est Quis aperiam et praesentium blanditiis non debitis natus At aspernatur dicta
 ## Table des matières 
 
 - [Installation](#Installation)
+- [Stack](#Stack)
 - [Fonctionnalité](#Fonctionnalité)
 - [Equipe](#Equipe)
 - [Contact](#Contact)
@@ -42,6 +43,11 @@ Pour lancer l'application :
 ```
 npm start
 ```
+
+## Stack
+- React Native
+- Node JS, backend
+- DB à déterminer
 
 ## Fonctionnalité 
 Sur cette application, nous avons implémenté de multiples fonctionnalités telles que :
