@@ -1,4 +1,4 @@
-# VegeDream
+# UCare
 Yuka Like
 
 *** Speech de présentation  ***
@@ -7,11 +7,14 @@ Lorem ipsum dolor sit amet. Hic consectetur voluptatem et sunt reprehenderit sit
 
 ## Application
 
+At ducimus porro est labore temporibus non sequi officiis. Qui galisum dignissimos quo labore voluptates non amet mollitia sit sunt odit est sint consectetur est possimus sunt!
+
+Est Quis aperiam et praesentium blanditiis non debitis natus At aspernatur dicta in maxime ipsam est adipisci officia. Aut sunt consequuntur 33 ipsa nostrum sit magnam voluptas et omnis veniam sit nemo distinctio sit molestiae inventore. Eum molestias ipsa aut voluptates deleniti ut voluptatibus aut eius facilis est architecto voluptatem qui voluptatem magnam non reiciendis ipsum. Id quidem explicabo aut quisquam illum et fugit repellat.
 
 ## Table des matières 
 
 - [Installation](#installation)
-- [Features](#features)
+- [Fonctionnalité](#features)
 - [Equipe](#team)
 - [Contact](#Contact)
 - [Licences](#Licences)
@@ -23,34 +26,22 @@ Lorem ipsum dolor sit amet. Hic consectetur voluptatem et sunt reprehenderit sit
  Dans votre dossier d'installation, créez votre git et connectez le à ce repository : 
 ```
 git init
-git remote add origin https://github.com/VincentBernet/Tirico-ShopCameraAnalitics
+git remote add origin https://github.com/VincentBernet/VegeDream
 git pull origin master
 ```
+ TODO : 
  
  Pour ensuite installer tous les composants nécessaires à l'application :
 ```
 npm install
-Installer dans Tirico_Server/code_python/data le fichier suivant : https://drive.google.com/open?id=1cewMfusmPjYWbrnuJRuKhPMwRe_b9PaT (yolov4.weights)
 ```
 
 Pour lancer l'application :
 ```
 npm start
 ```
- 
-Pour le python ~~(pas nécessaire actuellement, les graphes sont en locales)~~  
-Installer pip ou anaconda pour installer plus facilement les librairies :
 
-```
-pip install pandas                         (pour réaliser les graphes)
-pip install plotly                         (pour réaliser les graphes)
-pip install -c plotly plotly-orca          (pour save en png les graphes)
-pip install seaborn                        (pour réaliser la HeatMap)
-```
-
-## Licences
-
-## Features
+## Fonctionnalité 
 On this application we implemetended multiples features such as :
  - Login/Register/Logout to acces at your account and your own shops's analytics.
  - Multiple analytics such as heatmap, client flow etc .
@@ -58,20 +49,14 @@ On this application we implemetended multiples features such as :
 
 ## Equipe
 
-> This whole application is made by 7 students during their cursus in software Engenering at EFREI PARIS : <br> 
+> Cette application a été réalisée par 7 étudiants dans le cadre de leur cursus en génie logiciel à l'EFREI PARIS : <br> 
 
- - Jean Hecke & Louis Gailhac & Serge Nicolas Excoffier
- - Hélène Boersma & Emeline Bagoris
- - Sébastien Friedberg & Vincent Bernet
-
-
-
+ - Diogo Gabriel & Thomas Damasse
+ - Matthieu Gédéon & Marie Léonie & Maria Sadek
+ - Vincent Bernet & Vincent Lacrouts
 
 ## Contact
-- Don't hesitate to contact us on Github or on Linkedin
-
-
-
+- N'hésitez pas à nous contacter sur Github ou sur Linkedin
 
 ## Licences
 
