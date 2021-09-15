@@ -45,9 +45,11 @@ npm start
 ```
 
 ## Stack
+```
 - React Native
 - Node JS, backend
 - DB à déterminer
+```
 
 ## Fonctionnalité 
 Sur cette application, nous avons implémenté de multiples fonctionnalités telles que :
