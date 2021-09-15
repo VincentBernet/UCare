@@ -31,7 +31,7 @@ git init
 git remote add origin https://github.com/VincentBernet/VegeDream
 git pull origin master
 ```
-<span style="color:red">TODO</span>.
+<span style="color:red">! TODO !</span>
 
  Pour ensuite installer tous les composants nécessaires à l'application :
 ```
