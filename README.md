@@ -13,9 +13,9 @@ Est Quis aperiam et praesentium blanditiis non debitis natus At aspernatur dicta
 
 ## Table des matières 
 
-- [Installation](#installation)
-- [Fonctionnalité](#features)
-- [Equipe](#team)
+- [Installation](#Installation)
+- [Fonctionnalité](#Fonctionnalité)
+- [Equipe](#Equipe)
 - [Contact](#Contact)
 - [Licences](#Licences)
 
@@ -42,11 +42,12 @@ npm start
 ```
 
 ## Fonctionnalité 
-On this application we implemetended multiples features such as :
- - Login/Register/Logout to acces at your account and your own shops's analytics.
- - Multiple analytics such as heatmap, client flow etc .
+Sur cette application, nous avons implémenté de multiples fonctionnalités telles que :
+ - LoLorem ipsum dolor sit amet. Hic consectetur voluptatem.
+ - Lorem ipsum dolor sit amet. Hic consectetur voluptatem
+ - LoLorem ipsum dolor sit amet. Hic consectetur voluptatem.
+ - Lorem ipsum dolor sit amet. Hic consectetur voluptatem
  
-
 ## Equipe
 
 > Cette application a été réalisée par 7 étudiants dans le cadre de leur cursus en génie logiciel à l'EFREI PARIS : <br> 
