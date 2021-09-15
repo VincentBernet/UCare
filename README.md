@@ -60,7 +60,7 @@ Sur cette application, nous avons implémenté de multiples fonctionnalités tel
  
 ## Equipe
 
-> Cette application a été réalisée par 7 étudiants dans le cadre de leur cursus en génie logiciel à l'EFREI PARIS : <br> 
+> Cette application a été réalisée par 7 étudiants dans le cadre de leur cursus d'ingénieur à l'EFREI PARIS : <br> 
 
  - Diogo Gabriel & Thomas Damasse
  - Matthieu Gédéon & Marie Léonie & Maria Sadek
