@@ -66,4 +66,4 @@ Sur cette application, nous avons implémenté de multiples fonctionnalités tel
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
 - **[MIT license](http://opensource.org/licenses/mit-license.php)**
-- Copyright 2021 © <a href="https://www.linkedin.com/in/vincent-bernet-028a64193/" target="_blank">Tirico's Team</a>.
+- Copyright 2021 © <a href="https://www.ucare.org/" target="_blank">UCare's Team</a>.
