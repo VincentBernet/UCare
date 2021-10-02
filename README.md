@@ -59,7 +59,8 @@ npm start
 - DB à déterminer
 ```
 
-Idée de librairie pour le codebar Scanner : https://openbase.com/categories/js/best-react-native-barcode-scanner-libraries
+Idée de librairie pour le codebar Scanner : https://openbase.com/categories/js/best-react-native-barcode-scanner-libraries <br>
+A checker : https://www.youtube.com/watch?v=LtbuOgoQJAg&ab_channel=CodePalace
 
 ## Fonctionnalité
 
