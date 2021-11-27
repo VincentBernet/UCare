@@ -14,10 +14,8 @@
  import useColorScheme from '../hooks/useColorScheme';
  import ModalScreen from '../screens/ModalScreen';
  import NotFoundScreen from '../screens/NotFoundScreen';
- import TabOneScreen from '../screens/FavoritesScreen';
+ import TabOneScreen from '../screens/TabOneScreen';
  import TabTwoScreen from '../screens/TabTwoScreen';
- import BasicScanScreen from '../screens/BasicScanScreen';
- 
  import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
  import LinkingConfiguration from './LinkingConfiguration';
  
@@ -40,7 +38,7 @@
  function RootNavigator() {
    return (
      <Stack.Navigator>
-       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ title: 'Root', headerShown: false, headerStyle: {backgroundColor: '#f4511e'}}} />
+       <Stack.Screen name="Root" component={BottomTabNavigator} options={{ headerShown: false }} />
        <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />
        <Stack.Group screenOptions={{ presentation: 'modal' }}>
          <Stack.Screen name="Modal" component={ModalScreen} />
@@ -60,24 +58,16 @@
  
    return (
      <BottomTab.Navigator
-       initialRouteName="FavoritesTab"
+       initialRouteName="TabOne"
        screenOptions={{
          tabBarActiveTintColor: Colors[colorScheme].tint,
        }}>
-        <BottomTab.Screen
-         name="FavoritesTab"
-         component={BasicScanScreen}
-         options={({ navigation }: RootTabScreenProps<'FavoritesTab'>) => ({
-           title: 'Mes Favoris',
-           tabBarIcon: ({ color }) => <TabBarIcon name="heart" color={color} />,
-           headerStyle: {backgroundColor: '#FFFFFF', borderBottomLeftRadius: 35, borderBottomRightRadius: 35},
-           headerTitle: () => (
-             <img src="https://github.com/VincentBernet/UCare/blob/ReactNativeTest/ressource/ucarelogo.png?raw=true" alt='UcareLogo'/> 
-             ),
-           headerTitleContainerStyle: {
-             marginTop: 35,
-             marginLeft: 115,
-           },
+       <BottomTab.Screen
+         name="TabOne"
+         component={TabOneScreen}
+         options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
+           title: 'Tab One',
+           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
            headerRight: () => (
              <Pressable
                onPress={() => navigation.navigate('Modal')}
@@ -85,49 +75,23 @@
                  opacity: pressed ? 0.5 : 1,
                })}>
                <FontAwesome
-                 name="user"
+                 name="info-circle"
                  size={25}
                  color={Colors[colorScheme].text}
-                 style={{ marginRight: 30}}
+                 style={{ marginRight: 15 }}
                />
              </Pressable>
            ),
-         
          })}
        />
        <BottomTab.Screen
-         name="BasicScan"
-         component={BasicScanScreen}
-         options={({ navigation }: RootTabScreenProps<'BasicScan'>) => ({
-           title: 'Scanner',
-           tabBarIcon: ({ color }) => <TabBarIcon name="search" color={color} />,
-           headerStyle: {backgroundColor: '#FFFFFF', borderBottomLeftRadius: 35, borderBottomRightRadius: 35},
-           headerTitle: () => (
-             <img src="https://github.com/VincentBernet/UCare/blob/feature/TabNavigation/ressource/ucarelogo.png" alt='UcareLogo'/> 
-             ),
-           headerTitleContainerStyle: {
-             marginTop: 35,
-             marginLeft: 115,
-           },
-           headerRight: () => (
-             <Pressable
-               onPress={() => navigation.navigate('Modal')}
-               style={({ pressed }) => ({
-                 opacity: pressed ? 0.5 : 1,
-               })}>
-               <FontAwesome
-                 name="user"
-                 size={25}
-                 color={Colors[colorScheme].text}
-                 style={{ marginRight: 30}}
-               />
-             </Pressable>
-           ),
-         
-         })}
+         name="TabTwo"
+         component={TabTwoScreen}
+         options={{
+           title: 'Tab Two',
+           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+         }}
        />
- 
-      
      </BottomTab.Navigator>
    );
  }
