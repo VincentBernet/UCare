@@ -25,6 +25,11 @@
                TabTwoScreen: 'two',
              },
            },
+           TabThree: {
+            screens: {
+              TabThreeScreen: 'three',
+            },
+          },
          },
        },
        Modal: 'modal',
