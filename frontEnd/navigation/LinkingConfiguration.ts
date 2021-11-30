@@ -15,9 +15,9 @@
      screens: {
        Root: {
          screens: {
-           TabOne: {
+           TabFavorites: {
              screens: {
-               TabOneScreen: 'one',
+               TabFavoritesScreen: 'one',
              },
            },
            TabTwo: {
@@ -25,9 +25,9 @@
                TabTwoScreen: 'two',
              },
            },
-           TabThree: {
+           TabScanner: {
             screens: {
-              TabThreeScreen: 'three',
+              TabScannerScreen: 'scanner',
             },
           },
          },
