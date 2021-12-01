@@ -58,9 +58,7 @@ npm start
 - Node JS, backend
 - DB à déterminer
 ```
-
-Idée de librairie pour le codebar Scanner : https://openbase.com/categories/js/best-react-native-barcode-scanner-libraries <br>
-A checker : https://www.youtube.com/watch?v=LtbuOgoQJAg&ab_channel=CodePalace
+OpenFoodFact : https://fr.openfoodfacts.org/produit/7613037398083/le-bon-vegetal-hache-cru-soja-a-cuisiner-herta
 
 ## Fonctionnalité
 
