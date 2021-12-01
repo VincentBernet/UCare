@@ -1,54 +1,36 @@
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Card, ListItem, Button, Icon } from 'react-native-elements'
 
-import Colors from '../constants/Colors';
-import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
 
 export default function EditScreenInfo({ path }: { path: string }) {
 	return (
 		<View>
-			<View style={styles.getStartedContainer}>
-				<Text
-					style={styles.getStartedText}
-					lightColor="rgba(0,0,0,0.8)"
-					darkColor="rgba(255,255,255,0.8)"
-				>
-					LoremIpsum content inside EditScreenInfo
-				</Text>
-
-				<View
-					style={[
-						styles.codeHighlightContainer,
-						styles.homeScreenFilename,
-					]}
-					darkColor="rgba(255,255,255,0.05)"
-					lightColor="rgba(0,0,0,0.05)"
-				>
-					<MonoText>LoremIpsum coming from : {path}</MonoText>
-				</View>
-
-				<Text
-					style={styles.getStartedText}
-					lightColor="rgba(0,0,0,0.8)"
-					darkColor="rgba(255,255,255,0.8)"
-				>
-					LoremIpsum is dummy text used to demonstrate the appearance of
-					different elements on the screen.
-				</Text>
+			<View style={styles.mainViewCardContainer}>
+				<Card containerStyle={styles.mainCard}>
+					<Card.Image source={require('./hacher.png')} style={styles.mainImageCard}></Card.Image>
+				</Card>
 			</View>
+			
+			<Text style={styles.title}> Alternatives </Text>
 
-			<View style={styles.helpContainer}>
-				<TouchableOpacity onPress={handleHelpPress} style={styles.helpLink}>
-					<Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
-						Tap here if your app doesn't automatically update aftewr
-						making changes ok bro
-					</Text>
-				</TouchableOpacity>
+			<View style={styles.alternativeViewCardContainer}>
+				<Card containerStyle={styles.alternativeCard}>
+					<Card.Image source={require('./AlternativeImageOne.png')} style={styles.alternativeImageCard}></Card.Image>
+					<Card.Divider style={{borderStartColor: '#FF5E5B', backgroundColor:  '#FF5E5B'}}/>
+					<Card.Title>Sensational Haché</Card.Title>
+				</Card>
+
+				<Card containerStyle={styles.alternativeCard}>
+					<Card.Image source={require('./AlternativeImageTwo.png')} style={styles.alternativeImageCard}></Card.Image>
+					<Card.Divider/>
+					<Card.Title>Sensational Haché</Card.Title>
+				</Card>
 			</View>
 		</View>
-	);
+		);
 }
 
 function handleHelpPress() {
@@ -58,31 +40,34 @@ function handleHelpPress() {
 }
 
 const styles = StyleSheet.create({
-	getStartedContainer: {
-		alignItems: 'center',
-		marginHorizontal: 50,
+	title: {
+		fontSize: 30,
+		//fontFamily: 'Poppins', 
+		fontWeight: 'bold',
+		marginTop: 40,
+		alignContent:'flex-start'
 	},
-	homeScreenFilename: {
-		marginVertical: 7,
+	alternativeCard: {
+		borderRadius: 20
 	},
-	codeHighlightContainer: {
-		borderRadius: 3,
-		paddingHorizontal: 4,
+	alternativeImageCard: {
+		width: 112,
+		height: 112
 	},
-	getStartedText: {
-		fontSize: 17,
-		lineHeight: 24,
-		textAlign: 'center',
+	alternativeViewCardContainer: {
+		flexDirection: 'row', 
+		marginTop: 0
 	},
-	helpContainer: {
-		marginTop: 15,
-		marginHorizontal: 20,
-		alignItems: 'center',
+	mainViewCardContainer: {
+		alignItems:'center'
 	},
-	helpLink: {
-		paddingVertical: 15,
+	mainCard: {
+		borderRadius: 20,
+		width: '90%',
+		height: undefined,
+		alignItems:'center'
 	},
-	helpLinkText: {
-		textAlign: 'center',
-	},
+	mainImageCard : {
+		width: 280, height: 200, margin: 10
+	}
 });

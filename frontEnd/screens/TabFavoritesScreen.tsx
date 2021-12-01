@@ -10,15 +10,12 @@ export default function TabFavoritesScreen({
 }: RootTabScreenProps<'TabFavorites'>) {
 	return (
 		<View style={styles.container}>
-			<Text style={styles.title}>
-				Here are my favorites grocery aliments
-			</Text>
-			<View
+			{/*<View
 				style={styles.separator}
 				lightColor="#eee"
 				darkColor="rgba(255,255,255,0.1)"
-			/>
-			<EditScreenInfo path="/screens/TabOneScreen.tsx" />
+			/>*/}
+			<EditScreenInfo path="/screens/TabFavoritesScreen.tsx" />
 		</View>
 	);
 }
