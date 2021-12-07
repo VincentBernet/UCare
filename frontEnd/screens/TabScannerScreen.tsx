@@ -8,11 +8,10 @@ import { useState, useEffect } from 'react';
 import { Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 
-
 export default function TabScannerScreen() {
 	const [hasPermission, setHasPermission] = React.useState<null | Boolean>();
 	const [scanned, setScanned] = useState(false);
-	const [text, setText] = useState('Not yet scanned');
+	const [text, setText] = useState('Scannez un code-barres');
 
 	const askForCameraPermission = () => {
 		(async () => {
@@ -29,7 +28,7 @@ export default function TabScannerScreen() {
 	// What happens when we scan the bar code
 	const handleBarCodeScanned = ({ type, data }: { type: any; data: any }) => {
 		setScanned(true);
-		setText(data);
+		setText('Numéro de code-barres : ' + data);
 		console.log('Type: ' + type + '\nData: ' + data);
 	};
 
@@ -66,9 +65,9 @@ export default function TabScannerScreen() {
 
 			{scanned && (
 				<Button
-					title={'Scan again?'}
+					title={'Scannez ?'}
 					onPress={() => setScanned(false)}
-					color="tomato"
+					color="#FF5E5B"
 				/>
 			)}
 		</View>

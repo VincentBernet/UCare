@@ -1,7 +1,7 @@
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import { Card, ListItem, Button, Icon } from 'react-native-elements'
+import { Card, ListItem, Button, Icon } from 'react-native-elements';
 
 import { Text, View } from './Themed';
 
@@ -10,50 +10,85 @@ export default function EditScreenInfo({ path }: { path: string }) {
 		<View>
 			<View style={styles.mainViewCardContainer}>
 				<Card containerStyle={styles.mainCard}>
-					<Card.Image source={require('./hacher.png')} style={styles.mainImageCard}></Card.Image>
+					<Card.Image
+						source={require('./hacher.png')}
+						style={styles.mainImageCard}
+					></Card.Image>
 				</Card>
+
 				<Text style={styles.title}> Herta Le bon Végétal </Text>
-				<Card.Divider/>
+
+				<View style={styles.emojeeView}>
+					<Text style={styles.textForEmojee}>Unfriendly</Text>
+					<Card.Image
+						source={require('./emojeeAngry.png')}
+						style={styles.emojee}
+					></Card.Image>
+				</View>
+
 				<View style={styles.labelViewCardContainer}>
 					<Card containerStyle={styles.secondaryFirstCard}>
 						<View style={styles.viewForLabelText}>
-							<Card.Image source={require('./Vector1.png')} style={styles.labelCard}></Card.Image>
+							<Card.Image
+								source={require('./Vector1.png')}
+								style={styles.labelCard}
+							></Card.Image>
 							<Text style={styles.textLabel}>Vegan</Text>
 						</View>
 					</Card>
 					<Card containerStyle={styles.secondaryCard}>
 						<View style={styles.viewForLabelText}>
-							<Card.Image source={require('./Vector2.png')} style={styles.labelCard}></Card.Image>
+							<Card.Image
+								source={require('./Vector2.png')}
+								style={styles.labelCard}
+							></Card.Image>
 							<Text style={styles.textLabel}>Diabète</Text>
 						</View>
 					</Card>
 					<Card containerStyle={styles.secondaryCard}>
 						<View style={styles.viewForLabelText}>
-							<Card.Image source={require('./Vector3.png')} style={styles.labelCard}></Card.Image>
+							<Card.Image
+								source={require('./Vector3.png')}
+								style={styles.labelCard}
+							></Card.Image>
 							<Text style={styles.textLabel}>Gluten free</Text>
 						</View>
 					</Card>
 				</View>
 			</View>
 
-
 			<Text style={styles.title}> Alternatives </Text>
 
 			<View style={styles.alternativeViewCardContainer}>
 				<Card containerStyle={styles.alternativeCard}>
-					<Card.Image source={require('./AlternativeImageOne.png')} style={styles.alternativeImageCard}></Card.Image>
-					<Card.Divider style={{borderStartColor: '#FF5E5B', backgroundColor:  '#FF5E5B'}}/>
-					<Card.Title>Sensational Haché</Card.Title>
+					<Card.Image
+						source={require('./AlternativeImageOne.png')}
+						style={styles.alternativeImageCard}
+					></Card.Image>
+					<Card.Divider
+						style={{
+							borderStartColor: '#FF5E5B',
+							backgroundColor: '#FF5E5B',
+						}}
+					/>
+					<Card.Title style={styles.alternativeTitle}>
+						Sensational Haché
+					</Card.Title>
 				</Card>
 
 				<Card containerStyle={styles.alternativeCard}>
-					<Card.Image source={require('./AlternativeImageTwo.png')} style={styles.alternativeImageCard}></Card.Image>
-					<Card.Divider/>
-					<Card.Title>Sensational Haché</Card.Title>
+					<Card.Image
+						source={require('./AlternativeImageTwo.png')}
+						style={styles.alternativeImageCard}
+					></Card.Image>
+					<Card.Divider />
+					<Card.Title style={styles.alternativeTitle}>
+						Sojasun Haché
+					</Card.Title>
 				</Card>
 			</View>
 		</View>
-		);
+	);
 }
 
 function handleHelpPress() {
@@ -64,64 +99,76 @@ function handleHelpPress() {
 
 const styles = StyleSheet.create({
 	mainViewCardContainer: {
-		alignItems:'center'
+		alignItems: 'center',
 	},
 	mainCard: {
 		borderRadius: 20,
 		width: '90%',
 		height: undefined,
-		alignItems:'center'
+		alignItems: 'center',
 	},
 	title: {
-		fontSize: 30,
-		//fontFamily: 'Poppins', 
+		fontSize: 25,
+		//fontFamily: 'Poppins',
 		fontWeight: 'bold',
-		marginTop: 40,
-		alignContent:'flex-start'
+		marginTop: 10,
+		alignContent: 'flex-start',
 	},
-	labelViewCardContainer : {
-		flexDirection:'row', 
-		flexWrap:'wrap'
+	emojeeView: { flexDirection: 'row', flexWrap: 'wrap' },
+	textForEmojee: { textAlign: 'center', marginRight: 5, fontSize: 22 },
+	emojee: { width: 30, height: 30 },
+	labelViewCardContainer: {
+		flexDirection: 'row',
+		flexWrap: 'wrap',
 	},
-	mainImageCard : {
-		width: 280, height: 200, margin: 10
+	mainImageCard: {
+		width: 240,
+		height: 174,
+		margin: 10,
 	},
-	secondaryFirstCard : {
+	secondaryFirstCard: {
 		borderRadius: 30,
 		margin: 0,
 		padding: 5,
 		minWidth: 70,
 	},
-	secondaryCard : {
+	secondaryCard: {
 		borderRadius: 30,
 		margin: 0,
-		marginLeft: 25,
+		marginLeft: 35,
 		minWidth: 70,
-		padding: 5
+		padding: 5,
 	},
-	viewForLabelText : {
-		flexDirection:'row', 
-		flexWrap:'wrap'
+	viewForLabelText: {
+		flexDirection: 'row',
+		flexWrap: 'wrap',
+		backgroundColor: 'white',
 	},
-	labelCard : {
-		width:10,
-		height:10,
-		justifyContent: "space-around",
-		resizeMode:"contain"
+	labelCard: {
+		width: 15,
+		height: 15,
+		justifyContent: 'space-around',
+		marginRight: 5,
+		marginLeft: 3,
+		resizeMode: 'contain',
 	},
-	textLabel : {
-		textAlign: "center",
+	textLabel: {
+		textAlign: 'center',
+		marginRight: 5,
 	},
 
 	alternativeViewCardContainer: {
-		flexDirection: 'row', 
-		marginTop: 0
+		flexDirection: 'row',
+		marginTop: 0,
 	},
 	alternativeCard: {
-		borderRadius: 20
+		borderRadius: 20,
+		paddingBottom: 0,
 	},
 	alternativeImageCard: {
 		width: 112,
-		height: 112
+		height: 112,
+		marginBottom: 10,
 	},
+	alternativeTitle: { marginTop: 0, paddingTop: 0, paddingBottom: 0 },
 });
