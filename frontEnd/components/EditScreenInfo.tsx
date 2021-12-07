@@ -12,8 +12,31 @@ export default function EditScreenInfo({ path }: { path: string }) {
 				<Card containerStyle={styles.mainCard}>
 					<Card.Image source={require('./hacher.png')} style={styles.mainImageCard}></Card.Image>
 				</Card>
+				<Text style={styles.title}> Herta Le bon Végétal </Text>
+				<Card.Divider/>
+				<View style={styles.labelViewCardContainer}>
+					<Card containerStyle={styles.secondaryFirstCard}>
+						<View style={styles.viewForLabelText}>
+							<Card.Image source={require('./Vector1.png')} style={styles.labelCard}></Card.Image>
+							<Text style={styles.textLabel}>Vegan</Text>
+						</View>
+					</Card>
+					<Card containerStyle={styles.secondaryCard}>
+						<View style={styles.viewForLabelText}>
+							<Card.Image source={require('./Vector2.png')} style={styles.labelCard}></Card.Image>
+							<Text style={styles.textLabel}>Diabète</Text>
+						</View>
+					</Card>
+					<Card containerStyle={styles.secondaryCard}>
+						<View style={styles.viewForLabelText}>
+							<Card.Image source={require('./Vector3.png')} style={styles.labelCard}></Card.Image>
+							<Text style={styles.textLabel}>Gluten free</Text>
+						</View>
+					</Card>
+				</View>
 			</View>
-			
+
+
 			<Text style={styles.title}> Alternatives </Text>
 
 			<View style={styles.alternativeViewCardContainer}>
@@ -40,24 +63,6 @@ function handleHelpPress() {
 }
 
 const styles = StyleSheet.create({
-	title: {
-		fontSize: 30,
-		//fontFamily: 'Poppins', 
-		fontWeight: 'bold',
-		marginTop: 40,
-		alignContent:'flex-start'
-	},
-	alternativeCard: {
-		borderRadius: 20
-	},
-	alternativeImageCard: {
-		width: 112,
-		height: 112
-	},
-	alternativeViewCardContainer: {
-		flexDirection: 'row', 
-		marginTop: 0
-	},
 	mainViewCardContainer: {
 		alignItems:'center'
 	},
@@ -67,7 +72,56 @@ const styles = StyleSheet.create({
 		height: undefined,
 		alignItems:'center'
 	},
+	title: {
+		fontSize: 30,
+		//fontFamily: 'Poppins', 
+		fontWeight: 'bold',
+		marginTop: 40,
+		alignContent:'flex-start'
+	},
+	labelViewCardContainer : {
+		flexDirection:'row', 
+		flexWrap:'wrap'
+	},
 	mainImageCard : {
 		width: 280, height: 200, margin: 10
-	}
+	},
+	secondaryFirstCard : {
+		borderRadius: 30,
+		margin: 0,
+		padding: 5,
+		minWidth: 70,
+	},
+	secondaryCard : {
+		borderRadius: 30,
+		margin: 0,
+		marginLeft: 25,
+		minWidth: 70,
+		padding: 5
+	},
+	viewForLabelText : {
+		flexDirection:'row', 
+		flexWrap:'wrap'
+	},
+	labelCard : {
+		width:10,
+		height:10,
+		justifyContent: "space-around",
+		resizeMode:"contain"
+	},
+	textLabel : {
+		textAlign: "center",
+	},
+
+	alternativeViewCardContainer: {
+		flexDirection: 'row', 
+		marginTop: 0
+	},
+	alternativeCard: {
+		borderRadius: 20
+	},
+	alternativeImageCard: {
+		width: 112,
+		height: 112
+	},
 });
