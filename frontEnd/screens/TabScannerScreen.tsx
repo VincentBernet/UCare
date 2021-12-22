@@ -7,6 +7,8 @@ import { Text, View } from '../components/Themed';
 import { useState, useEffect } from 'react';
 import { Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 export default function TabScannerScreen() {
 	const [hasPermission, setHasPermission] = React.useState<null | Boolean>();
@@ -58,18 +60,11 @@ export default function TabScannerScreen() {
 			<View style={styles.barcodebox}>
 				<BarCodeScanner
 					onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
-					style={{ height: 400, width: 400 }}
+					style={{ height: 600, width: 600 }}
 				/>
 			</View>
 			<Text style={styles.maintext}>{text}</Text>
-
-			{scanned && (
-				<Button
-					title={'Scannez ?'}
-					onPress={() => setScanned(false)}
-					color="#FF5E5B"
-				/>
-			)}
+			{scanned && <Text>yo</Text>}
 		</View>
 	);
 }
@@ -96,7 +91,7 @@ const styles = StyleSheet.create({
 	barcodebox: {
 		alignItems: 'center',
 		justifyContent: 'center',
-		height: 300,
+		height: 350,
 		width: 300,
 		overflow: 'hidden',
 		borderRadius: 30,

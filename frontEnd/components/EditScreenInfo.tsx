@@ -11,7 +11,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
 			<View style={styles.mainViewCardContainer}>
 				<Card containerStyle={styles.mainCard}>
 					<Card.Image
-						source={require('./hacher.png')}
+						source={require('./image1.png')}
 						style={styles.mainImageCard}
 					></Card.Image>
 				</Card>

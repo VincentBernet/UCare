@@ -16,11 +16,15 @@ import { ColorSchemeName, Pressable } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+
+import TabScannerScreen from '../screens/TabScannerScreen';
+import TabProductScreen from '../screens/TabProductScreen';
+import TabFavoritesScreen from '../screens/TabFavoritesScreen';
+
 import ModalScreen from '../screens/ModalScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import TabFavoritesScreen from '../screens/TabFavoritesScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import TabScannerScreen from '../screens/TabScannerScreen';
+
 import { Card, Image, ListItem, Icon } from 'react-native-elements';
 
 import {
@@ -85,12 +89,12 @@ const BottomTab = createBottomTabNavigator<RootTabParamList>();
 
 function LogoTitle() {
 	return (
-	  <Image
-		style={{ width: 85, height: 30 }}
-		source={require('./iconCroped.png')}
-	  />
+		<Image
+			style={{ width: 85, height: 30 }}
+			source={require('./iconCroped.png')}
+		/>
 	);
-  }
+}
 
 function BottomTabNavigator() {
 	const colorScheme = useColorScheme();
@@ -106,7 +110,7 @@ function BottomTabNavigator() {
 				name="TabScanner"
 				component={TabScannerScreen}
 				options={({ navigation }: RootTabScreenProps<'TabScanner'>) => ({
-					// title: 'Scanner',
+					title: 'Scanner',
 					headerTitle: (props: any) => <LogoTitle {...props} />,
 					headerTitleAlign: 'center',
 					headerStyle: {
@@ -140,6 +144,7 @@ function BottomTabNavigator() {
 				name="TabFavorites"
 				component={TabFavoritesScreen}
 				options={({ navigation }: RootTabScreenProps<'TabFavorites'>) => ({
+					title: 'Favoris',
 					headerTitle: (props: any) => <LogoTitle {...props} />,
 					headerTitleAlign: 'center',
 					tabBarIcon: ({ color }) => (

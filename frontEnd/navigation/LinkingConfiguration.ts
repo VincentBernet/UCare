@@ -4,39 +4,43 @@
  * https://reactnavigation.org/docs/configuring-links
  */
 
- import { LinkingOptions } from '@react-navigation/native';
- import * as Linking from 'expo-linking';
- 
- import { RootStackParamList } from '../types';
- 
- const linking: LinkingOptions<RootStackParamList> = {
-   prefixes: [Linking.makeUrl('/')],
-   config: {
-     screens: {
-       Root: {
-         screens: {
-           TabFavorites: {
-             screens: {
-               TabFavoritesScreen: 'one',
-             },
-           },
-           TabTwo: {
-             screens: {
-               TabTwoScreen: 'two',
-             },
-           },
-           TabScanner: {
-            screens: {
-              TabScannerScreen: 'scanner',
-            },
-          },
-         },
-       },
-       Modal: 'modal',
-       NotFound: '*',
-     },
-   },
- };
- 
- export default linking;
- 
+import { LinkingOptions } from '@react-navigation/native';
+import * as Linking from 'expo-linking';
+
+import { RootStackParamList } from '../types';
+
+const linking: LinkingOptions<RootStackParamList> = {
+	prefixes: [Linking.makeUrl('/')],
+	config: {
+		screens: {
+			Root: {
+				screens: {
+					TabScanner: {
+						screens: {
+							TabScannerScreen: 'scanner',
+						},
+					},
+					TabProduct: {
+						screens: {
+							TabProductScreen: 'product',
+						},
+					},
+					TabFavorites: {
+						screens: {
+							TabFavoritesScreen: 'favorites',
+						},
+					},
+					TabTwo: {
+						screens: {
+							TabTwoScreen: 'two',
+						},
+					},
+				},
+			},
+			Modal: 'modal',
+			NotFound: '*',
+		},
+	},
+};
+
+export default linking;

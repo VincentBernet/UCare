@@ -8,7 +8,7 @@ import { Text, View } from './Themed';
 const sampleFavoritesProducts = [
 	{
 		id: '1',
-		imageName: 'image2',
+		imageName: 'image1',
 		title: 'Product 1',
 	},
 	{
@@ -82,10 +82,10 @@ export default function FavoriteProductModule({ path }: { path: string }) {
 				></Card.Image>
 			</View>
 			<Card.Image
-				source={require('./hacher.png')}
+				source={require('./image1.png')}
 				style={styles.mainImageCard}
 			></Card.Image>
-			<Text style={styles.title}> {product.title} </Text>
+			<Text style={styles.title}> {product.title}</Text>
 		</Card>
 	);
 

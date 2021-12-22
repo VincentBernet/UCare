@@ -2,6 +2,7 @@ import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
+import FavoriteProductModule from '../components/FavoriteProductModule';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
@@ -15,7 +16,7 @@ export default function TabFavoritesScreen({
 				lightColor="#eee"
 				darkColor="rgba(255,255,255,0.1)"
 			/>*/}
-			<EditScreenInfo path="/screens/TabFavoritesScreen.tsx" />
+			<FavoriteProductModule path="/screens/TabFavoritesScreen.tsx" />
 		</View>
 	);
 }
