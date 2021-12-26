@@ -1,18 +1,20 @@
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 
 import { useState, useEffect } from 'react';
 import { Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
+import { useNavigation } from '@react-navigation/native';
 
 
 export default function TabScannerScreen() {
+	const navigation = useNavigation();
 	const [hasPermission, setHasPermission] = React.useState<null | Boolean>();
 	const [scanned, setScanned] = useState(false);
-	const [text, setText] = useState('Scannez un code-barres');
-
+	const [text, setText] = useState('Nouvelle recherche : Go Scanner');
+	var numbercompteur = 0;
 	const askForCameraPermission = () => {
 		(async () => {
 			const { status } = await BarCodeScanner.requestPermissionsAsync();
@@ -27,9 +29,19 @@ export default function TabScannerScreen() {
 
 	// What happens when we scan the bar code
 	const handleBarCodeScanned = ({ type, data }: { type: any; data: any }) => {
-		setScanned(true);
-		setText('Numéro de code-barres : ' + data);
-		console.log('Type: ' + type + '\nData: ' + data);
+		if (type === 32) {
+			setScanned(false);
+			numbercompteur += 1;
+			console.log(numbercompteur + ') Recherche en cours du produit : ' + data );
+			navigation.navigate('CurrentProduct');
+		}
+		else { 
+			setScanned(false);
+			
+			setText('Ceci n\'est pas un format de CodeBar valide : ' + data);
+			console.log(numbercompteur + ') Echec mauvais CodeBar Format : ' + data );
+			console.log('Type: ' + type + '\nData: ' + data);
+		}
 	};
 
 	// Check permissions and return the screens
@@ -61,8 +73,10 @@ export default function TabScannerScreen() {
 					style={{ height: 600, width: 600 }}
 				/>
 			</View>
-			<Text style={styles.maintext}>{text}</Text>
-			{scanned && <Text>yo</Text>}
+			{//scanned && navigation.navigate('CurrentProduct')
+			}
+			{scanned &&
+				<Text style={styles.barcodeResult}>{text}</Text>}
 		</View>
 	);
 }
@@ -95,4 +109,9 @@ const styles = StyleSheet.create({
 		borderRadius: 30,
 		backgroundColor: 'tomato',
 	},
+	barcodeResult: {
+		marginTop: 15,
+		backgroundColor: 'red',
+		padding: 10,
+	}
 });

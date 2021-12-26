@@ -1,15 +1,27 @@
+import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
-import { Card, ListItem, Button, Icon } from 'react-native-elements';
+import { Card } from 'react-native-elements';
 
 import { Text, View } from './Themed';
 
 export default function CurrentProductEditModule({ currentProductJson }: { currentProductJson: JSON }) {
+	const navigation = useNavigation();
+
 	return (
 		<View>
 			<View style={styles.mainViewCardContainer}>
 				<Card containerStyle={styles.mainCard}>
+					<View style={styles.headerProductViewContainer} >
+					<TouchableOpacity onPress={() => alert('Post Method for backend API') //TODO : post backend request to add product to favorites
+					}>
+						<Card.Image
+							source={require('./../assets/images/FavoriteProduct/love.png')}
+							style={styles.mainImageLoveCard}
+						></Card.Image>
+						</TouchableOpacity>
+					</View>
 					<Card.Image
 						source={require('./../assets/images/CurrentProduct/Sample-Stub/image1.png')}
 						style={styles.mainImageCard}
@@ -100,12 +112,32 @@ function handleHelpPress() {
 const styles = StyleSheet.create({
 	mainViewCardContainer: {
 		alignItems: 'center',
+		padding: 0,
+		margin: 0,
 	},
 	mainCard: {
 		borderRadius: 20,
 		width: '90%',
 		height: undefined,
 		alignItems: 'center',
+		paddingBottom: 20,
+		paddingLeft: 25,
+		paddingRight: 25,
+		padding: 0,
+		margin: 0,
+	},
+	headerProductViewContainer: {
+		backgroundColor: '#fff',
+		display: 'flex',
+		flexDirection: 'row',
+		justifyContent: 'flex-end',
+	},
+	mainImageLoveCard: {
+		margin: 0,
+		marginTop: 7,
+		padding: 0,
+		width: 24,
+		height: 22,
 	},
 	title: {
 		fontSize: 25,
@@ -122,9 +154,9 @@ const styles = StyleSheet.create({
 		flexWrap: 'wrap',
 	},
 	mainImageCard: {
-		width: 240,
-		height: 174,
-		margin: 10,
+		width: 280,
+		height: 200,
+		margin: 0,
 	},
 	secondaryFirstCard: {
 		borderRadius: 30,
