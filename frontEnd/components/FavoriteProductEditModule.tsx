@@ -5,7 +5,6 @@ import { SafeAreaView, FlatList, StyleSheet, StatusBar, TouchableOpacity } from 
 import { useNavigation } from '@react-navigation/native';
 
 import { Text, View } from './Themed';
-import CurrentProductScreen from '../screens/CurrentProductScreen';
 
 const sampleFavoritesProducts = [
 	{
@@ -74,7 +73,7 @@ export default function FavoriteProductEditModule({ path }: { path: string }) {
 	const navigation = useNavigation();
 
 	const FavProduct = ({ product }: { product: any }) => (
-		<TouchableOpacity onPress={() => navigation.navigate('CurrentProduct', sampleFavoritesProducts)}>
+		<TouchableOpacity onPress={() => navigation.navigate('CurrentProduct', /* */)}>
 			<Card containerStyle={styles.productCardContainer} >
 				<View style={styles.headerProductViewContainer} >
 					<Card.Image
