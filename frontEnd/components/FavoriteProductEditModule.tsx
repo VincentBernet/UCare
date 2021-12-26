@@ -1,9 +1,11 @@
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import { Card, ListItem, Button, Icon } from 'react-native-elements';
-import { SafeAreaView, FlatList, StyleSheet, StatusBar } from 'react-native';
+import { SafeAreaView, FlatList, StyleSheet, StatusBar, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import { Text, View } from './Themed';
+import CurrentProductScreen from '../screens/CurrentProductScreen';
 
 const sampleFavoritesProducts = [
 	{
@@ -68,25 +70,29 @@ const sampleFavoritesProducts = [
 	},
 ];
 
-export default function FavoriteProductModule({ path }: { path: string }) {
+export default function FavoriteProductEditModule({ path }: { path: string }) {
+	const navigation = useNavigation();
+
 	const FavProduct = ({ product }: { product: any }) => (
-		<Card containerStyle={styles.productCardContainer}>
-			<View style={styles.headerProductViewContainer}>
+		<TouchableOpacity onPress={() => navigation.navigate('CurrentProduct', sampleFavoritesProducts)}>
+			<Card containerStyle={styles.productCardContainer} >
+				<View style={styles.headerProductViewContainer} >
+					<Card.Image
+						source={require('./../assets/images/FavoriteProduct/cross.png')}
+						style={styles.mainImageCrossCard}
+					></Card.Image>
+					<Card.Image
+						source={require('./../assets/images/FavoriteProduct/love.png')}
+						style={styles.mainImageLoveCard}
+					></Card.Image>
+				</View>
 				<Card.Image
-					source={require('./cross.png')}
-					style={styles.mainImageCrossCard}
+					source={require('./../assets/images/FavoriteProduct/Sample-Stub/image1.png')}
+					style={styles.mainImageCard}
 				></Card.Image>
-				<Card.Image
-					source={require('./love.png')}
-					style={styles.mainImageLoveCard}
-				></Card.Image>
-			</View>
-			<Card.Image
-				source={require('./image1.png')}
-				style={styles.mainImageCard}
-			></Card.Image>
-			<Text style={styles.title}> {product.title}</Text>
-		</Card>
+				<Text style={styles.title}> {product.title}</Text>
+			</Card>
+		</TouchableOpacity >
 	);
 
 	const renderProduct = ({ item }: any) => <FavProduct product={item} />;

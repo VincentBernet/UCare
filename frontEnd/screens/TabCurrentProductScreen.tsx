@@ -1,21 +1,16 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
-import FavoriteProductEditModule from '../components/FavoriteProductEditModule';
+import CurrentProductEditModule from '../components/CurrentProductEditModule';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 
-export default function TabFavoritesScreen({
+export default function TabCurrentProductScreen({
 	navigation,
-}: RootTabScreenProps<'TabFavorites'>) {
+}: RootTabScreenProps<'TabCurrentProduct'>) {
 	return (
 		<View style={styles.container}>
-			{/*<View
-				style={styles.separator}
-				lightColor="#eee"
-				darkColor="rgba(255,255,255,0.1)"
-			/>*/}
-			<FavoriteProductEditModule path="/screens/TabFavoritesScreen.tsx" />
+			{/*<CurrentProductEditModule path="/screens/TabCurrentProductScreen.tsx" />*/}
 		</View>
 	);
 }

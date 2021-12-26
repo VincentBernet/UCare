@@ -20,9 +20,9 @@ const linking: LinkingOptions<RootStackParamList> = {
 							TabScannerScreen: 'scanner',
 						},
 					},
-					TabProduct: {
+					TabCurrentProduct: {
 						screens: {
-							TabProductScreen: 'product',
+							TabCurrentProductScreen: 'product',
 						},
 					},
 					TabFavorites: {
@@ -37,7 +37,8 @@ const linking: LinkingOptions<RootStackParamList> = {
 					},
 				},
 			},
-			Modal: 'modal',
+			CurrentProduct: 'currentProduct',
+			MyAccount: 'myAccount',
 			NotFound: '*',
 		},
 	},

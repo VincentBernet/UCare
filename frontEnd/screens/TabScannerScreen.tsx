@@ -1,14 +1,12 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
-// import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 import { useState, useEffect } from 'react';
 import { Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 export default function TabScannerScreen() {
 	const [hasPermission, setHasPermission] = React.useState<null | Boolean>();

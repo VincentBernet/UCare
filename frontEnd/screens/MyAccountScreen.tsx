@@ -1,16 +1,14 @@
+import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { StyleSheet } from 'react-native';
+import { Platform, StyleSheet } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
-import { RootTabScreenProps } from '../types';
 
-export default function TabProductScreen({
-	navigation,
-}: RootTabScreenProps<'TabProduct'>) {
+export default function MyAccountScreen() {
 	return (
-		<View style={styles.container}>
-			<EditScreenInfo path="/screens/TabProductScreen.tsx" />
+		<View>
+			{/* Use a light status bar on iOS to account for the black space above the modal */}
+			<StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
 		</View>
 	);
 }

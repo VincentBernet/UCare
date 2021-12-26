@@ -18,12 +18,11 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 
 import TabScannerScreen from '../screens/TabScannerScreen';
-import TabProductScreen from '../screens/TabProductScreen';
 import TabFavoritesScreen from '../screens/TabFavoritesScreen';
 
-import ModalScreen from '../screens/ModalScreen';
+import MyAccountScreen from '../screens/MyAccountScreen';
+import CurrentProductScreen from '../screens/CurrentProductScreen';
 import NotFoundScreen from '../screens/NotFoundScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
 
 import { Card, Image, ListItem, Icon } from 'react-native-elements';
 
@@ -67,7 +66,7 @@ function RootNavigator() {
 				name="Root"
 				component={BottomTabNavigator}
 				options={{ headerShown: false }}
-				//options={{ headerTitle: (props) => <LogoTitle {...props} /> }}
+			//options={{ headerTitle: (props) => <LogoTitle {...props} /> }}
 			/>
 			<Stack.Screen
 				name="NotFound"
@@ -75,7 +74,8 @@ function RootNavigator() {
 				options={{ title: 'Oops!' }}
 			/>
 			<Stack.Group screenOptions={{ presentation: 'modal' }}>
-				<Stack.Screen name="Modal" component={ModalScreen} />
+				<Stack.Screen name="MyAccount" component={MyAccountScreen} />
+				<Stack.Screen name="CurrentProduct" component={CurrentProductScreen} />
 			</Stack.Group>
 		</Stack.Navigator>
 	);
@@ -124,7 +124,7 @@ function BottomTabNavigator() {
 					),
 					headerRight: () => (
 						<Pressable
-							onPress={() => navigation.navigate('Modal')}
+							onPress={() => navigation.navigate('MyAccount')}
 							style={({ pressed }) => ({
 								opacity: pressed ? 0.5 : 1,
 							})}
@@ -157,13 +157,13 @@ function BottomTabNavigator() {
 					headerStatusBarHeight: 30,
 					headerRight: () => (
 						<Pressable
-							onPress={() => navigation.navigate('Modal')}
+							onPress={() => navigation.navigate('MyAccount')}
 							style={({ pressed }) => ({
 								opacity: pressed ? 0.5 : 1,
 							})}
 						>
 							<FontAwesome
-								name="info-circle"
+								name="user"
 								size={25}
 								color={Colors[colorScheme].text}
 								style={{ marginRight: 45 }}

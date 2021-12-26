@@ -5,23 +5,23 @@ import { Card, ListItem, Button, Icon } from 'react-native-elements';
 
 import { Text, View } from './Themed';
 
-export default function EditScreenInfo({ path }: { path: string }) {
+export default function CurrentProductEditModule({ currentProductJson }: { currentProductJson: JSON }) {
 	return (
 		<View>
 			<View style={styles.mainViewCardContainer}>
 				<Card containerStyle={styles.mainCard}>
 					<Card.Image
-						source={require('./image1.png')}
+						source={require('./../assets/images/CurrentProduct/Sample-Stub/image1.png')}
 						style={styles.mainImageCard}
 					></Card.Image>
 				</Card>
 
-				<Text style={styles.title}> Herta Le bon Végétal </Text>
+				<Text style={styles.title} > {currentProductJson ? currentProductJson : 'Herta le bon Végétal'} </Text>
 
 				<View style={styles.emojeeView}>
 					<Text style={styles.textForEmojee}>Unfriendly</Text>
 					<Card.Image
-						source={require('./emojeeAngry.png')}
+						source={require('./../assets/images/CurrentProduct/emojeeAngry.png')}
 						style={styles.emojee}
 					></Card.Image>
 				</View>
@@ -30,7 +30,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
 					<Card containerStyle={styles.secondaryFirstCard}>
 						<View style={styles.viewForLabelText}>
 							<Card.Image
-								source={require('./Vector1.png')}
+								source={require('./../assets/images/CurrentProduct/vegan.png')}
 								style={styles.labelCard}
 							></Card.Image>
 							<Text style={styles.textLabel}>Vegan</Text>
@@ -39,7 +39,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
 					<Card containerStyle={styles.secondaryCard}>
 						<View style={styles.viewForLabelText}>
 							<Card.Image
-								source={require('./Vector2.png')}
+								source={require('./../assets/images/CurrentProduct/sugarFree.png')}
 								style={styles.labelCard}
 							></Card.Image>
 							<Text style={styles.textLabel}>Diabète</Text>
@@ -48,14 +48,14 @@ export default function EditScreenInfo({ path }: { path: string }) {
 					<Card containerStyle={styles.secondaryCard}>
 						<View style={styles.viewForLabelText}>
 							<Card.Image
-								source={require('./Vector3.png')}
+								source={require('./../assets/images/CurrentProduct/glutenFree.png')}
 								style={styles.labelCard}
 							></Card.Image>
 							<Text style={styles.textLabel}>Gluten free</Text>
 						</View>
 					</Card>
 				</View>
-			</View>
+			</View >
 
 			<Text style={styles.title}> Alternatives </Text>
 
@@ -87,7 +87,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
 					</Card.Title>
 				</Card>
 			</View>
-		</View>
+		</View >
 	);
 }
 
