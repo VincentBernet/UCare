@@ -76,10 +76,12 @@ export default function FavoriteProductEditModule({ path }: { path: string }) {
 		<TouchableOpacity onPress={() => navigation.navigate('CurrentProduct', /* */)}>
 			<Card containerStyle={styles.productCardContainer} >
 				<View style={styles.headerProductViewContainer} >
-					<Card.Image
-						source={require('./../assets/images/FavoriteProduct/cross.png')}
-						style={styles.mainImageCrossCard}
-					></Card.Image>
+					<TouchableOpacity onPress={() => alert('Deleting this product from your favorites')}>
+						<Card.Image
+							source={require('./../assets/images/FavoriteProduct/cross.png')}
+							style={styles.mainImageCrossCard}
+						></Card.Image>
+					</TouchableOpacity >
 					<Card.Image
 						source={require('./../assets/images/FavoriteProduct/love.png')}
 						style={styles.mainImageLoveCard}
