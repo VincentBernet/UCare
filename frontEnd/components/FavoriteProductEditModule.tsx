@@ -1,7 +1,13 @@
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import { Card, ListItem, Button, Icon } from 'react-native-elements';
-import { SafeAreaView, FlatList, StyleSheet, StatusBar, TouchableOpacity } from 'react-native';
+import {
+	SafeAreaView,
+	FlatList,
+	StyleSheet,
+	StatusBar,
+	TouchableOpacity,
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { Text, View } from './Themed';
@@ -73,15 +79,23 @@ export default function FavoriteProductEditModule({ path }: { path: string }) {
 	const navigation = useNavigation();
 
 	const FavProduct = ({ product }: { product: any }) => (
-		<TouchableOpacity onPress={() => navigation.navigate('CurrentProduct', /* */)}>
-			<Card containerStyle={styles.productCardContainer} >
-				<View style={styles.headerProductViewContainer} >
-					<TouchableOpacity onPress={() => alert('Deleting this product from your favorites')}>
+		<TouchableOpacity
+			onPress={() =>
+				navigation.navigate('CurrentProduct', { title: product.title })
+			}
+		>
+			<Card containerStyle={styles.productCardContainer}>
+				<View style={styles.headerProductViewContainer}>
+					<TouchableOpacity
+						onPress={() =>
+							alert('Deleting this product from your favorites')
+						}
+					>
 						<Card.Image
 							source={require('./../assets/images/FavoriteProduct/cross.png')}
 							style={styles.mainImageCrossCard}
 						></Card.Image>
-					</TouchableOpacity >
+					</TouchableOpacity>
 					<Card.Image
 						source={require('./../assets/images/FavoriteProduct/love.png')}
 						style={styles.mainImageLoveCard}
@@ -93,7 +107,7 @@ export default function FavoriteProductEditModule({ path }: { path: string }) {
 				></Card.Image>
 				<Text style={styles.title}> {product.title}</Text>
 			</Card>
-		</TouchableOpacity >
+		</TouchableOpacity>
 	);
 
 	const renderProduct = ({ item }: any) => <FavProduct product={item} />;

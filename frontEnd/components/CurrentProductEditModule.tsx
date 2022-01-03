@@ -6,20 +6,27 @@ import { Card } from 'react-native-elements';
 
 import { Text, View } from './Themed';
 
-export default function CurrentProductEditModule({ currentProductJson }: { currentProductJson: JSON }) {
+export default function CurrentProductEditModule({
+	currentProductJson,
+}: {
+	currentProductJson: any;
+}) {
 	const navigation = useNavigation();
 
 	return (
 		<View>
 			<View style={styles.mainViewCardContainer}>
 				<Card containerStyle={styles.mainCard}>
-					<View style={styles.headerProductViewContainer} >
-					<TouchableOpacity onPress={() => alert('Post Method for backend API') //TODO : post backend request to add product to favorites
-					}>
-						<Card.Image
-							source={require('./../assets/images/FavoriteProduct/love.png')}
-							style={styles.mainImageLoveCard}
-						></Card.Image>
+					<View style={styles.headerProductViewContainer}>
+						<TouchableOpacity
+							onPress={
+								() => alert('Post Method for backend API') //TODO : post backend request to add product to favorites
+							}
+						>
+							<Card.Image
+								source={require('./../assets/images/FavoriteProduct/love.png')}
+								style={styles.mainImageLoveCard}
+							></Card.Image>
 						</TouchableOpacity>
 					</View>
 					<Card.Image
@@ -28,7 +35,12 @@ export default function CurrentProductEditModule({ currentProductJson }: { curre
 					></Card.Image>
 				</Card>
 
-				<Text style={styles.title} > {currentProductJson ? currentProductJson : 'Herta le bon Végétal'} </Text>
+				<Text style={styles.title}>
+					{' '}
+					{currentProductJson
+						? currentProductJson.title
+						: "Can't access the current \nProduct Title"}{' '}
+				</Text>
 
 				<View style={styles.emojeeView}>
 					<Text style={styles.textForEmojee}>Unfriendly</Text>
@@ -67,7 +79,7 @@ export default function CurrentProductEditModule({ currentProductJson }: { curre
 						</View>
 					</Card>
 				</View>
-			</View >
+			</View>
 
 			<Text style={styles.title}> Alternatives </Text>
 
@@ -99,7 +111,7 @@ export default function CurrentProductEditModule({ currentProductJson }: { curre
 					</Card.Title>
 				</Card>
 			</View>
-		</View >
+		</View>
 	);
 }
 
@@ -145,6 +157,7 @@ const styles = StyleSheet.create({
 		fontWeight: 'bold',
 		marginTop: 10,
 		alignContent: 'flex-start',
+		textAlign: 'center',
 	},
 	emojeeView: { flexDirection: 'row', flexWrap: 'wrap' },
 	textForEmojee: { textAlign: 'center', marginRight: 5, fontSize: 22 },
