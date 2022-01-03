@@ -14,6 +14,18 @@ export default function TabScannerScreen() {
 	const [scanned, setScanned] = useState(false);
 	const [text, setText] = useState('Nouvelle recherche : Go Scanner');
 	var numbercompteur = 0;
+
+	/*const retrieveProductViaBarcodeAndAPI = (codeBar: number) =>  {
+		return fetch('https://world.openfoodfacts.org/api/v2/search?code='+codeBar)
+		.then ((response) => response.json())
+		.then ((json) => {
+			return json.title;
+		})
+		.catch((error) => {
+			console.error(error);
+		});
+	}*/
+
 	const askForCameraPermission = () => {
 		(async () => {
 			const { status } = await BarCodeScanner.requestPermissionsAsync();
@@ -29,7 +41,9 @@ export default function TabScannerScreen() {
 	// What happens when we scan the bar code
 	const handleBarCodeScanned = ({ type, data }: { type: any; data: any }) => {
 		numbercompteur += 1;
-		const currentProductJson = { title: 'CurrentProductTitle' };
+		// TODO: Call The API of openfoodfacts, store everything in a json file. Should be done on the backend server. 
+		// const currentProductJson = retrieveProductViaBarcodeAndAPI(data);
+		const currentProductJson = { title: 'Title coming from Scanner'};
 		if (type === 32 || type === 1) {
 			setScanned(false);
 			console.log(

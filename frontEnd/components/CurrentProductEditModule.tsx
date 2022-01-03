@@ -11,8 +11,6 @@ export default function CurrentProductEditModule({
 }: {
 	currentProductJson: any;
 }) {
-	const navigation = useNavigation();
-
 	return (
 		<View>
 			<View style={styles.mainViewCardContainer}>
@@ -35,9 +33,9 @@ export default function CurrentProductEditModule({
 					></Card.Image>
 				</Card>
 
-				<Text style={styles.title}>
+				<Text style={styles.mainTitle}>
 					{' '}
-					{currentProductJson
+					{currentProductJson.title
 						? currentProductJson.title
 						: "Can't access the current \nProduct Title"}{' '}
 				</Text>
@@ -136,7 +134,7 @@ const styles = StyleSheet.create({
 		paddingLeft: 25,
 		paddingRight: 25,
 		padding: 0,
-		margin: 0,
+		marginTop: 0,
 	},
 	headerProductViewContainer: {
 		backgroundColor: '#fff',
@@ -150,6 +148,15 @@ const styles = StyleSheet.create({
 		padding: 0,
 		width: 24,
 		height: 22,
+	},
+	mainTitle: {
+		fontSize: 25,
+		//fontFamily: 'Poppins',
+		fontWeight: 'bold',
+		marginTop: 5,
+		marginBottom: 15,
+		alignContent: 'flex-start',
+		textAlign: 'center',
 	},
 	title: {
 		fontSize: 25,

@@ -16,37 +16,37 @@ const sampleFavoritesProducts = [
 	{
 		id: '1',
 		imageName: 'image1',
-		title: 'Product 1',
+		title: 'Le Bon Haché Cru',
 	},
 	{
 		id: '2',
 		imageName: 'image2',
-		title: 'Product 2',
+		title: 'Tartare Végétal',
 	},
 	{
 		id: '3',
 		imageName: 'image3',
-		title: 'Product 3',
+		title: 'Délice de Légumes',
 	},
 	{
 		id: '4',
 		imageName: 'image4',
-		title: 'Product 4',
+		title: 'Saucisse Végétale',
 	},
 	{
 		id: '5',
 		imageName: 'image5',
-		title: 'Product 5',
+		title: 'Délice de Légumes',
 	},
 	{
 		id: '6',
 		imageName: 'image6',
-		title: 'Product 6',
+		title: 'Gallète aux Légumes',
 	},
 	{
 		id: '7',
 		imageName: 'image7',
-		title: 'Product 7',
+		title: 'Tian de Légumes',
 	},
 	{
 		id: '8',
@@ -81,7 +81,11 @@ export default function FavoriteProductEditModule({ path }: { path: string }) {
 	const FavProduct = ({ product }: { product: any }) => (
 		<TouchableOpacity
 			onPress={() =>
-				navigation.navigate('CurrentProduct', { title: product.title })
+				navigation.navigate('CurrentProduct', {
+					id: product.id,
+					imageName: product.imageName,
+					title: product.title,
+				})
 			}
 		>
 			<Card containerStyle={styles.productCardContainer}>

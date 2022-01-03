@@ -5,20 +5,11 @@ import { Platform, StyleSheet } from 'react-native';
 import CurrentProductEditModule from '../components/CurrentProductEditModule';
 import { Text, View } from '../components/Themed';
 
-export default function CurrentProductScreen({
-	currentProductJson,
-}: {
-	currentProductJson: any;
-}) {
+export default function CurrentProductScreen({ route }: { route: any }) {
+	const { title, id, imageName } = route.params;
 	return (
 		<View style={styles.container}>
-			<Text>
-				{' '}
-				{currentProductJson
-					? currentProductJson
-					: "Can't access the current \nProduct Title"}{' '}
-			</Text>
-			<CurrentProductEditModule currentProductJson={currentProductJson} />
+			<CurrentProductEditModule currentProductJson={route.params} />
 
 			{/* Use a light status bar on iOS to account for the black space above the modal */}
 			<StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
@@ -28,17 +19,11 @@ export default function CurrentProductScreen({
 
 const styles = StyleSheet.create({
 	container: {
+		margin: 0,
+		marginTop: -35,
+		padding: 0,
 		flex: 1,
 		alignItems: 'center',
 		justifyContent: 'center',
-	},
-	title: {
-		fontSize: 20,
-		fontWeight: 'bold',
-	},
-	separator: {
-		marginVertical: 30,
-		height: 1,
-		width: '80%',
-	},
+	}
 });

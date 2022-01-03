@@ -66,7 +66,7 @@ function RootNavigator() {
 				name="Root"
 				component={BottomTabNavigator}
 				options={{ headerShown: false }}
-			//options={{ headerTitle: (props) => <LogoTitle {...props} /> }}
+				//options={{ headerTitle: (props) => <LogoTitle {...props} /> }}
 			/>
 			<Stack.Screen
 				name="NotFound"
@@ -75,7 +75,10 @@ function RootNavigator() {
 			/>
 			<Stack.Group screenOptions={{ presentation: 'modal' }}>
 				<Stack.Screen name="MyAccount" component={MyAccountScreen} />
-				<Stack.Screen name="CurrentProduct" component={CurrentProductScreen} />
+				<Stack.Screen
+					name="CurrentProduct"
+					component={CurrentProductScreen}
+				/>
 			</Stack.Group>
 		</Stack.Navigator>
 	);
