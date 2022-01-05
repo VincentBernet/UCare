@@ -34,10 +34,9 @@ export default function CurrentProductEditModule({
 				</Card>
 
 				<Text style={styles.mainTitle}>
-					{' '}
 					{currentProductJson.title
 						? currentProductJson.title
-						: "Can't access the current \nProduct Title"}{' '}
+						: "Can't access the current \nProduct Title"}
 				</Text>
 
 				<View style={styles.emojeeView}>
