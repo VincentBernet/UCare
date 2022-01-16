@@ -5,6 +5,8 @@ import { Platform, StyleSheet } from 'react-native';
 import CurrentProductEditModule from '../components/CurrentProductEditModule';
 import { Text, View } from '../components/Themed';
 
+import { styles } from './style/CurrentProductScreen_StyleSheet';
+
 export default function CurrentProductScreen({ route }: { route: any }) {
 	const { title, id, imageName } = route.params;
 	return (
@@ -16,14 +18,3 @@ export default function CurrentProductScreen({ route }: { route: any }) {
 		</View>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		margin: 0,
-		marginTop: -35,
-		padding: 0,
-		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center',
-	}
-});

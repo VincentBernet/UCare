@@ -8,6 +8,8 @@ import { Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { useNavigation } from '@react-navigation/native';
 
+import { styles } from './style/TabScannerScreen_StyleSheet';
+
 export default function TabScannerScreen() {
 	const navigation = useNavigation();
 	const [hasPermission, setHasPermission] = React.useState<null | Boolean>();
@@ -41,9 +43,9 @@ export default function TabScannerScreen() {
 	// What happens when we scan the bar code
 	const handleBarCodeScanned = ({ type, data }: { type: any; data: any }) => {
 		numbercompteur += 1;
-		// TODO: Call The API of openfoodfacts, store everything in a json file. Should be done on the backend server. 
+		// TODO: Call The API of openfoodfacts, store everything in a json file. Should be done on the backend server.
 		// const currentProductJson = retrieveProductViaBarcodeAndAPI(data);
-		const currentProductJson = { title: 'Title coming from Scanner'};
+		const currentProductJson = { title: 'Title coming from Scanner' };
 		if (type === 32 || type === 1) {
 			setScanned(false);
 			console.log(
@@ -97,38 +99,3 @@ export default function TabScannerScreen() {
 		</View>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	title: {
-		fontSize: 100,
-		fontWeight: 'bold',
-	},
-	separator: {
-		marginVertical: 30,
-		height: 1,
-		width: '80%',
-	},
-	maintext: {
-		fontSize: 16,
-		margin: 20,
-	},
-	barcodebox: {
-		alignItems: 'center',
-		justifyContent: 'center',
-		height: 350,
-		width: 300,
-		overflow: 'hidden',
-		borderRadius: 30,
-		backgroundColor: 'tomato',
-	},
-	barcodeResult: {
-		marginTop: 15,
-		backgroundColor: 'red',
-		padding: 10,
-	},
-});
