@@ -8,6 +8,7 @@ import { Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { useNavigation } from '@react-navigation/native';
 
+import { styles } from './style/TabScannerScreen_StyleSheet';
 
 export default function TabScannerScreen() {
 	const navigation = useNavigation();
@@ -15,6 +16,18 @@ export default function TabScannerScreen() {
 	const [scanned, setScanned] = useState(false);
 	const [text, setText] = useState('Nouvelle recherche : Go Scanner');
 	var numbercompteur = 0;
+
+	/*const retrieveProductViaBarcodeAndAPI = (codeBar: number) =>  {
+		return fetch('https://world.openfoodfacts.org/api/v2/search?code='+codeBar)
+		.then ((response) => response.json())
+		.then ((json) => {
+			return json.title;
+		})
+		.catch((error) => {
+			console.error(error);
+		});
+	}*/
+
 	const askForCameraPermission = () => {
 		(async () => {
 			const { status } = await BarCodeScanner.requestPermissionsAsync();
@@ -29,17 +42,23 @@ export default function TabScannerScreen() {
 
 	// What happens when we scan the bar code
 	const handleBarCodeScanned = ({ type, data }: { type: any; data: any }) => {
-		if (type === 32) {
+		numbercompteur += 1;
+		// TODO: Call The API of openfoodfacts, store everything in a json file. Should be done on the backend server.
+		// const currentProductJson = retrieveProductViaBarcodeAndAPI(data);
+		const currentProductJson = { title: 'Title coming from Scanner' };
+		if (type === 32 || type === 1) {
 			setScanned(false);
-			numbercompteur += 1;
-			console.log(numbercompteur + ') Recherche en cours du produit : ' + data );
-			navigation.navigate('CurrentProduct');
-		}
-		else { 
+			console.log(
+				numbercompteur + ') Recherche en cours du produit : ' + data
+			);
+			navigation.navigate('CurrentProduct', currentProductJson);
+		} else {
 			setScanned(false);
-			
-			setText('Ceci n\'est pas un format de CodeBar valide : ' + data);
-			console.log(numbercompteur + ') Echec mauvais CodeBar Format : ' + data );
+
+			setText("Ceci n'est pas un format de CodeBar valide : " + data);
+			console.log(
+				numbercompteur + ') Echec mauvais CodeBar Format : ' + data
+			);
 			console.log('Type: ' + type + '\nData: ' + data);
 		}
 	};
@@ -73,45 +92,10 @@ export default function TabScannerScreen() {
 					style={{ height: 600, width: 600 }}
 				/>
 			</View>
-			{//scanned && navigation.navigate('CurrentProduct')
+			{
+				//scanned && navigation.navigate('CurrentProduct')
 			}
-			{scanned &&
-				<Text style={styles.barcodeResult}>{text}</Text>}
+			{scanned && <Text style={styles.barcodeResult}>{text}</Text>}
 		</View>
 	);
 }
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		alignItems: 'center',
-		justifyContent: 'center',
-	},
-	title: {
-		fontSize: 100,
-		fontWeight: 'bold',
-	},
-	separator: {
-		marginVertical: 30,
-		height: 1,
-		width: '80%',
-	},
-	maintext: {
-		fontSize: 16,
-		margin: 20,
-	},
-	barcodebox: {
-		alignItems: 'center',
-		justifyContent: 'center',
-		height: 350,
-		width: 300,
-		overflow: 'hidden',
-		borderRadius: 30,
-		backgroundColor: 'tomato',
-	},
-	barcodeResult: {
-		marginTop: 15,
-		backgroundColor: 'red',
-		padding: 10,
-	}
-});

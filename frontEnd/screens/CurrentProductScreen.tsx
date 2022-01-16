@@ -5,31 +5,16 @@ import { Platform, StyleSheet } from 'react-native';
 import CurrentProductEditModule from '../components/CurrentProductEditModule';
 import { Text, View } from '../components/Themed';
 
-export default function CurrentProductScreen({ productJson }: { productJson: JSON }) {
+import { styles } from './style/CurrentProductScreen_StyleSheet';
 
-    return (
-        <View style={styles.container}>
-            <CurrentProductEditModule currentProductJson={productJson} />
+export default function CurrentProductScreen({ route }: { route: any }) {
+	const { title, id, imageName } = route.params;
+	return (
+		<View style={styles.container}>
+			<CurrentProductEditModule currentProductJson={route.params} />
 
-            {/* Use a light status bar on iOS to account for the black space above the modal */}
-            < StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
-        </View>
-    );
+			{/* Use a light status bar on iOS to account for the black space above the modal */}
+			<StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
+		</View>
+	);
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
-    },
-    separator: {
-        marginVertical: 30,
-        height: 1,
-        width: '80%',
-    },
-});

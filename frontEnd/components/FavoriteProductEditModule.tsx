@@ -1,46 +1,53 @@
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import { Card, ListItem, Button, Icon } from 'react-native-elements';
-import { SafeAreaView, FlatList, StyleSheet, StatusBar, TouchableOpacity } from 'react-native';
+import {
+	SafeAreaView,
+	FlatList,
+	StyleSheet,
+	StatusBar,
+	TouchableOpacity,
+} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-
 import { Text, View } from './Themed';
+
+import { styles } from './style/FavoriteProductEditModule_StyleSheet';
 
 const sampleFavoritesProducts = [
 	{
 		id: '1',
 		imageName: 'image1',
-		title: 'Product 1',
+		title: 'Le Bon Haché Cru',
 	},
 	{
 		id: '2',
 		imageName: 'image2',
-		title: 'Product 2',
+		title: 'Tartare Végétal',
 	},
 	{
 		id: '3',
 		imageName: 'image3',
-		title: 'Product 3',
+		title: 'Délice de Légumes',
 	},
 	{
 		id: '4',
 		imageName: 'image4',
-		title: 'Product 4',
+		title: 'Saucisse Végétale',
 	},
 	{
 		id: '5',
 		imageName: 'image5',
-		title: 'Product 5',
+		title: 'Délice de Légumes',
 	},
 	{
 		id: '6',
 		imageName: 'image6',
-		title: 'Product 6',
+		title: 'Gallète aux Légumes',
 	},
 	{
 		id: '7',
 		imageName: 'image7',
-		title: 'Product 7',
+		title: 'Tian de Légumes',
 	},
 	{
 		id: '8',
@@ -73,27 +80,39 @@ export default function FavoriteProductEditModule({ path }: { path: string }) {
 	const navigation = useNavigation();
 
 	const FavProduct = ({ product }: { product: any }) => (
-		<TouchableOpacity onPress={() => navigation.navigate('CurrentProduct', /* */)}>
-			<Card containerStyle={styles.productCardContainer} >
-				<View style={styles.headerProductViewContainer} >
-					<TouchableOpacity onPress={() => alert('Deleting this product from your favorites')}>
+		<TouchableOpacity
+			onPress={() =>
+				navigation.navigate('CurrentProduct', {
+					id: product.id,
+					imageName: product.imageName,
+					title: product.title,
+				})
+			}
+		>
+			<Card containerStyle={styles.productCardContainer}>
+				<View style={styles.headerProductViewContainer}>
+					<TouchableOpacity
+						onPress={() =>
+							alert('Deleting this product from your favorites')
+						}
+					>
 						<Card.Image
-							source={require('./../assets/images/FavoriteProduct/cross.png')}
+							source={require('./../assets/images/Icon-Product/cross.png')}
 							style={styles.mainImageCrossCard}
 						></Card.Image>
-					</TouchableOpacity >
+					</TouchableOpacity>
 					<Card.Image
-						source={require('./../assets/images/FavoriteProduct/love.png')}
+						source={require('./../assets/images/Icon-Product/love.png')}
 						style={styles.mainImageLoveCard}
 					></Card.Image>
 				</View>
 				<Card.Image
-					source={require('./../assets/images/FavoriteProduct/Sample-Stub/image1.png')}
+					source={require('./../assets/images/Sample-Stub/image1.png')}
 					style={styles.mainImageCard}
 				></Card.Image>
 				<Text style={styles.title}> {product.title}</Text>
 			</Card>
-		</TouchableOpacity >
+		</TouchableOpacity>
 	);
 
 	const renderProduct = ({ item }: any) => <FavProduct product={item} />;
@@ -117,54 +136,3 @@ function handleHelpPress() {
 		'https://docs.expo.io/get-started/create-a-new-app/#opening-the-app-on-your-phonetablet'
 	);
 }
-
-const styles = StyleSheet.create({
-	globalProductContainer: {
-		display: 'flex',
-		flex: 1,
-		flexDirection: 'row',
-		flexWrap: 'wrap',
-		justifyContent: 'space-evenly',
-		marginTop: 25,
-	},
-	productCardContainer: {
-		padding: 15,
-		paddingBottom: 10,
-		margin: 0,
-		marginBottom: 15,
-		borderRadius: 20,
-		width: '100%',
-		height: 'auto',
-		alignItems: 'center',
-	},
-	headerProductViewContainer: {
-		backgroundColor: '#fff',
-		display: 'flex',
-		flexDirection: 'row',
-		justifyContent: 'flex-start',
-	},
-	mainImageCard: {
-		marginTop: 5,
-		marginBottom: 5,
-		marginLeft: 18,
-		marginRight: 18,
-	},
-	mainImageLoveCard: {
-		margin: 0,
-		marginLeft: 205,
-		width: 24,
-		height: 22,
-	},
-	mainImageCrossCard: {
-		margin: 0,
-		width: 24,
-		height: 22,
-	},
-	title: {
-		margin: 0,
-		padding: 0,
-		fontSize: 25,
-		fontWeight: 'bold',
-		textAlign: 'center',
-	},
-});
