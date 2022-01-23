@@ -110,15 +110,11 @@ export default function CurrentProductEditModule({
 							source={require('./../assets/images/Sample-Stub/AlternativeImageOne.png')}
 							style={styles.alternativeImageCard}
 						></Card.Image>
-						<Card.Divider
-							style={{
-								borderStartColor: '#FF5E5B',
-								backgroundColor: '#FF5E5B',
-							}}
-						/>
-						<Card.Title style={styles.alternativeTitle}>
-							Sensational Haché
-						</Card.Title>
+						<View style={styles.alternativeCardBottom}>
+							<Card.Title style={styles.alternativeTitle}>
+								{sampleAlternativesProducts[0].title}
+							</Card.Title>
+						</View>
 					</Card>
 				</TouchableOpacity>
 
@@ -136,10 +132,11 @@ export default function CurrentProductEditModule({
 							source={require('./../assets/images/Sample-Stub/AlternativeImageTwo.png')}
 							style={styles.alternativeImageCard}
 						></Card.Image>
-						<Card.Divider />
-						<Card.Title style={styles.alternativeTitle}>
-							Sojasun Haché
-						</Card.Title>
+						<View style={styles.alternativeCardBottom}>
+							<Card.Title style={styles.alternativeTitle}>
+								{sampleAlternativesProducts[1].title}
+							</Card.Title>
+						</View>
 					</Card>
 				</TouchableOpacity>
 			</View>
