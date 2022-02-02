@@ -17,16 +17,32 @@ export default function TabScannerScreen() {
 	const [text, setText] = useState('Nouvelle recherche : Go Scanner');
 	var numbercompteur = 0;
 
-	/*const retrieveProductViaBarcodeAndAPI = (codeBar: number) =>  {
-		return fetch('https://world.openfoodfacts.org/api/v2/search?code='+codeBar)
-		.then ((response) => response.json())
-		.then ((json) => {
-			return json.title;
-		})
-		.catch((error) => {
+	// Future interface for the productJson returned by the API
+	interface productAttributes {
+		title?: string;
+		id?: number;
+	}
+
+	const retrieveProductViaBarcodeWithBackEndApi = async (
+		codeBar: number
+		// for return type :Promise<productAttributes>, adding it later
+	) => {
+		try {
+			console.log('Console Log before calling Ucare API');
+			const response = await fetch(
+				// On Android, as of API Level 28, clear text traffic is also blocked by default.
+				// This behaviour can be overridden by setting android:usesCleartextTraffic in the app manifest file.
+				// So need to find a way to bypass this. Or by creating a https endpoint on backend server or by modifying android settings.
+				'http://172.20.96.1:3000/products/737628064502'
+			);
+			const json = await response.json();
+			return json;
+		} catch (error) {
+			// In case of error, return the error message
+			console.log('We got some error with the api call chef: ' + error);
 			console.error(error);
-		});
-	}*/
+		}
+	};
 
 	const askForCameraPermission = () => {
 		(async () => {
@@ -41,25 +57,39 @@ export default function TabScannerScreen() {
 	}, []);
 
 	// What happens when we scan the bar code
-	const handleBarCodeScanned = ({ type, data }: { type: any; data: any }) => {
+	const handleBarCodeScanned = ({
+		type,
+		codeBarNumber,
+	}: {
+		type: number;
+		codeBarNumber: number;
+	}) => {
 		numbercompteur += 1;
-		// TODO: Call The API of openfoodfacts, store everything in a json file. Should be done on the backend server.
-		// const currentProductJson = retrieveProductViaBarcodeAndAPI(data);
-		const currentProductJson = { title: 'Title coming from Scanner' };
+		// Calling the function that call the API to retrieve the product information
+		const currentProductJson =
+			retrieveProductViaBarcodeWithBackEndApi(codeBarNumber);
+
+		// If the product type is correct, we navigate to the product screen with the product information from the API call
 		if (type === 32 || type === 1) {
 			setScanned(false);
 			console.log(
-				numbercompteur + ') Recherche en cours du produit : ' + data
+				numbercompteur +
+					') Recherche en cours du produit : ' +
+					codeBarNumber
 			);
-			navigation.navigate('CurrentProduct', currentProductJson);
+			// TODO: uncomment after fixing the API call issue with android
+			//console.log(currentProductJson);
+			//navigation.navigate('CurrentProduct', currentProductJson);
 		} else {
+			// If the product type is uncorrect, TODO: pop up a message for bad product scanned
 			setScanned(false);
-
-			setText("Ceci n'est pas un format de CodeBar valide : " + data);
-			console.log(
-				numbercompteur + ') Echec mauvais CodeBar Format : ' + data
+			setText(
+				"Ceci n'est pas un format de CodeBar valide : " + codeBarNumber
 			);
-			console.log('Type: ' + type + '\nData: ' + data);
+			console.log(
+				numbercompteur + ') Echec mauvais CodeBar Format : ' + codeBarNumber
+			);
+			console.log('Type: ' + type + '\nData: ' + codeBarNumber);
 		}
 	};
 
@@ -88,6 +118,7 @@ export default function TabScannerScreen() {
 		<View style={styles.container}>
 			<View style={styles.barcodebox}>
 				<BarCodeScanner
+					// TODO: check that issue later
 					onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
 					style={{ height: 600, width: 600 }}
 				/>
