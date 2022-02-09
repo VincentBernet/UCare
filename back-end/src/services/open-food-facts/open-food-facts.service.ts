@@ -1,7 +1,7 @@
 import { HttpException, Injectable } from '@nestjs/common';
-import { cp } from 'fs';
+//import { cp } from 'fs';
 import { HttpService } from 'nestjs-http-promise';
-import { catchError, map } from 'rxjs/operators';
+//import { catchError, map } from 'rxjs/operators';
 
 @Injectable()
 export class OpenFoodFactsService {
@@ -27,6 +27,10 @@ export class OpenFoodFactsService {
     // Todo : formater la donnée pour ne renvoyer que les infos nécessaires au front, nottament les "labels" attributes, comprendre comment intéragir avec les observables;
     let essentialProductInformationJson = JSON.parse(
       await essentialProductInformation,
+    );
+    console.log(
+      'UCare back-end has been called and return : \n',
+      essentialProductInformationJson,
     );
     return essentialProductInformationJson;
   }
