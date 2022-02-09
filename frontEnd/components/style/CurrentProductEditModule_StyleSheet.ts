@@ -58,6 +58,7 @@ const styles = StyleSheet.create({
 		width: 280,
 		height: 200,
 		margin: 0,
+		borderRadius: 15,
 	},
 	secondaryFirstCard: {
 		borderRadius: 30,

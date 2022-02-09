@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 
@@ -15,33 +14,41 @@ export default function TabScannerScreen() {
 	const [hasPermission, setHasPermission] = React.useState<null | Boolean>();
 	const [scanned, setScanned] = useState(false);
 	const [text, setText] = useState('Nouvelle recherche : Go Scanner');
-	var numbercompteur = 0;
+	var numberCompteur = 0;
 
 	// Future interface for the productJson returned by the API
 	interface productAttributes {
-		title?: string;
-		id?: number;
+		product_title?: string;
+		product_id?: number;
+		product_image?: string;
 	}
 
 	const retrieveProductViaBarcodeWithBackEndApi = async (
 		codeBar: number
-		// for return type :Promise<productAttributes>, adding it later
-	) => {
+	): Promise<productAttributes> => {
+		let json: productAttributes = {};
 		try {
-			console.log('Console Log before calling Ucare API');
-			const response = await fetch(
-				// On Android, as of API Level 28, clear text traffic is also blocked by default.
-				// This behaviour can be overridden by setting android:usesCleartextTraffic in the app manifest file.
-				// So need to find a way to bypass this. Or by creating a https endpoint on backend server or by modifying android settings.
-				'http://172.20.96.1:3000/products/737628064502'
+			const endpointUrl =
+				'https://ucare-backend.herokuapp.com/products/' + codeBar + '.json';
+			console.log(
+				'Console Log before calling Ucare API at : ' + endpointUrl
 			);
-			const json = await response.json();
-			return json;
+			const response = await fetch(endpointUrl).then((response) =>
+				response
+					.json()
+					.then((data) => ({
+						data: data,
+						status: response.status,
+					}))
+					.then((res) => {
+						json = res.data;
+					})
+			);
 		} catch (error) {
-			// In case of error, return the error message
 			console.log('We got some error with the api call chef: ' + error);
 			console.error(error);
 		}
+		return json;
 	};
 
 	const askForCameraPermission = () => {
@@ -57,39 +64,36 @@ export default function TabScannerScreen() {
 	}, []);
 
 	// What happens when we scan the bar code
-	const handleBarCodeScanned = ({
+	const handleBarCodeScanned = async ({
 		type,
-		codeBarNumber,
+		data,
 	}: {
-		type: number;
-		codeBarNumber: number;
+		type: any;
+		data: any;
 	}) => {
-		numbercompteur += 1;
-		// Calling the function that call the API to retrieve the product information
-		const currentProductJson =
-			retrieveProductViaBarcodeWithBackEndApi(codeBarNumber);
+		numberCompteur += 1;
+		const codeBar = parseInt(data);
 
 		// If the product type is correct, we navigate to the product screen with the product information from the API call
 		if (type === 32 || type === 1) {
-			setScanned(false);
+			setScanned(true);
+			setText('Scanned : ' + codeBar);
 			console.log(
-				numbercompteur +
-					') Recherche en cours du produit : ' +
-					codeBarNumber
+				numberCompteur + ') Recherche en cours du produit : ' + codeBar
 			);
-			// TODO: uncomment after fixing the API call issue with android
-			//console.log(currentProductJson);
-			//navigation.navigate('CurrentProduct', currentProductJson);
+			// Calling the function that call the API to retrieve the product information
+			const currentProductJson =
+				await retrieveProductViaBarcodeWithBackEndApi(codeBar);
+			console.log(currentProductJson);
+			navigation.navigate('CurrentProduct', currentProductJson);
 		} else {
 			// If the product type is uncorrect, TODO: pop up a message for bad product scanned
 			setScanned(false);
-			setText(
-				"Ceci n'est pas un format de CodeBar valide : " + codeBarNumber
-			);
+			setText("Ceci n'est pas un format de CodeBar valide : " + codeBar);
 			console.log(
-				numbercompteur + ') Echec mauvais CodeBar Format : ' + codeBarNumber
+				numberCompteur + ') Echec mauvais CodeBar Format : ' + codeBar
 			);
-			console.log('Type: ' + type + '\nData: ' + codeBarNumber);
+			console.log('Type: ' + type + '\nData: ' + codeBar);
 		}
 	};
 
@@ -123,9 +127,6 @@ export default function TabScannerScreen() {
 					style={{ height: 600, width: 600 }}
 				/>
 			</View>
-			{
-				//scanned && navigation.navigate('CurrentProduct')
-			}
 			{scanned && <Text style={styles.barcodeResult}>{text}</Text>}
 		</View>
 	);
