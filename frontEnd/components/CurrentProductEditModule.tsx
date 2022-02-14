@@ -43,14 +43,14 @@ export default function CurrentProductEditModule({
 						</TouchableOpacity>
 					</View>
 					<Card.Image
-						source={require('./../assets/images/Sample-Stub/image1.png')}
+						source={{ uri: currentProductJson.product_image }}
 						style={styles.mainImageCard}
 					></Card.Image>
 				</Card>
 
 				<Text style={styles.mainTitle}>
-					{currentProductJson.title
-						? currentProductJson.title
+					{currentProductJson.product_title
+						? currentProductJson.product_title
 						: "Can't access the current \nProduct Title"}
 				</Text>
 

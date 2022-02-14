@@ -8,7 +8,7 @@ import { Text, View } from '../components/Themed';
 import { styles } from './style/CurrentProductScreen_StyleSheet';
 
 export default function CurrentProductScreen({ route }: { route: any }) {
-	const { title, id, imageName } = route.params;
+	const { product_title, product_id, product_image } = route.params;
 	return (
 		<View style={styles.container}>
 			<CurrentProductEditModule currentProductJson={route.params} />
