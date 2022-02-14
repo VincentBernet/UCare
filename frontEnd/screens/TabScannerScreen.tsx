@@ -21,6 +21,9 @@ export default function TabScannerScreen() {
 		product_title?: string;
 		product_id?: number;
 		product_image?: string;
+		nustriscore_grade?: string;
+		nova_group?: string;
+		ecoscore_grade?: string;
 	}
 
 	const retrieveProductViaBarcodeWithBackEndApi = async (
