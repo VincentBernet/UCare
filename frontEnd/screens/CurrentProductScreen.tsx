@@ -6,9 +6,10 @@ import CurrentProductEditModule from '../components/CurrentProductEditModule';
 import { Text, View } from '../components/Themed';
 
 import { styles } from './style/CurrentProductScreen_StyleSheet';
+import { productAttributes } from './Utils/callApi.utils';
 
 export default function CurrentProductScreen({ route }: { route: any }) {
-	const { product_title, product_id, product_image } = route.params;
+	const { productAttributes } = route.params;
 	return (
 		<View style={styles.container}>
 			<CurrentProductEditModule currentProductJson={route.params} />
