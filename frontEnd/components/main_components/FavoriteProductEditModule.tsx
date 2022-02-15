@@ -9,70 +9,37 @@ import {
 	TouchableOpacity,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Text, View } from './Themed';
+import { Text, View } from './../Themed';
 
-import { styles } from './style/FavoriteProductEditModule_StyleSheet';
+import { styles } from './../style/FavoriteProductEditModule_StyleSheet';
+import { productAttributes } from './../../commons/product.interface';
 
-const sampleFavoritesProducts = [
+const sampleFavoritesProducts: Array<productAttributes> = [
 	{
-		id: '1',
-		imageName: 'image1',
-		title: 'Le Bon Haché Cru',
+		product_id: 1,
+		product_title: 'Le Bon Haché Cru',
+		product_image:
+			'https://media.lesechos.com/api/v1/images/view/5d7a5855d286c22eaf798fa5/1280x720/0601864134058-web-tete.jpg',
+		nustriscore_grade: 'a',
+		nova_group: '4',
+		ecoscore_grade: 'a',
+
+		vegan: true,
+		vegetarian: true,
+		palmOilFree: true,
 	},
 	{
-		id: '2',
-		imageName: 'image2',
-		title: 'Tartare Végétal',
-	},
-	{
-		id: '3',
-		imageName: 'image3',
-		title: 'Délice de Légumes',
-	},
-	{
-		id: '4',
-		imageName: 'image4',
-		title: 'Saucisse Végétale',
-	},
-	{
-		id: '5',
-		imageName: 'image5',
-		title: 'Délice de Légumes',
-	},
-	{
-		id: '6',
-		imageName: 'image6',
-		title: 'Gallète aux Légumes',
-	},
-	{
-		id: '7',
-		imageName: 'image7',
-		title: 'Tian de Légumes',
-	},
-	{
-		id: '8',
-		imageName: 'image8',
-		title: 'Product 8',
-	},
-	{
-		id: '9',
-		imageName: 'image9',
-		title: 'Product 9',
-	},
-	{
-		id: '10',
-		imageName: 'image10',
-		title: 'Product 10',
-	},
-	{
-		id: '11',
-		imageName: 'image11',
-		title: 'Product 11',
-	},
-	{
-		id: '12',
-		imageName: 'image12',
-		title: 'Product 12',
+		product_id: 2,
+		product_title: 'Purée Délice',
+		product_image:
+			'https://media.carrefour.fr/medias/6837a728287a343ba2764d7eb1bcd60f/p_540x540/3083681066845-photosite-20211130-082705-0.jpg',
+		nustriscore_grade: 'a',
+		nova_group: '4',
+		ecoscore_grade: 'a',
+
+		vegan: true,
+		vegetarian: true,
+		palmOilFree: true,
 	},
 ];
 
@@ -81,13 +48,7 @@ export default function FavoriteProductEditModule({ path }: { path: string }) {
 
 	const FavProduct = ({ product }: { product: any }) => (
 		<TouchableOpacity
-			onPress={() =>
-				navigation.navigate('CurrentProduct', {
-					id: product.id,
-					imageName: product.imageName,
-					title: product.title,
-				})
-			}
+			onPress={() => navigation.navigate('CurrentProduct', product)}
 		>
 			<Card containerStyle={styles.productCardContainer}>
 				<View style={styles.headerProductViewContainer}>
@@ -97,20 +58,20 @@ export default function FavoriteProductEditModule({ path }: { path: string }) {
 						}
 					>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/cross.png')}
+							source={require('./../../assets/images/Icon-Product/cross.png')}
 							style={styles.mainImageCrossCard}
 						></Card.Image>
 					</TouchableOpacity>
 					<Card.Image
-						source={require('./../assets/images/Icon-Product/love.png')}
+						source={require('./../../assets/images/Icon-Product/love.png')}
 						style={styles.mainImageLoveCard}
 					></Card.Image>
 				</View>
 				<Card.Image
-					source={require('./../assets/images/Sample-Stub/image1.png')}
+					source={{ uri: product.product_image }}
 					style={styles.mainImageCard}
 				></Card.Image>
-				<Text style={styles.title}> {product.title}</Text>
+				<Text style={styles.title}> {product.product_title}</Text>
 			</Card>
 		</TouchableOpacity>
 	);
@@ -123,7 +84,7 @@ export default function FavoriteProductEditModule({ path }: { path: string }) {
 				<FlatList
 					data={sampleFavoritesProducts}
 					renderItem={renderProduct}
-					keyExtractor={(item) => item.id}
+					keyExtractor={(item) => item.product_id.toString()}
 				/>
 			</SafeAreaView>
 			{/* <View style={styles.globalProductContainer}></View> */}
