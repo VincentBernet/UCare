@@ -8,25 +8,42 @@ import { styles } from './style/CurrentProductEditModule_StyleSheet';
 import { Text, View } from './Themed';
 import labelComponent from './labels';
 
-const sampleAlternativesProducts = [
+import { productAttributes } from '../screens/Utils/product.interface';
+
+const sampleAlternativesProducts: Array<productAttributes> = [
 	{
-		id: '1',
-		imageName: 'image1',
-		title: 'Sensational Haché',
+		product_id: 1,
+		product_title: 'Le Bon Haché Cru',
+		product_image:
+			'https://media.lesechos.com/api/v1/images/view/5d7a5855d286c22eaf798fa5/1280x720/0601864134058-web-tete.jpg',
+		nustriscore_grade: 'a',
+		nova_group: '4',
+		ecoscore_grade: 'a',
+
+		vegan: true,
+		vegetarian: true,
+		palmOilFree: true,
 	},
 	{
-		id: '2',
-		imageName: 'image2',
-		title: 'Sojasun Haché',
+		product_id: 2,
+		product_title: 'Purée Délice',
+		product_image:
+			'https://media.carrefour.fr/medias/6837a728287a343ba2764d7eb1bcd60f/p_540x540/3083681066845-photosite-20211130-082705-0.jpg',
+		nustriscore_grade: 'a',
+		nova_group: '4',
+		ecoscore_grade: 'a',
+
+		vegan: true,
+		vegetarian: true,
+		palmOilFree: true,
 	},
 ];
 
 export default function CurrentProductEditModule({
 	currentProductJson,
 }: {
-	currentProductJson: any;
+	currentProductJson: productAttributes;
 }) {
-	console.log(currentProductJson);
 	const navigation = useNavigation();
 	return (
 		<View>
@@ -35,7 +52,7 @@ export default function CurrentProductEditModule({
 					<View style={styles.headerProductViewContainer}>
 						<TouchableOpacity
 							onPress={
-								() => alert('Post Method for backend API') //TODO : post backend request to add product to favorites
+								() => alert('Adding this product to your favorites') //TODO : post backend request to add product to favorites
 							}
 						>
 							<Card.Image
@@ -55,14 +72,27 @@ export default function CurrentProductEditModule({
 						? currentProductJson.product_title
 						: "Can't access the current \nProduct Title"}
 				</Text>
-
-				<View style={styles.emojeeView}>
-					<Text style={styles.textForEmojee}>Unfriendly</Text>
-					<Card.Image
-						source={require('./../assets/images/Icon-Product/emojeeAngry.png')}
-						style={styles.emojee}
-					></Card.Image>
-				</View>
+				{currentProductJson.vegan ||
+				currentProductJson.vegetarian ||
+				currentProductJson.palmOilFree ? (
+					<View style={styles.emojeeView}>
+						<Text style={styles.textForEmojee}>Friendly</Text>
+						<Card.Image
+							source={{
+								uri: 'http://clipart-library.com/image_gallery2/Wink-Emoji-PNG.png',
+							}}
+							style={styles.emojee}
+						></Card.Image>
+					</View>
+				) : (
+					<View style={styles.emojeeView}>
+						<Text style={styles.textForEmojee}>Unfriendly</Text>
+						<Card.Image
+							source={require('./../assets/images/Icon-Product/emojeeAngry.png')}
+							style={styles.emojee}
+						></Card.Image>
+					</View>
+				)}
 
 				<View style={styles.labelViewCardContainer}>
 					{currentProductJson.vegan ? (
@@ -110,21 +140,22 @@ export default function CurrentProductEditModule({
 			<View style={styles.alternativeViewCardContainer}>
 				<TouchableOpacity
 					onPress={() =>
-						navigation.navigate('CurrentProduct', {
-							id: sampleAlternativesProducts[0].id,
-							imageName: sampleAlternativesProducts[0].imageName,
-							title: sampleAlternativesProducts[0].title,
-						})
+						navigation.navigate(
+							'CurrentProduct',
+							sampleAlternativesProducts[0]
+						)
 					}
 				>
 					<Card containerStyle={styles.alternativeCard}>
 						<Card.Image
-							source={require('./../assets/images/Sample-Stub/AlternativeImageOne.png')}
+							source={{
+								uri: sampleAlternativesProducts[0].product_image,
+							}}
 							style={styles.alternativeImageCard}
 						></Card.Image>
 						<View style={styles.alternativeCardBottom}>
 							<Card.Title style={styles.alternativeTitle}>
-								{sampleAlternativesProducts[0].title}
+								{sampleAlternativesProducts[0].product_title}
 							</Card.Title>
 						</View>
 					</Card>
@@ -132,21 +163,22 @@ export default function CurrentProductEditModule({
 
 				<TouchableOpacity
 					onPress={() =>
-						navigation.navigate('CurrentProduct', {
-							id: sampleAlternativesProducts[1].id,
-							imageName: sampleAlternativesProducts[1].imageName,
-							title: sampleAlternativesProducts[1].title,
-						})
+						navigation.navigate(
+							'CurrentProduct',
+							sampleAlternativesProducts[1]
+						)
 					}
 				>
 					<Card containerStyle={styles.alternativeCard}>
 						<Card.Image
-							source={require('./../assets/images/Sample-Stub/AlternativeImageTwo.png')}
+							source={{
+								uri: sampleAlternativesProducts[1].product_image,
+							}}
 							style={styles.alternativeImageCard}
 						></Card.Image>
 						<View style={styles.alternativeCardBottom}>
 							<Card.Title style={styles.alternativeTitle}>
-								{sampleAlternativesProducts[1].title}
+								{sampleAlternativesProducts[1].product_title}
 							</Card.Title>
 						</View>
 					</Card>

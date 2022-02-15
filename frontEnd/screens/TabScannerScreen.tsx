@@ -13,8 +13,8 @@ import { styles } from './style/TabScannerScreen_StyleSheet';
 export default function TabScannerScreen() {
 	const [hasPermission, setHasPermission] = React.useState<null | Boolean>();
 	const [scanned, setScanned] = useState(false);
+	const [numberCompteur, setNumberCompteur] = useState(1);
 	const [text, setText] = useState('Nouvelle recherche : Go Scanner');
-	var numberCompteur = 0;
 	const navigation = useNavigation();
 	const askForCameraPermission = () => {
 		(async () => {
@@ -55,12 +55,11 @@ export default function TabScannerScreen() {
 		type: any;
 		data: any;
 	}) => {
-		numberCompteur += 1;
+		setNumberCompteur(numberCompteur + 1);
 		const codeBar = parseInt(data);
-
 		// If the product type is correct, we navigate to the product screen with the product information from the API call
+		setScanned(true);
 		if (type === 32 || type === 1) {
-			setScanned(true);
 			setText('Scanned : ' + codeBar);
 			console.log(
 				numberCompteur + ') Recherche en cours du produit : ' + codeBar
@@ -68,11 +67,17 @@ export default function TabScannerScreen() {
 			// Calling the function that call the API to retrieve the product information
 			const currentProductJson = await retrieveProductInformation(codeBar);
 			console.log(currentProductJson);
+			setText('Nouvelle recherche : Go Scanner');
 			navigation.navigate('CurrentProduct', currentProductJson);
+			setTimeout(() => {
+				setScanned(false);
+			}, 3000);
 		} else {
 			// If the product type is uncorrect, TODO: pop up a message for bad product scanned
-			setScanned(false);
-			setText("Ceci n'est pas un format de CodeBar valide : " + codeBar);
+			setTimeout(() => {
+				setScanned(false);
+			}, 3000);
+			setText("Ceci n'est pas un format de CodeBar valide !");
 			console.log(
 				numberCompteur + ') Echec mauvais CodeBar Format : ' + codeBar
 			);
