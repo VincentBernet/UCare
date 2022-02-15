@@ -2,11 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
 import { Platform } from 'react-native';
 
-import CurrentProductEditModule from '../components/CurrentProductEditModule';
+import CurrentProductEditModule from '../components/main_components/CurrentProductEditModule';
 import { View } from '../components/Themed';
 
 import { styles } from './style/CurrentProductScreen_StyleSheet';
-import { productAttributes } from './Utils/product.interface';
+import { productAttributes } from '../commons/product.interface';
 
 export default function CurrentProductScreen({ route }: { route: any }) {
 	const { productAttributes } = route.params;

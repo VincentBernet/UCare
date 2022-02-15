@@ -3,9 +3,9 @@ import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-elements';
-import { styles } from './style/CurrentProductEditModule_StyleSheet';
+import { styles } from '../style/CurrentProductEditModule_StyleSheet';
 
-import { Text, View } from './Themed';
+import { Text, View } from '../Themed';
 
 export default function labelComponent({
 	currentProductJson,

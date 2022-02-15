@@ -9,10 +9,10 @@ import {
 	TouchableOpacity,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Text, View } from './Themed';
+import { Text, View } from './../Themed';
 
-import { styles } from './style/FavoriteProductEditModule_StyleSheet';
-import { productAttributes } from '../screens/Utils/product.interface';
+import { styles } from './../style/FavoriteProductEditModule_StyleSheet';
+import { productAttributes } from './../../commons/product.interface';
 
 const sampleFavoritesProducts: Array<productAttributes> = [
 	{
@@ -58,12 +58,12 @@ export default function FavoriteProductEditModule({ path }: { path: string }) {
 						}
 					>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/cross.png')}
+							source={require('./../../assets/images/Icon-Product/cross.png')}
 							style={styles.mainImageCrossCard}
 						></Card.Image>
 					</TouchableOpacity>
 					<Card.Image
-						source={require('./../assets/images/Icon-Product/love.png')}
+						source={require('./../../assets/images/Icon-Product/love.png')}
 						style={styles.mainImageLoveCard}
 					></Card.Image>
 				</View>

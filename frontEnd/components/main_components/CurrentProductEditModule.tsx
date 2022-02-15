@@ -3,12 +3,12 @@ import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-elements';
-import { styles } from './style/CurrentProductEditModule_StyleSheet';
+import { styles } from '../style/CurrentProductEditModule_StyleSheet';
 
-import { Text, View } from './Themed';
-import labelComponent from './labels';
+import { Text, View } from '../Themed';
+import labelComponent from '../subsidiary_components/labels';
 
-import { productAttributes } from '../screens/Utils/product.interface';
+import { productAttributes } from '../../commons/product.interface';
 
 const sampleAlternativesProducts: Array<productAttributes> = [
 	{
@@ -56,7 +56,7 @@ export default function CurrentProductEditModule({
 							}
 						>
 							<Card.Image
-								source={require('./../assets/images/Icon-Product/love.png')}
+								source={require('./../../assets/images/Icon-Product/love.png')}
 								style={styles.mainImageLoveCard}
 							></Card.Image>
 						</TouchableOpacity>
@@ -88,7 +88,7 @@ export default function CurrentProductEditModule({
 					<View style={styles.emojeeView}>
 						<Text style={styles.textForEmojee}>Unfriendly</Text>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/emojeeAngry.png')}
+							source={require('./../../assets/images/Icon-Product/emojeeAngry.png')}
 							style={styles.emojee}
 						></Card.Image>
 					</View>
@@ -99,7 +99,7 @@ export default function CurrentProductEditModule({
 						<Card containerStyle={styles.secondaryFirstCard}>
 							<View style={styles.viewForLabelText}>
 								<Card.Image
-									source={require('./../assets/images/Icon-Product/vegan.png')}
+									source={require('./../../assets/images/Icon-Product/vegan.png')}
 									style={styles.labelCard}
 								></Card.Image>
 								<Text style={styles.textLabel}>Vegan</Text>
@@ -111,7 +111,7 @@ export default function CurrentProductEditModule({
 						<Card containerStyle={styles.secondaryFirstCard}>
 							<View style={styles.viewForLabelText}>
 								<Card.Image
-									source={require('./../assets/images/Icon-Product/vegan.png')}
+									source={require('./../../assets/images/Icon-Product/vegan.png')}
 									style={styles.labelCard}
 								></Card.Image>
 								<Text style={styles.textLabel}>Végétarien</Text>
@@ -123,7 +123,7 @@ export default function CurrentProductEditModule({
 						<Card containerStyle={styles.secondaryFirstCard}>
 							<View style={styles.viewForLabelText}>
 								<Card.Image
-									source={require('./../assets/images/Icon-Product/vegan.png')}
+									source={require('./../../assets/images/Icon-Product/vegan.png')}
 									style={styles.labelCard}
 								></Card.Image>
 								<Text style={styles.textLabel}>

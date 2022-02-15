@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 import { Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { useNavigation } from '@react-navigation/native';
-import { retrieveProductInformation } from './Utils/callApi.utils';
+import { retrieveProductInformation } from '../commons/callApi.utils';
 
 import { styles } from './style/TabScannerScreen_StyleSheet';
 
