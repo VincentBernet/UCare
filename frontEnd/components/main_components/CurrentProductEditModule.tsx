@@ -94,6 +94,7 @@ export default function CurrentProductEditModule({
 					</View>
 				)}
 
+				{/*TODO: Put beside code in an external component : <labelComponent />*/}
 				<View style={styles.labelViewCardContainer}>
 					{currentProductJson.vegan ? (
 						<Card containerStyle={styles.secondaryFirstCard}>
