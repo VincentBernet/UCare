@@ -52,17 +52,6 @@ In your explanation, please provide links (file + line) to relevant parts of you
 
 ## Expectations
 
-### GraphQL API only
-
-- [ ] Reduce code duplication for the various involved schemas (of the database, of the ORM, of GraphQL...). **[1 point]** 🔵
-> How did you achieve this?
-
-- [ ] Mitigation(s) against too complex GraphQL queries, arbitrary deep nested object fetching or related DoS. **[1 point per mitigation, up to 2]**
-> Quote and explain each mitigation.
-
-- [ ] Any security or performance improvement related to your GraphQL implementation, as optionally highlighted in the subject? points]**
-> Explain each improvement.
-
 ### Input validation
 
 - [ ] Strictly and deeply validate the type of every input (`params, querystring, body`) at runtime before any processing. **[1 point]** 🔵
