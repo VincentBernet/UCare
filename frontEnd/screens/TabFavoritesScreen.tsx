@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
 
-import FavoriteProductEditModule from '../components/FavoriteProductEditModule';
+import FavoriteProductEditModule from '../components/main_components/FavoriteProductEditModule';
 import { Text, View } from '../components/Themed';
 import { RootTabScreenProps } from '../types';
 

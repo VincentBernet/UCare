@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
 
 import { Text, View } from '../components/Themed';
 
@@ -7,27 +6,16 @@ import { useState, useEffect } from 'react';
 import { Button } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { useNavigation } from '@react-navigation/native';
+import { retrieveProductInformation } from '../commons/callApi.utils';
 
 import { styles } from './style/TabScannerScreen_StyleSheet';
 
 export default function TabScannerScreen() {
-	const navigation = useNavigation();
 	const [hasPermission, setHasPermission] = React.useState<null | Boolean>();
 	const [scanned, setScanned] = useState(false);
+	const [numberCompteur, setNumberCompteur] = useState(1);
 	const [text, setText] = useState('Nouvelle recherche : Go Scanner');
-	var numbercompteur = 0;
-
-	/*const retrieveProductViaBarcodeAndAPI = (codeBar: number) =>  {
-		return fetch('https://world.openfoodfacts.org/api/v2/search?code='+codeBar)
-		.then ((response) => response.json())
-		.then ((json) => {
-			return json.title;
-		})
-		.catch((error) => {
-			console.error(error);
-		});
-	}*/
-
+	const navigation = useNavigation();
 	const askForCameraPermission = () => {
 		(async () => {
 			const { status } = await BarCodeScanner.requestPermissionsAsync();
@@ -39,29 +27,6 @@ export default function TabScannerScreen() {
 	useEffect(() => {
 		askForCameraPermission();
 	}, []);
-
-	// What happens when we scan the bar code
-	const handleBarCodeScanned = ({ type, data }: { type: any; data: any }) => {
-		numbercompteur += 1;
-		// TODO: Call The API of openfoodfacts, store everything in a json file. Should be done on the backend server.
-		// const currentProductJson = retrieveProductViaBarcodeAndAPI(data);
-		const currentProductJson = { title: 'Title coming from Scanner' };
-		if (type === 32 || type === 1) {
-			setScanned(false);
-			console.log(
-				numbercompteur + ') Recherche en cours du produit : ' + data
-			);
-			navigation.navigate('CurrentProduct', currentProductJson);
-		} else {
-			setScanned(false);
-
-			setText("Ceci n'est pas un format de CodeBar valide : " + data);
-			console.log(
-				numbercompteur + ') Echec mauvais CodeBar Format : ' + data
-			);
-			console.log('Type: ' + type + '\nData: ' + data);
-		}
-	};
 
 	// Check permissions and return the screens
 	if (hasPermission === null) {
@@ -83,18 +48,53 @@ export default function TabScannerScreen() {
 		);
 	}
 
+	const handleBarCodeScanned = async ({
+		type,
+		data,
+	}: {
+		type: any;
+		data: any;
+	}) => {
+		setNumberCompteur(numberCompteur + 1);
+		const codeBar = parseInt(data);
+		// If the product type is correct, we navigate to the product screen with the product information from the API call
+		setScanned(true);
+		if (type === 32 || type === 1) {
+			setText('Scanned : ' + codeBar);
+			console.log(
+				numberCompteur + ') Recherche en cours du produit : ' + codeBar
+			);
+			// Calling the function that call the API to retrieve the product information
+			const currentProductJson = await retrieveProductInformation(codeBar);
+			console.log(currentProductJson);
+			setText('Nouvelle recherche : Go Scanner');
+			navigation.navigate('CurrentProduct', currentProductJson);
+			setTimeout(() => {
+				setScanned(false);
+			}, 3000);
+		} else {
+			// If the product type is uncorrect, TODO: pop up a message for bad product scanned
+			setTimeout(() => {
+				setScanned(false);
+			}, 3000);
+			setText("Ceci n'est pas un format de CodeBar valide !");
+			console.log(
+				numberCompteur + ') Echec mauvais CodeBar Format : ' + codeBar
+			);
+			console.log('Type: ' + type + '\nData: ' + codeBar);
+		}
+	};
+
 	// Return the View
 	return (
 		<View style={styles.container}>
 			<View style={styles.barcodebox}>
 				<BarCodeScanner
+					// TODO: check that issue later
 					onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
 					style={{ height: 600, width: 600 }}
 				/>
 			</View>
-			{
-				//scanned && navigation.navigate('CurrentProduct')
-			}
 			{scanned && <Text style={styles.barcodeResult}>{text}</Text>}
 		</View>
 	);

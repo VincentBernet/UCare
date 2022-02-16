@@ -3,9 +3,9 @@ import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import { Button, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card, withTheme } from 'react-native-elements';
-import { styles } from './style/MyAccountEditModule_StyleSheet';
+import { styles } from './../style/MyAccountEditModule_StyleSheet';
 
-import { Text, View } from './Themed';
+import { Text, View } from './../Themed';
 
 export default function MyAccountEditModuleModule({
 	currentUserJson,
@@ -43,7 +43,7 @@ export default function MyAccountEditModuleModule({
 				<Card containerStyle={styles.secondaryCard}>
 					<View style={styles.none}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/vegan.png')}
+							source={require('./../../assets/images/Icon-Product/vegan.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.none}>Vegan</Text>
@@ -52,7 +52,7 @@ export default function MyAccountEditModuleModule({
 				<Card containerStyle={styles.secondaryCard}>
 					<View style={styles.none}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/sugarFree.png')}
+							source={require('./../../assets/images/Icon-Product/sugarFree.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.none}>Diabète</Text>
@@ -61,7 +61,7 @@ export default function MyAccountEditModuleModule({
 				<Card containerStyle={styles.secondaryCard}>
 					<View style={styles.none}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/glutenFree.png')}
+							source={require('./../../assets/images/Icon-Product/glutenFree.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.none}>Gluten free</Text>
@@ -70,7 +70,7 @@ export default function MyAccountEditModuleModule({
 				<Card containerStyle={styles.secondaryCard}>
 					<View style={styles.none}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/vegan.png')}
+							source={require('./../../assets/images/Icon-Product/vegan.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.none}>Vegan</Text>
@@ -79,7 +79,7 @@ export default function MyAccountEditModuleModule({
 				<Card containerStyle={styles.secondaryCard}>
 					<View style={styles.none}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/sugarFree.png')}
+							source={require('./../../assets/images/Icon-Product/sugarFree.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.none}>Diabète</Text>
@@ -88,7 +88,7 @@ export default function MyAccountEditModuleModule({
 				<Card containerStyle={styles.secondaryCard}>
 					<View style={styles.none}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/glutenFree.png')}
+							source={require('./../../assets/images/Icon-Product/glutenFree.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.none}>Gluten free</Text>
@@ -97,7 +97,7 @@ export default function MyAccountEditModuleModule({
 				<Card containerStyle={styles.secondaryCard}>
 					<View style={styles.none}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/vegan.png')}
+							source={require('./../../assets/images/Icon-Product/vegan.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.none}>Vegan</Text>
@@ -106,7 +106,7 @@ export default function MyAccountEditModuleModule({
 				<Card containerStyle={styles.secondaryCard}>
 					<View style={styles.none}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/sugarFree.png')}
+							source={require('./../../assets/images/Icon-Product/sugarFree.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.none}>Diabète</Text>
@@ -115,7 +115,7 @@ export default function MyAccountEditModuleModule({
 				<Card containerStyle={styles.secondaryCard}>
 					<View style={styles.none}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/glutenFree.png')}
+							source={require('./../../assets/images/Icon-Product/glutenFree.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.none}>Gluten free</Text>
@@ -124,7 +124,7 @@ export default function MyAccountEditModuleModule({
 				<Card containerStyle={styles.secondaryCard}>
 					<View style={styles.none}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/vegan.png')}
+							source={require('./../../assets/images/Icon-Product/vegan.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.none}>Vegan</Text>
@@ -133,7 +133,7 @@ export default function MyAccountEditModuleModule({
 				<Card containerStyle={styles.secondaryCard}>
 					<View style={styles.none}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/sugarFree.png')}
+							source={require('./../../assets/images/Icon-Product/sugarFree.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.none}>Diabète</Text>
@@ -142,7 +142,7 @@ export default function MyAccountEditModuleModule({
 				<Card containerStyle={styles.secondaryCard}>
 					<View style={styles.none}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/glutenFree.png')}
+							source={require('./../../assets/images/Icon-Product/glutenFree.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.none}>Gluten free</Text>
