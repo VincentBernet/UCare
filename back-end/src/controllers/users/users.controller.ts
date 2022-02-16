@@ -1,6 +1,8 @@
 // Se limiter seulement à la définition d'endpoint au niveau des controllers, et mettre la logique au niveau des services.
 import { Controller, Delete, Get, Param, Post } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('users')
 @Controller('users')
 export class UsersController {
   // Vérifier que ce chemin n'est pas puant en terme de sécurité. Password clair etc...

@@ -3,22 +3,23 @@ import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-elements';
+import { productAttributes } from '../../commons/product.interface';
 import { styles } from '../style/CurrentProductEditModule_StyleSheet';
 
 import { Text, View } from '../Themed';
 
-export default function labelComponent({
+const labelComponent = ({
 	currentProductJson,
 }: {
-	currentProductJson: any;
-}) {
+	currentProductJson: productAttributes;
+}) => {
 	return (
 		<View style={styles.labelViewCardContainer}>
 			{currentProductJson.vegan ? (
 				<Card containerStyle={styles.secondaryFirstCard}>
 					<View style={styles.viewForLabelText}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/vegan.png')}
+							source={require('./../../assets/images/Icon-Product/vegan.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.textLabel}>Vegan</Text>
@@ -30,7 +31,7 @@ export default function labelComponent({
 				<Card containerStyle={styles.secondaryFirstCard}>
 					<View style={styles.viewForLabelText}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/vegan.png')}
+							source={require('./../../assets/images/Icon-Product/vegan.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.textLabel}>Végétarien</Text>
@@ -42,7 +43,7 @@ export default function labelComponent({
 				<Card containerStyle={styles.secondaryFirstCard}>
 					<View style={styles.viewForLabelText}>
 						<Card.Image
-							source={require('./../assets/images/Icon-Product/vegan.png')}
+							source={require('./../../assets/images/Icon-Product/vegan.png')}
 							style={styles.labelCard}
 						></Card.Image>
 						<Text style={styles.textLabel}>Sans huile de palme</Text>
@@ -51,4 +52,6 @@ export default function labelComponent({
 			) : null}
 		</View>
 	);
-}
+};
+
+export default labelComponent;
