@@ -17,6 +17,23 @@ export const parseValuableInformation = (
   return productInformationFormated;
 };
 
+export const parseValuableInformationAlternative = (
+  productInformation: string,
+): productFormated => {
+  let productInformationJSON = JSON.parse(productInformation);
+
+  let productInformationFormated: productFormated = {} as productFormated;
+  productInformationFormated = productInformationJSON;
+
+  productInformationFormated.vegan = isVegan(productInformationJSON);
+  productInformationFormated.vegetarian = isVegetarian(productInformationJSON);
+  productInformationFormated.palmOilFree = isPalmOilFree(
+    productInformationJSON,
+  );
+
+  return productInformationFormated;
+};
+
 /* function to verify if the product is vegan */
 const isVegan = (productInformationJSON): boolean => {
   if (productInformationJSON.ingredients_analysis_tags.includes('non-vegan')) {
