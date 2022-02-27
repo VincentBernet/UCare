@@ -28,6 +28,8 @@ export class OpenFoodFactsService {
           response.data.product.nova_group +
           '", "ingredients_analysis_tags":"' +
           response.data.product.ingredients_analysis_tags +
+          '", "categories_hierarchy":"' +
+          response.data.product.categories_hierarchy +
           '"}',
       )
       .catch((err): string => {

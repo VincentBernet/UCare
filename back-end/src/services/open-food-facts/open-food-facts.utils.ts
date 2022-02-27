@@ -8,6 +8,8 @@ export const parseValuableInformation = (
   let productInformationFormated: productFormated = {} as productFormated;
   productInformationFormated = productInformationJSON;
 
+  productInformationFormated.firstCatego =
+    productInformationJSON.categories_hierarchy.split('en:')[1].split(',')[0];
   productInformationFormated.vegan = isVegan(productInformationJSON);
   productInformationFormated.vegetarian = isVegetarian(productInformationJSON);
   productInformationFormated.palmOilFree = isPalmOilFree(
