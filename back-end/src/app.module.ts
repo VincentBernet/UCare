@@ -5,9 +5,11 @@ import { ProductsController } from './controllers/products/products.controller';
 import { OpenFoodFactsService } from './services/open-food-facts/open-food-facts.service';
 import { UsersController } from './controllers/users/users.controller';
 import { HttpModule } from 'nestjs-http-promise';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
-  imports: [HttpModule],
+  imports: [HttpModule, AuthModule, UsersModule],
   controllers: [AppController, ProductsController, UsersController],
   providers: [AppService, OpenFoodFactsService],
 })
