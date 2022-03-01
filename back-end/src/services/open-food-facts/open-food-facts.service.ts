@@ -41,7 +41,9 @@ export class OpenFoodFactsService {
     );
 
     console.log(
-      'UCare back-end has been called and return : \n',
+      '-----------------------------------' +
+        'UCare back-end has been called and return :' +
+        '\n',
       productInformationFormated,
     );
 
@@ -94,7 +96,9 @@ export class OpenFoodFactsService {
     );*/
 
     console.log(
-      'UCare back-end has been called and return : \n',
+      '-----------------------------------' +
+        'UCare back-end has been called and return :' +
+        '\n',
       alternativeProductInformationReduced,
     );
 

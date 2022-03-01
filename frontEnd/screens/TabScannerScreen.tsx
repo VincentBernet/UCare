@@ -3,7 +3,7 @@ import * as React from 'react';
 import { Text, View } from '../components/Themed';
 
 import { useState, useEffect } from 'react';
-import { Button } from 'react-native';
+import { Button, ActivityIndicator } from 'react-native';
 import { BarCodeScanner } from 'expo-barcode-scanner';
 import { useNavigation } from '@react-navigation/native';
 import { retrieveProductInformation } from '../commons/callApi.utils';
@@ -95,7 +95,8 @@ export default function TabScannerScreen() {
 					style={{ height: 600, width: 600 }}
 				/>
 			</View>
-			{scanned && <Text style={styles.barcodeResult}>{text}</Text>}
+			{/*scanned && <Text style={styles.barcodeResult}>{text}</Text>*/}
+			{scanned && <ActivityIndicator size="large" color="#0000ff" />}
 		</View>
 	);
 }
