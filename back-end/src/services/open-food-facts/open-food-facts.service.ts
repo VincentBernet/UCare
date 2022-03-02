@@ -1,6 +1,7 @@
 import { HttpException, Injectable } from '@nestjs/common';
 import { HttpService } from 'nestjs-http-promise';
 import { productFormated } from './interfaces/productResponse.interface';
+import { alternativeFormated } from './interfaces/alternativeResponse.interface';
 import {
   parseValuableInformation,
   parseValuableInformationAlternative,
@@ -41,21 +42,24 @@ export class OpenFoodFactsService {
     );
 
     console.log(
-      '-----------------------------------' +
-        'UCare back-end has been called and return :' +
-        '\n',
+      '-----------------------------------------------------------\n',
+      'UCare back-end products endpoint has been called and return :',
+      '\n',
       productInformationFormated,
+      '\n-----------------------------------------------------------',
     );
 
     return productInformationFormated;
   }
 
-  async getAlternativeProductInformation(category): Promise<string> {
+  async getAlternativeProductInformation(
+    category,
+  ): Promise<alternativeFormated> {
     let alternativeProductInformationReduced = this.http
       .get('https://world.openfoodfacts.org/category/' + category + '.json')
       .then(
         (response): string =>
-          '"alternativesProducts":[{"product_id":"' +
+          '{"alternativesProducts":[{"product_id":"' +
           response.data.products[0]._id +
           '", "product_title":"' +
           response.data.products[0].product_name +
@@ -69,6 +73,8 @@ export class OpenFoodFactsService {
           response.data.products[0].nova_group +
           '", "ingredients_analysis_tags":"' +
           response.data.products[0].ingredients_analysis_tags +
+          '", "categories_hierarchy":"' +
+          response.data.products[0].categories_hierarchy +
           '"}' +
           ',{"product_id":"' +
           response.data.products[1]._id +
@@ -84,24 +90,27 @@ export class OpenFoodFactsService {
           response.data.products[1].nova_group +
           '", "ingredients_analysis_tags":"' +
           response.data.products[1].ingredients_analysis_tags +
-          '"}]',
+          '", "categories_hierarchy":"' +
+          response.data.products[1].categories_hierarchy +
+          '"}]}',
       )
       .catch((err): string => {
         throw new HttpException(err.response.data, err.response.status);
       });
 
-    /*
-    let productInformationFormated = await parseValuableInformationAlternative(
-      await alternativeProductInformationReduced,
-    );*/
+    let alternativeInformationFormated =
+      await parseValuableInformationAlternative(
+        await alternativeProductInformationReduced,
+      );
 
     console.log(
-      '-----------------------------------' +
-        'UCare back-end has been called and return :' +
-        '\n',
-      alternativeProductInformationReduced,
+      '-----------------------------------------------------------\n',
+      'UCare back-end category endpoint has been called and return :',
+      '\n',
+      alternativeInformationFormated,
+      '\n-----------------------------------------------------------',
     );
 
-    return alternativeProductInformationReduced;
+    return alternativeInformationFormated;
   }
 }

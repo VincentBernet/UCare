@@ -1,6 +1,6 @@
 // Future interface for the productJson returned by the API
 export interface productAttributes {
-	product_id?: number;
+	product_id: number;
 
 	product_title?: string;
 	product_image?: string;
@@ -13,5 +13,5 @@ export interface productAttributes {
 	vegetarian?: boolean;
 	palmOilFree?: boolean;
 
-	firstCatego?: string;
+	firstCatego: string;
 }

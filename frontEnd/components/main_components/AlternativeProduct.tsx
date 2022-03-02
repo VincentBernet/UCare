@@ -1,21 +1,72 @@
 import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
-import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import React, { useState } from 'react';
+import { ActivityIndicator, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-elements';
-import { styles } from '../style/CurrentProduct_StyleSheet';
+import { styles } from '../style/AlternativeProduct_StyleSheet';
 
 import { Text, View } from '../Themed';
 import labelComponent from '../subsidiary_components/labels';
 
+import { productAttributes } from '../../commons/product.interface';
 import { alternativeAttributes } from '../../commons/alternative.interface';
+import { retrieveAlternativeInformation } from '../../commons/callApi.utils';
 
 export default function AlternativeProduct({
-	alternativeProductJson,
+	currentProductJson,
 }: {
-	alternativeProductJson: alternativeAttributes;
+	currentProductJson: productAttributes;
 }) {
 	const navigation = useNavigation();
+	const [alternativeProductAvailable, setAlternativeProductAvailable] =
+		useState(false);
+
+	const waitingForAlternativeProducts = async (
+		firstCatego: productAttributes['firstCatego']
+	): Promise<alternativeAttributes> => {
+		const alternativeProductJson: alternativeAttributes =
+			await retrieveAlternativeInformation(firstCatego);
+		setAlternativeProductAvailable(true);
+		return alternativeProductJson;
+	};
+
+	const finalJson = waitingForAlternativeProducts(
+		currentProductJson.firstCatego
+	);
+
+	const sampleAlternativesProducts: alternativeAttributes = [
+		{
+			product_id: 1,
+			product_title: 'Le Bon Haché Cru',
+			product_image:
+				'https://media.lesechos.com/api/v1/images/view/5d7a5855d286c22eaf798fa5/1280x720/0601864134058-web-tete.jpg',
+			firstCatego: 'pizza',
+
+			nustriscore_grade: 'a',
+			nova_group: '4',
+			ecoscore_grade: 'a',
+
+			vegan: true,
+			vegetarian: true,
+			palmOilFree: true,
+		},
+		{
+			product_id: 2,
+			product_title: 'Purée Délice',
+			product_image:
+				'https://media.carrefour.fr/medias/6837a728287a343ba2764d7eb1bcd60f/p_540x540/3083681066845-photosite-20211130-082705-0.jpg',
+			firstCatego: 'pizza',
+
+			nustriscore_grade: 'a',
+			nova_group: '4',
+			ecoscore_grade: 'a',
+
+			vegan: true,
+			vegetarian: true,
+			palmOilFree: true,
+		},
+	];
+
 	return (
 		<View>
 			<Text style={styles.title}> Alternatives </Text>
@@ -24,21 +75,33 @@ export default function AlternativeProduct({
 					onPress={() =>
 						navigation.navigate(
 							'CurrentProduct',
-							alternativeProductJson[0]
+							sampleAlternativesProducts[0]
 						)
 					}
 				>
 					<Card containerStyle={styles.alternativeCard}>
-						<Card.Image
-							source={{
-								uri: alternativeProductJson[0].product_image,
-							}}
-							style={styles.alternativeImageCard}
-						></Card.Image>
+						{alternativeProductAvailable ? (
+							<Card.Image
+								source={{
+									uri: sampleAlternativesProducts[0].product_image,
+								}}
+								style={styles.alternativeImageCard}
+							></Card.Image>
+						) : (
+							<View style={styles.alternativeContainerForLoader}>
+								<ActivityIndicator
+									size="large"
+									color="#FF5E5B"
+									style={{ transform: [{ scale: 1.5 }] }}
+								/>
+							</View>
+						)}
 						<View style={styles.alternativeCardBottom}>
-							<Card.Title style={styles.alternativeTitle}>
-								{alternativeProductJson[0].product_title}
-							</Card.Title>
+							{alternativeProductAvailable && (
+								<Card.Title style={styles.alternativeTitle}>
+									{sampleAlternativesProducts[0].product_title}
+								</Card.Title>
+							)}
 						</View>
 					</Card>
 				</TouchableOpacity>
@@ -47,21 +110,33 @@ export default function AlternativeProduct({
 					onPress={() =>
 						navigation.navigate(
 							'CurrentProduct',
-							alternativeProductJson[1]
+							sampleAlternativesProducts[1]
 						)
 					}
 				>
 					<Card containerStyle={styles.alternativeCard}>
-						<Card.Image
-							source={{
-								uri: alternativeProductJson[1].product_image,
-							}}
-							style={styles.alternativeImageCard}
-						></Card.Image>
+						{alternativeProductAvailable ? (
+							<Card.Image
+								source={{
+									uri: sampleAlternativesProducts[1].product_image,
+								}}
+								style={styles.alternativeImageCard}
+							></Card.Image>
+						) : (
+							<View style={styles.alternativeContainerForLoader}>
+								<ActivityIndicator
+									size="large"
+									color="#FF5E5B"
+									style={{ transform: [{ scale: 1.5 }] }}
+								/>
+							</View>
+						)}
 						<View style={styles.alternativeCardBottom}>
-							<Card.Title style={styles.alternativeTitle}>
-								{alternativeProductJson[1].product_title}
-							</Card.Title>
+							{alternativeProductAvailable && (
+								<Card.Title style={styles.alternativeTitle}>
+									{sampleAlternativesProducts[1].product_title}
+								</Card.Title>
+							)}
 						</View>
 					</Card>
 				</TouchableOpacity>

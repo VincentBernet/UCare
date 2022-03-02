@@ -4,7 +4,7 @@ import { alternativeAttributes } from './alternative.interface';
 export const retrieveProductInformation = async (
 	codeBar: number
 ): Promise<productAttributes> => {
-	let json: productAttributes = { product_id: codeBar };
+	let json: productAttributes = { product_id: codeBar, firstCatego: '' };
 	try {
 		const endpointUrl =
 			'https://ucare-backend.herokuapp.com/products/' + codeBar + '.json';
@@ -28,15 +28,17 @@ export const retrieveProductInformation = async (
 };
 
 export const retrieveAlternativeInformation = async (
-	firstCategory?: string
+	firstCategory: string
 ): Promise<alternativeAttributes> => {
-	let json: alternativeAttributes = [{ firstCatego: firstCategory }];
+	let json: alternativeAttributes = [{ product_id: 0, firstCatego: '' }];
 	try {
 		const endpointUrl =
-			'https://ucare-backend.herokuapp.com/category/' +
-			firstCategory +
-			'.json';
-		console.log('Console Log before calling Ucare API at : ' + endpointUrl);
+			'https://ucare-backend.herokuapp.com/category/' + firstCategory;
+		console.log(
+			'-------------------------------------------------------------------------------------------------\n' +
+				'Console Log before calling Ucare API at : ' +
+				endpointUrl
+		);
 		await fetch(endpointUrl).then((response) =>
 			response
 				.json()
@@ -46,6 +48,7 @@ export const retrieveAlternativeInformation = async (
 				}))
 				.then((res) => {
 					json = res.data;
+					console.log(json);
 				})
 		);
 	} catch (error) {

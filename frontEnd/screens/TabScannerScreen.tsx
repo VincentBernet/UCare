@@ -62,7 +62,10 @@ export default function TabScannerScreen() {
 		if (type === 32 || type === 1) {
 			setText('Scanned : ' + codeBar);
 			console.log(
-				numberCompteur + ') Recherche en cours du produit : ' + codeBar
+				'-------------------------------------------------------------------------------------------------\n' +
+					numberCompteur +
+					') Recherche en cours du produit : ' +
+					codeBar
 			);
 			// Calling the function that call the API to retrieve the product information
 			const currentProductJson = await retrieveProductInformation(codeBar);
@@ -99,7 +102,7 @@ export default function TabScannerScreen() {
 			{scanned && (
 				<ActivityIndicator
 					size="large"
-					color="#0000ff"
+					color="#FF5E5B"
 					style={{ transform: [{ scale: 2 }], marginTop: 50 }}
 				/>
 			)}
