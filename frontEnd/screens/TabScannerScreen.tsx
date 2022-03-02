@@ -96,7 +96,13 @@ export default function TabScannerScreen() {
 				/>
 			</View>
 			{/*scanned && <Text style={styles.barcodeResult}>{text}</Text>*/}
-			{scanned && <ActivityIndicator size="large" color="#0000ff" />}
+			{scanned && (
+				<ActivityIndicator
+					size="large"
+					color="#0000ff"
+					style={{ transform: [{ scale: 2 }], marginTop: 50 }}
+				/>
+			)}
 		</View>
 	);
 }

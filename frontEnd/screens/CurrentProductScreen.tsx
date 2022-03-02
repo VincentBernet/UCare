@@ -10,8 +10,12 @@ import { View } from '../components/Themed';
 import { styles } from './style/CurrentProductScreen_StyleSheet';
 import { productAttributes } from '../commons/product.interface';
 import { alternativeAttributes } from '../commons/alternative.interface';
+import { retrieveAlternativeInformation } from '../commons/callApi.utils';
+import { useState } from 'react';
 
 export default function CurrentProductScreen({ route }: { route: any }) {
+	const [alternativeProductReady, setAlternativeProductReady] =
+		useState(false);
 	const { productAttributes } = route.params;
 	const sampleAlternativesProducts: alternativeAttributes = [
 		{
@@ -42,14 +46,46 @@ export default function CurrentProductScreen({ route }: { route: any }) {
 			palmOilFree: true,
 		},
 	];
+	const waitingForAlternativeProducts = async (
+		firstCatego: productAttributes['firstCatego']
+	): Promise<alternativeAttributes> => {
+		const alternativeProductJson: alternativeAttributes =
+			await retrieveAlternativeInformation(firstCatego);
+		setAlternativeProductReady(true);
+		console.log(alternativeProductJson);
+		return alternativeProductJson;
+	};
 
 	return (
 		<View style={styles.container}>
 			<CurrentProduct currentProductJson={route.params} />
-			<AlternativeProduct
-				alternativeProductJson={sampleAlternativesProducts}
-			/>
-			<ActivityIndicator size="large" color="#0000ff" />
+
+			{!alternativeProductReady ? (
+				<View
+					style={{
+						marginTop: 70,
+						display: 'flex',
+						flexDirection: 'row',
+					}}
+				>
+					<ActivityIndicator
+						size="large"
+						color="#0000ff"
+						style={{ transform: [{ scale: 2 }], marginRight: 100 }}
+					/>
+					<ActivityIndicator
+						size="large"
+						color="#0000ff"
+						style={{ transform: [{ scale: 2 }] }}
+					/>
+				</View>
+			) : (
+				<AlternativeProduct
+					alternativeProductJson={waitingForAlternativeProducts(
+						productAttributes.firstCatego
+					)}
+				/>
+			)}
 			{/* Use a light status bar on iOS to account for the black space above the modal */}
 			<StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
 		</View>

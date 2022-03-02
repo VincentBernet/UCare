@@ -70,7 +70,7 @@ export class OpenFoodFactsService {
           '", "ingredients_analysis_tags":"' +
           response.data.products[0].ingredients_analysis_tags +
           '"}' +
-          '{"product_id":"' +
+          ',{"product_id":"' +
           response.data.products[1]._id +
           '", "product_title":"' +
           response.data.products[1].product_name +
@@ -84,7 +84,7 @@ export class OpenFoodFactsService {
           response.data.products[1].nova_group +
           '", "ingredients_analysis_tags":"' +
           response.data.products[1].ingredients_analysis_tags +
-          '"}',
+          '"}]',
       )
       .catch((err): string => {
         throw new HttpException(err.response.data, err.response.status);
