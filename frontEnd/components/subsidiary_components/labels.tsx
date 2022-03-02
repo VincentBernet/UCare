@@ -4,7 +4,7 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-elements';
 import { productAttributes } from '../../commons/product.interface';
-import { styles } from '../style/CurrentProductEditModule_StyleSheet';
+import { styles } from '../style/CurrentProduct_StyleSheet';
 
 import { Text, View } from '../Themed';
 
