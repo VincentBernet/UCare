@@ -1,7 +1,4 @@
 # UCare
-
-_Yuka Like_
-
 De nos jours, de plus en plus de personnes suivent un régime particulier, avec différentes restrictions alimentaires liées à leurs allergies, convictions ou sens moral.
 
 Ils ont besoin de savoir facilement si les produits qu’ils souhaitent consommer sont conformes à leur régime, sans perdre leur temps à vérifier chaque ingrédient un par un sur une étiquette parfois difficilement lisible.
