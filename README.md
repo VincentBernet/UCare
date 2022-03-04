@@ -55,9 +55,10 @@ npm start
 ## Stack
 
 ```
-- React Native
-- Node JS, backend
-- DB à déterminer
+- React-Native for the front-end
+- Nest.js (framework node.js) for the back-end
+- PostGreSql for the DB part
+- Host on Heroku
 ```
 
 OpenFoodFact : https://fr.openfoodfacts.org/produit/7613037398083/le-bon-vegetal-hache-cru-soja-a-cuisiner-herta
