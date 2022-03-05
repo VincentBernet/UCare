@@ -1,6 +1,11 @@
 import { productFormated } from './interfaces/productResponse.interface';
 import { alternativeFormated } from './interfaces/alternativeResponse.interface';
 
+export function randomIntFromInterval(min, max) {
+  // min and max included
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
 export const parseValuableInformation = (
   productInformation: string,
 ): productFormated => {
