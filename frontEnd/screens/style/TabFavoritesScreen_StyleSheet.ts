@@ -6,7 +6,6 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 	},
-	blankContainer: {},
 	title: {
 		fontSize: 20,
 		fontWeight: 'bold',
