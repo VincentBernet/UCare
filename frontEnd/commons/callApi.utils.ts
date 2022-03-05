@@ -8,7 +8,9 @@ export const retrieveProductInformation = async (
 	try {
 		const endpointUrl =
 			'https://ucare-backend.herokuapp.com/products/' + codeBar + '.json';
-		console.log('Console Log before calling Ucare API at : ' + endpointUrl);
+		console.log(
+			'Console Log before calling Ucare Product API at : ' + endpointUrl
+		);
 		await fetch(endpointUrl).then((response) =>
 			response
 				.json()
@@ -30,13 +32,18 @@ export const retrieveProductInformation = async (
 export const retrieveAlternativeInformation = async (
 	firstCategory: string
 ): Promise<alternativeAttributes> => {
-	let json: alternativeAttributes = [{ product_id: 0, firstCatego: '' }];
+	let json: alternativeAttributes = {
+		alternativesProducts: [
+			{ product_id: 0, firstCatego: '' },
+			{ product_id: 0, firstCatego: '' },
+		],
+	};
 	try {
 		const endpointUrl =
 			'https://ucare-backend.herokuapp.com/category/' + firstCategory;
 		console.log(
 			'-------------------------------------------------------------------------------------------------\n' +
-				'Console Log before calling Ucare API at : ' +
+				'Calling the following category API :  ' +
 				endpointUrl
 		);
 		await fetch(endpointUrl).then((response) =>
@@ -48,7 +55,14 @@ export const retrieveAlternativeInformation = async (
 				}))
 				.then((res) => {
 					json = res.data;
-					console.log(json);
+					console.log(
+						'First alternative  : ' +
+							json.alternativesProducts[0].product_title
+					);
+					console.log(
+						'Second alternative : ' +
+							json.alternativesProducts[1].product_title
+					);
 				})
 		);
 	} catch (error) {

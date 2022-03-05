@@ -10,26 +10,28 @@ const styles = StyleSheet.create({
 		textAlign: 'center',
 	},
 	alternativeViewCardContainer: {
+		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'space-around',
 		marginTop: 0,
 	},
 	alternativeCard: {
 		zIndex: 200,
+		width: 150,
 		elevation: 200,
 		borderRadius: 20,
 		padding: 0,
 	},
 	alternativeContainerForLoader: {
-		width: 112,
-		height: 112,
+		width: 150,
+		height: 170,
 		display: 'flex',
 		justifyContent: 'center',
 	},
 	alternativeImageCard: {
-		width: 112,
-		height: 112,
 		margin: 15,
+		marginBottom: 10,
+		borderRadius: 8,
 	},
 	alternativeCardBottom: {
 		zIndex: 1,
@@ -43,6 +45,8 @@ const styles = StyleSheet.create({
 	},
 	alternativeTitle: {
 		marginTop: 0,
+		marginLeft: 5,
+		marginRight: 5,
 		paddingTop: 0,
 		paddingBottom: 0,
 		color: '#fff',
