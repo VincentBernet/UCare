@@ -7,7 +7,7 @@ export const sampleProducts: alternativeAttributes = {
 			product_title: 'Le Bon Haché Cru',
 			product_image:
 				'https://media.lesechos.com/api/v1/images/view/5d7a5855d286c22eaf798fa5/1280x720/0601864134058-web-tete.jpg',
-			firstCatego: 'Substituts de viande',
+			firstCatego: 'meat-analogues',
 
 			nustriscore_grade: 'a',
 			nova_group: '4',

@@ -6,6 +6,7 @@ import { Card } from 'react-native-elements';
 import { styles } from '../style/CurrentProduct_StyleSheet';
 
 import { Text, View } from '../Themed';
+import LabelComponent from '../subsidiary_components/Labels';
 
 import { productAttributes } from '../../commons/product.interface';
 
@@ -28,13 +29,13 @@ export default function CurrentProduct({
 							<Card.Image
 								source={require('./../../assets/images/Icon-Product/love.png')}
 								style={styles.mainImageLoveCard}
-							></Card.Image>
+							/>
 						</TouchableOpacity>
 					</View>
 					<Card.Image
 						source={{ uri: currentProductJson.product_image }}
 						style={styles.mainImageCard}
-					></Card.Image>
+					/>
 				</Card>
 
 				<Text style={styles.mainTitle}>
@@ -52,7 +53,7 @@ export default function CurrentProduct({
 								uri: 'http://clipart-library.com/image_gallery2/Wink-Emoji-PNG.png',
 							}}
 							style={styles.emojee}
-						></Card.Image>
+						/>
 					</View>
 				) : (
 					<View style={styles.emojeeView}>
@@ -60,50 +61,12 @@ export default function CurrentProduct({
 						<Card.Image
 							source={require('./../../assets/images/Icon-Product/emojeeAngry.png')}
 							style={styles.emojee}
-						></Card.Image>
+						/>
 					</View>
 				)}
 
 				{/*TODO: Put beside code in an external component : <labelComponent />*/}
-				<View style={styles.labelViewCardContainer}>
-					{currentProductJson.vegan ? (
-						<Card containerStyle={styles.secondaryFirstCard}>
-							<View style={styles.viewForLabelText}>
-								<Card.Image
-									source={require('./../../assets/images/Icon-Product/vegan.png')}
-									style={styles.labelCard}
-								></Card.Image>
-								<Text style={styles.textLabel}>Vegan</Text>
-							</View>
-						</Card>
-					) : null}
-
-					{currentProductJson.vegetarian ? (
-						<Card containerStyle={styles.secondaryFirstCard}>
-							<View style={styles.viewForLabelText}>
-								<Card.Image
-									source={require('./../../assets/images/Icon-Product/vegan.png')}
-									style={styles.labelCard}
-								></Card.Image>
-								<Text style={styles.textLabel}>Végétarien</Text>
-							</View>
-						</Card>
-					) : null}
-
-					{currentProductJson.palmOilFree ? (
-						<Card containerStyle={styles.secondaryFirstCard}>
-							<View style={styles.viewForLabelText}>
-								<Card.Image
-									source={require('./../../assets/images/Icon-Product/vegan.png')}
-									style={styles.labelCard}
-								></Card.Image>
-								<Text style={styles.textLabel}>
-									Sans huile de palme
-								</Text>
-							</View>
-						</Card>
-					) : null}
-				</View>
+				<LabelComponent currentProductJson={currentProductJson} />
 			</View>
 		</View>
 	);
