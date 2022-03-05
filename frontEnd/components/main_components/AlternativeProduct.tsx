@@ -9,6 +9,7 @@ import { Text, View } from '../Themed';
 import labelComponent from '../subsidiary_components/labels';
 
 import { productAttributes } from '../../commons/product.interface';
+import { sampleProducts } from '../../commons/sampleProducts';
 import { alternativeAttributes } from '../../commons/alternative.interface';
 import { retrieveAlternativeInformation } from '../../commons/callApi.utils';
 
@@ -21,69 +22,48 @@ export default function AlternativeProduct({
 	const [alternativeProductAvailable, setAlternativeProductAvailable] =
 		useState(false);
 
+	const [alternativeProductJson, setAlternativeProductJson] =
+		useState(sampleProducts);
+
 	const waitingForAlternativeProducts = async (
 		firstCatego: productAttributes['firstCatego']
 	): Promise<alternativeAttributes> => {
 		const alternativeProductJson: alternativeAttributes =
 			await retrieveAlternativeInformation(firstCatego);
 		setAlternativeProductAvailable(true);
+		setAlternativeProductJson(alternativeProductJson);
 		return alternativeProductJson;
 	};
 
-	const finalJson = waitingForAlternativeProducts(
-		currentProductJson.firstCatego
-	);
-
-	const sampleAlternativesProducts: alternativeAttributes = [
-		{
-			product_id: 1,
-			product_title: 'Le Bon Haché Cru',
-			product_image:
-				'https://media.lesechos.com/api/v1/images/view/5d7a5855d286c22eaf798fa5/1280x720/0601864134058-web-tete.jpg',
-			firstCatego: 'pizza',
-
-			nustriscore_grade: 'a',
-			nova_group: '4',
-			ecoscore_grade: 'a',
-
-			vegan: true,
-			vegetarian: true,
-			palmOilFree: true,
-		},
-		{
-			product_id: 2,
-			product_title: 'Purée Délice',
-			product_image:
-				'https://media.carrefour.fr/medias/6837a728287a343ba2764d7eb1bcd60f/p_540x540/3083681066845-photosite-20211130-082705-0.jpg',
-			firstCatego: 'pizza',
-
-			nustriscore_grade: 'a',
-			nova_group: '4',
-			ecoscore_grade: 'a',
-
-			vegan: true,
-			vegetarian: true,
-			palmOilFree: true,
-		},
-	];
+	if (!alternativeProductAvailable) {
+		const finalJson = waitingForAlternativeProducts(
+			currentProductJson.firstCatego
+		);
+	}
 
 	return (
 		<View>
-			<Text style={styles.title}> Alternatives </Text>
+			<Text style={styles.title}>
+				{' '}
+				Alternatives {/*currentProductJson.firstCatego*/}
+			</Text>
 			<View style={styles.alternativeViewCardContainer}>
 				<TouchableOpacity
-					onPress={() =>
+					onPress={() => {
+						setAlternativeProductAvailable(false);
+						setAlternativeProductJson(sampleProducts);
 						navigation.navigate(
 							'CurrentProduct',
-							sampleAlternativesProducts[0]
-						)
-					}
+							alternativeProductJson.alternativesProducts[0]
+						);
+					}}
 				>
 					<Card containerStyle={styles.alternativeCard}>
 						{alternativeProductAvailable ? (
 							<Card.Image
 								source={{
-									uri: sampleAlternativesProducts[0].product_image,
+									uri: alternativeProductJson.alternativesProducts[0]
+										.product_image,
 								}}
 								style={styles.alternativeImageCard}
 							></Card.Image>
@@ -98,8 +78,14 @@ export default function AlternativeProduct({
 						)}
 						<View style={styles.alternativeCardBottom}>
 							{alternativeProductAvailable && (
-								<Card.Title style={styles.alternativeTitle}>
-									{sampleAlternativesProducts[0].product_title}
+								<Card.Title
+									numberOfLines={1}
+									style={styles.alternativeTitle}
+								>
+									{
+										alternativeProductJson.alternativesProducts[0]
+											.product_title
+									}
 								</Card.Title>
 							)}
 						</View>
@@ -107,18 +93,21 @@ export default function AlternativeProduct({
 				</TouchableOpacity>
 
 				<TouchableOpacity
-					onPress={() =>
+					onPress={() => {
+						setAlternativeProductAvailable(false);
+						setAlternativeProductJson(sampleProducts);
 						navigation.navigate(
 							'CurrentProduct',
-							sampleAlternativesProducts[1]
-						)
-					}
+							alternativeProductJson.alternativesProducts[1]
+						);
+					}}
 				>
 					<Card containerStyle={styles.alternativeCard}>
 						{alternativeProductAvailable ? (
 							<Card.Image
 								source={{
-									uri: sampleAlternativesProducts[1].product_image,
+									uri: alternativeProductJson.alternativesProducts[1]
+										.product_image,
 								}}
 								style={styles.alternativeImageCard}
 							></Card.Image>
@@ -133,8 +122,14 @@ export default function AlternativeProduct({
 						)}
 						<View style={styles.alternativeCardBottom}>
 							{alternativeProductAvailable && (
-								<Card.Title style={styles.alternativeTitle}>
-									{sampleAlternativesProducts[1].product_title}
+								<Card.Title
+									numberOfLines={1}
+									style={styles.alternativeTitle}
+								>
+									{
+										alternativeProductJson.alternativesProducts[1]
+											.product_title
+									}
 								</Card.Title>
 							)}
 						</View>
