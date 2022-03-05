@@ -1,14 +1,14 @@
 import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-elements';
 import { productAttributes } from '../../commons/product.interface';
-import { styles } from '../style/CurrentProduct_StyleSheet';
+import { styles } from '../style/Labels_StyleSheet';
 
 import { Text, View } from '../Themed';
 
-const labelComponent = ({
+const LabelComponent = ({
 	currentProductJson,
 }: {
 	currentProductJson: productAttributes;
@@ -21,7 +21,7 @@ const labelComponent = ({
 						<Card.Image
 							source={require('./../../assets/images/Icon-Product/vegan.png')}
 							style={styles.labelCard}
-						></Card.Image>
+						/>
 						<Text style={styles.textLabel}>Vegan</Text>
 					</View>
 				</Card>
@@ -33,7 +33,7 @@ const labelComponent = ({
 						<Card.Image
 							source={require('./../../assets/images/Icon-Product/vegan.png')}
 							style={styles.labelCard}
-						></Card.Image>
+						/>
 						<Text style={styles.textLabel}>Végétarien</Text>
 					</View>
 				</Card>
@@ -45,13 +45,24 @@ const labelComponent = ({
 						<Card.Image
 							source={require('./../../assets/images/Icon-Product/vegan.png')}
 							style={styles.labelCard}
-						></Card.Image>
+						/>
 						<Text style={styles.textLabel}>Sans huile de palme</Text>
 					</View>
 				</Card>
+			) : null}
+			{currentProductJson.nustriscore_grade ? (
+				<Image
+					source={{
+						uri:
+							'https://static.openfoodfacts.org/images/attributes/nutriscore-' +
+							currentProductJson.nustriscore_grade +
+							'.png',
+					}}
+					style={styles.nutriscoreImage}
+				/>
 			) : null}
 		</View>
 	);
 };
 
-export default labelComponent;
+export default LabelComponent;

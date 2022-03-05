@@ -6,7 +6,7 @@ import { Card } from 'react-native-elements';
 import { styles } from '../style/AlternativeProduct_StyleSheet';
 
 import { Text, View } from '../Themed';
-import labelComponent from '../subsidiary_components/labels';
+import labelComponent from '../subsidiary_components/Labels';
 
 import { productAttributes } from '../../commons/product.interface';
 import { sampleProducts } from '../../commons/sampleProducts';

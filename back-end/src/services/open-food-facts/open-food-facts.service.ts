@@ -5,6 +5,7 @@ import { alternativeFormated } from './interfaces/alternativeResponse.interface'
 import {
   parseValuableInformation,
   parseValuableInformationAlternative,
+  randomIntFromInterval,
 } from './open-food-facts.utils';
 
 @Injectable()
@@ -55,43 +56,45 @@ export class OpenFoodFactsService {
   async getAlternativeProductInformation(
     category,
   ): Promise<alternativeFormated> {
+    let firstRandomIndex = randomIntFromInterval(0, 10);
+    let secondRandomIndex = firstRandomIndex + randomIntFromInterval(0, 10);
     let alternativeProductInformationReduced = this.http
       .get('https://world.openfoodfacts.org/category/' + category + '.json')
       .then(
         (response): string =>
           '{"alternativesProducts":[{"product_id":"' +
-          response.data.products[0]._id +
+          response.data.products[firstRandomIndex]._id +
           '", "product_title":"' +
-          response.data.products[0].product_name +
+          response.data.products[firstRandomIndex].product_name +
           '", "product_image":"' +
-          response.data.products[0].image_front_small_url +
+          response.data.products[firstRandomIndex].image_front_small_url +
           '", "nustriscore_grade":"' +
-          response.data.products[0].nutrition_grades +
+          response.data.products[firstRandomIndex].nutrition_grades +
           '", "ecoscore_grade":"' +
-          response.data.products[0].ecoscore_grade +
+          response.data.products[firstRandomIndex].ecoscore_grade +
           '", "nova_group":"' +
-          response.data.products[0].nova_group +
+          response.data.products[firstRandomIndex].nova_group +
           '", "ingredients_analysis_tags":"' +
-          response.data.products[0].ingredients_analysis_tags +
+          response.data.products[firstRandomIndex].ingredients_analysis_tags +
           '", "categories_hierarchy":"' +
-          response.data.products[0].categories_hierarchy +
+          response.data.products[firstRandomIndex].categories_hierarchy +
           '"}' +
           ',{"product_id":"' +
-          response.data.products[1]._id +
+          response.data.products[secondRandomIndex]._id +
           '", "product_title":"' +
-          response.data.products[1].product_name +
+          response.data.products[secondRandomIndex].product_name +
           '", "product_image":"' +
-          response.data.products[1].image_front_small_url +
+          response.data.products[secondRandomIndex].image_front_small_url +
           '", "nustriscore_grade":"' +
-          response.data.products[1].nutrition_grades +
+          response.data.products[secondRandomIndex].nutrition_grades +
           '", "ecoscore_grade":"' +
-          response.data.products[1].ecoscore_grade +
+          response.data.products[secondRandomIndex].ecoscore_grade +
           '", "nova_group":"' +
-          response.data.products[1].nova_group +
+          response.data.products[secondRandomIndex].nova_group +
           '", "ingredients_analysis_tags":"' +
-          response.data.products[1].ingredients_analysis_tags +
+          response.data.products[secondRandomIndex].ingredients_analysis_tags +
           '", "categories_hierarchy":"' +
-          response.data.products[1].categories_hierarchy +
+          response.data.products[secondRandomIndex].categories_hierarchy +
           '"}]}',
       )
       .catch((err): string => {
