@@ -60,6 +60,17 @@ Apple : https://apps.apple.com/us/app/expo-go/id982107779
 
 ---
 
+1] Run la commande suivante pour lancer le frontEnd :
+```
+npm start
+```
+2] Ouvrir Expo sur votre smartphone puis scanner le QR code afficher sur votre terminale, l'application mobile se lance et fonctionne sur votre appareil 🔥
+
+
+
+
+---
+
 <a name='Stack'></a>
 
 ## Stack
