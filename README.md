@@ -1,4 +1,5 @@
 # UCare
+
 De nos jours, de plus en plus de personnes suivent un régime particulier, avec différentes restrictions alimentaires liées à leurs allergies, convictions ou sens moral.
 
 Ils ont besoin de savoir facilement si les produits qu’ils souhaitent consommer sont conformes à leur régime, sans perdre leur temps à vérifier chaque ingrédient un par un sur une étiquette parfois difficilement lisible.
@@ -9,10 +10,12 @@ Cette application sera destinée à tous ceux qui se retrouvent dans ces besoins
 
 ## Application
 
-<img src="ressource/ScreenShotSpeech.png"\>
-<img src="ressource/ScreenShotSpeech.png"\>
-<img src="ressource/ScreenShotSpeech.png"\>
-
+<p style="display: flex;">
+    <img src="ressource/index2.png"\>
+    <img src="ressource/favoris.png"\>
+    <img src="ressource/currentProduct.png"\>
+    <img src="ressource/currentProduct2.png"\>
+</p>
 ---
 
 ## Table des matières
@@ -24,14 +27,17 @@ Cette application sera destinée à tous ceux qui se retrouvent dans ces besoins
 -  **[Licence](#Licences)**
 
 ---
+
 <a name='Installation'></a>
+
 ## Installation
 
 Dans votre dossier d'installation, créez votre git et connectez le à ce repository :
 
 Prérequis :
-- Avoir installer Git
-- Node JS
+
+-  Avoir installer Git
+-  Node JS
 
 ```
 git init
@@ -50,8 +56,11 @@ Pour lancer l'application :
 ```
 npm start
 ```
+
 ---
+
 <a name='Stack'></a>
+
 ## Stack
 
 ```
@@ -64,7 +73,9 @@ npm start
 OpenFoodFact : https://fr.openfoodfacts.org/produit/7613037398083/le-bon-vegetal-hache-cru-soja-a-cuisiner-herta
 
 ---
+
 <a name='Fonctionnalité'></a>
+
 ## Fonctionnalité
 
 Sur cette application, nous avons implémenté de multiples fonctionnalités telles que :
@@ -75,7 +86,9 @@ Sur cette application, nous avons implémenté de multiples fonctionnalités tel
 -  Lorem ipsum dolor sit amet. Hic consectetur voluptatem
 
 ---
+
 <a name='Equipe'></a>
+
 ## Équipe & Contact
 
 > Cette application a été réalisée par 7 étudiants dans le cadre de leur cursus d'ingénieur à l'EFREI PARIS : <br>
@@ -85,8 +98,11 @@ Sur cette application, nous avons implémenté de multiples fonctionnalités tel
 -  **[Vincent Bernet](https://www.linkedin.com/in/vincent-bernet/)** & **[Vincent Lacrouts](https://www.linkedin.com/in/vincent-lacrouts/)**
 
 > N'hésitez pas à nous contacter !
+
 ---
+
 <a name='Licences'></a>
+
 ## Licences
 
 [![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
