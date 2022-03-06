@@ -52,10 +52,10 @@ Pour ensuite installer tous les composants nécessaires à l'application :
 npm install
 ```
 
-Pour lancer l'application :
-
+Installer l'application expo sur votre smartphone :
 ```
-npm start
+Android : https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US
+Apple : https://apps.apple.com/us/app/expo-go/id982107779
 ```
 
 ---
@@ -81,10 +81,10 @@ OpenFoodFact : https://fr.openfoodfacts.org/produit/7613037398083/le-bon-vegetal
 
 Sur cette application, nous avons implémenté de multiples fonctionnalités telles que :
 
--  LoLorem ipsum dolor sit amet. Hic consectetur voluptatem.
--  Lorem ipsum dolor sit amet. Hic consectetur voluptatem
--  LoLorem ipsum dolor sit amet. Hic consectetur voluptatem.
--  Lorem ipsum dolor sit amet. Hic consectetur voluptatem
+-  Scan d'un produit
+-  Analyse du produit (vegan, végétarien, sans huile de palme, nutriscore)
+-  Recherche et proposition d'alternative au produit consulté
+-  Ajout, suppression et consultation de produit sous forme de favoris
 
 ---
 
