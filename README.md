@@ -33,13 +33,11 @@ Cette application sera destinée à tous ceux qui se retrouvent dans ces besoins
 
 ## Installation
 
-Dans votre dossier d'installation, créez votre git et connectez le à ce repository :
-
 Prérequis :
-
 -  Avoir installé Git
 -  Node JS
 
+Dans votre dossier d'installation, créez votre git et connectez le à ce repository :
 ```
 git init
 git remote add origin https://github.com/VincentBernet/VegeDream
