@@ -1,9 +1,6 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-	emojeeView: { flexDirection: 'row', flexWrap: 'wrap' },
-	textForEmojee: { textAlign: 'center', marginRight: 5, fontSize: 22 },
-	emojee: { width: 30, height: 30 },
 	labelViewCardContainer: {
 		flexDirection: 'row',
 		flexWrap: 'wrap',
@@ -37,10 +34,6 @@ const styles = StyleSheet.create({
 	textLabel: {
 		textAlign: 'center',
 		marginRight: 5,
-	},
-	nutriscoreImage: {
-		width: 100,
-		height: 50,
 	},
 });
 

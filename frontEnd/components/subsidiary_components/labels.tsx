@@ -50,17 +50,6 @@ const LabelComponent = ({
 					</View>
 				</Card>
 			) : null}
-			{currentProductJson.nustriscore_grade ? (
-				<Image
-					source={{
-						uri:
-							'https://static.openfoodfacts.org/images/attributes/nutriscore-' +
-							currentProductJson.nustriscore_grade +
-							'.png',
-					}}
-					style={styles.nutriscoreImage}
-				/>
-			) : null}
 		</View>
 	);
 };

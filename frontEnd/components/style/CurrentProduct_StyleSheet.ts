@@ -17,6 +17,12 @@ const styles = StyleSheet.create({
 		padding: 0,
 		marginTop: 0,
 	},
+	mainImageCard: {
+		width: 280,
+		height: 200,
+		margin: 0,
+		borderRadius: 15,
+	},
 	headerProductViewContainer: {
 		backgroundColor: '#fff',
 		display: 'flex',
@@ -35,7 +41,7 @@ const styles = StyleSheet.create({
 		//fontFamily: 'Poppins',
 		fontWeight: 'bold',
 		marginTop: 5,
-		marginBottom: 15,
+		marginBottom: 5,
 		alignContent: 'flex-start',
 		textAlign: 'center',
 	},
@@ -47,48 +53,12 @@ const styles = StyleSheet.create({
 		alignContent: 'flex-start',
 		textAlign: 'center',
 	},
-	emojeeView: { flexDirection: 'row', flexWrap: 'wrap' },
-	textForEmojee: { textAlign: 'center', marginRight: 5, fontSize: 22 },
-	emojee: { width: 30, height: 30 },
-	labelViewCardContainer: {
+	containerFriendlyNutri: {
+		display: 'flex',
 		flexDirection: 'row',
-		flexWrap: 'wrap',
-	},
-	mainImageCard: {
-		width: 280,
-		height: 200,
-		margin: 0,
-		borderRadius: 15,
-	},
-	secondaryFirstCard: {
-		borderRadius: 30,
-		margin: 0,
-		padding: 5,
-		minWidth: 70,
-	},
-	secondaryCard: {
-		borderRadius: 30,
-		margin: 0,
-		marginLeft: 35,
-		minWidth: 70,
-		padding: 5,
-	},
-	viewForLabelText: {
-		flexDirection: 'row',
-		flexWrap: 'wrap',
-		backgroundColor: 'white',
-	},
-	labelCard: {
-		width: 15,
-		height: 15,
-		justifyContent: 'space-around',
-		marginRight: 5,
-		marginLeft: 3,
-		resizeMode: 'contain',
-	},
-	textLabel: {
-		textAlign: 'center',
-		marginRight: 5,
+		alignItems: 'center',
+		justifyContent: 'center',
+		marginBottom: 10,
 	},
 });
 
