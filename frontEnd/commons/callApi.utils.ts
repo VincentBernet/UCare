@@ -20,6 +20,7 @@ export const retrieveProductInformation = async (
 				}))
 				.then((res) => {
 					json = res.data;
+					console.log(json.nustriscore_grade);
 				})
 		);
 	} catch (error) {
@@ -57,11 +58,15 @@ export const retrieveAlternativeInformation = async (
 					json = res.data;
 					console.log(
 						'First alternative  : ' +
-							json.alternativesProducts[0].product_title
+							json.alternativesProducts[0].product_title +
+							' avec pour nutriscore : ' +
+							json.alternativesProducts[0].nustriscore_grade
 					);
 					console.log(
 						'Second alternative : ' +
-							json.alternativesProducts[1].product_title
+							json.alternativesProducts[1].product_title +
+							' avec pour nutriscore : ' +
+							json.alternativesProducts[1].nustriscore_grade
 					);
 				})
 		);

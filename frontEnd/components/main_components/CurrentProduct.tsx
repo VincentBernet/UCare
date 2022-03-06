@@ -1,7 +1,7 @@
 import { useNavigation } from '@react-navigation/native';
 import * as WebBrowser from 'expo-web-browser';
 import React from 'react';
-import { StyleSheet, TouchableOpacity } from 'react-native';
+import { Image, TouchableOpacity } from 'react-native';
 import { Card } from 'react-native-elements';
 import { styles } from '../style/CurrentProduct_StyleSheet';
 
@@ -9,6 +9,8 @@ import { Text, View } from '../Themed';
 import LabelComponent from '../subsidiary_components/Labels';
 
 import { productAttributes } from '../../commons/product.interface';
+import WithNutriScoreComponent from '../subsidiary_components/WithNutriScore';
+import WithoutNutriScoreComponent from '../subsidiary_components/WithoutNutriScore';
 
 export default function CurrentProduct({
 	currentProductJson,
@@ -43,27 +45,17 @@ export default function CurrentProduct({
 						? currentProductJson.product_title
 						: "Can't access the current \nProduct Title"}
 				</Text>
-				{currentProductJson.vegan ||
-				currentProductJson.vegetarian ||
-				currentProductJson.palmOilFree ? (
-					<View style={styles.emojeeView}>
-						<Text style={styles.textForEmojee}>Friendly</Text>
-						<Card.Image
-							source={{
-								uri: 'http://clipart-library.com/image_gallery2/Wink-Emoji-PNG.png',
-							}}
-							style={styles.emojee}
+				<View style={styles.containerFriendlyNutri}>
+					{currentProductJson.nustriscore_grade !== 'undefined' ? (
+						<WithNutriScoreComponent
+							currentProductJson={currentProductJson}
 						/>
-					</View>
-				) : (
-					<View style={styles.emojeeView}>
-						<Text style={styles.textForEmojee}>Unfriendly</Text>
-						<Card.Image
-							source={require('./../../assets/images/Icon-Product/emojeeAngry.png')}
-							style={styles.emojee}
+					) : (
+						<WithoutNutriScoreComponent
+							currentProductJson={currentProductJson}
 						/>
-					</View>
-				)}
+					)}
+				</View>
 
 				{/*TODO: Put beside code in an external component : <labelComponent />*/}
 				<LabelComponent currentProductJson={currentProductJson} />
