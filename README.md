@@ -11,11 +11,12 @@ Cette application sera destinée à tous ceux qui se retrouvent dans ces besoins
 ## Application
 
 <p style="display: flex;">
-    <img src="ressource/index2.png"\>
-    <img src="ressource/favoris.png"\>
-    <img src="ressource/currentProduct.png"\>
-    <img src="ressource/currentProduct2.png"\>
+    <img style="max-width: 30px; height: auto;" src="ressource/index2.png"\>
+    <img style="max-width: 30px; height: auto;" src="ressource/favoris.png"\>
+    <img style="max-width: 30px; height: auto;"src="ressource/currentProduct.png"\>
+    <img style="max-width: 30px; height: auto;" src="ressource/currentProduct2.png"\>
 </p>
+
 ---
 
 ## Table des matières
