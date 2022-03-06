@@ -11,10 +11,10 @@ Cette application sera destinée à tous ceux qui se retrouvent dans ces besoins
 ## Application
 
 <p style="display: flex;">
-    <img style="max-width: 30px; height: auto;" src="ressource/index2.png"\>
-    <img style="max-width: 30px; height: auto;" src="ressource/favoris.png"\>
-    <img style="max-width: 30px; height: auto;"src="ressource/currentProduct.png"\>
-    <img style="max-width: 30px; height: auto;" src="ressource/currentProduct2.png"\>
+    <img width="200" height="auto" src="ressource/index2.png"\>
+    <img width="200" height="auto"  src="ressource/favoris.png"\>
+    <img width="200" height="auto"  src="ressource/currentProduct.png"\>
+    <img width="181" height="auto"  src="ressource/currentProduct2.png"\>
 </p>
 
 ---
