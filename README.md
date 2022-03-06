@@ -37,7 +37,7 @@ Dans votre dossier d'installation, créez votre git et connectez le à ce reposi
 
 Prérequis :
 
--  Avoir installer Git
+-  Avoir installé Git
 -  Node JS
 
 ```
