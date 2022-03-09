@@ -15,4 +15,9 @@ describe('OpenFoodFactsService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('should return a product', async () => {
+    const product = await service.getProductInformation('123456789');
+    expect(product).toBeDefined();
+  });
 });
