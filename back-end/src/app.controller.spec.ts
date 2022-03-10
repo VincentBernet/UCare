@@ -15,8 +15,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "UCare backend is responding!"', () => {
-      expect(appController.getResponse()).toBe('UCare backend is responding!');
+    it('should return "UCare backend is responding ! \n Please check ... https://.../swagger"', () => {
+      expect(appController.getResponse()).toBe('UCare backend is responding ! \n Please check the swagger documentation for more information on our API : https://ucare-backend.herokuapp.com/swagger');
     });
   });
 });
