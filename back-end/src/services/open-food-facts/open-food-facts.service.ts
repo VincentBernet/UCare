@@ -12,7 +12,7 @@ import {
 export class OpenFoodFactsService {
   constructor(private http: HttpService) {}
   async getProductInformation(id): Promise<productFormated> {
-    let productInformationReduced = this.http
+    const productInformationReduced = this.http
       .get('https://world.openfoodfacts.org/api/v0/product/' + id + '.json')
       .then(
         (response): string =>
@@ -38,7 +38,7 @@ export class OpenFoodFactsService {
         throw new HttpException(err.response.data, err.response.status);
       });
 
-    let productInformationFormated = await parseValuableInformation(
+    const productInformationFormated = await parseValuableInformation(
       await productInformationReduced,
     );
 
@@ -56,9 +56,9 @@ export class OpenFoodFactsService {
   async getAlternativeProductInformation(
     category,
   ): Promise<alternativeFormated> {
-    let firstRandomIndex = randomIntFromInterval(0, 10);
-    let secondRandomIndex = firstRandomIndex + randomIntFromInterval(0, 10);
-    let alternativeProductInformationReduced = this.http
+    const firstRandomIndex = randomIntFromInterval(0, 10);
+    const secondRandomIndex = firstRandomIndex + randomIntFromInterval(0, 10);
+    const alternativeProductInformationReduced = this.http
       .get('https://world.openfoodfacts.org/category/' + category + '.json')
       .then(
         (response): string =>
@@ -101,7 +101,7 @@ export class OpenFoodFactsService {
         throw new HttpException(err.response.data, err.response.status);
       });
 
-    let alternativeInformationFormated =
+    const alternativeInformationFormated =
       await parseValuableInformationAlternative(
         await alternativeProductInformationReduced,
       );

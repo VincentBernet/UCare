@@ -1,7 +1,7 @@
 // Se limiter seulement à la définition d'endpoint au niveau des controllers, et mettre la logique au niveau des services.
 import { Controller, Get, Param } from '@nestjs/common';
 import { OpenFoodFactsService } from '../../services/open-food-facts/open-food-facts.service';
-import { ApiOkResponse, ApiResponse, ApiTags } from '@nestjs/swagger';
+import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('category')
 @Controller('category')
