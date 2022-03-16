@@ -1,11 +1,12 @@
 # UCare
 
-TODO: update then translate this documentation in english
-De nos jours, de plus en plus de personnes suivent un régime particulier, avec différentes restrictions alimentaires liées à leurs allergies, convictions ou sens moral.
+___TODO: update then translate this documentation in english___
 
-Ils ont besoin de savoir facilement si les produits qu’ils souhaitent consommer sont conformes à leur régime, sans perdre leur temps à vérifier chaque ingrédient un par un sur une étiquette parfois difficilement lisible.
+Nowadays, more and more people follow a particular diet, with different dietary restrictions linked to their allergies, beliefs or moral sense.
 
-Cette application sera destinée à tous ceux qui se retrouvent dans ces besoins et sera disponible sur téléphone.
+They need to know easily if the products they want to consume are in accordance with their diet, without wasting their time checking each ingredient one by one on a label sometimes difficult to read.
+
+This application will be intended for all those who find themselves in these needs and will be available on phone.
 
 ---
 
