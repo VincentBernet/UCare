@@ -2,6 +2,8 @@
 
 ___TODO: update then translate this documentation in english___
 
+[ ] Deployment on the **App Store** and **Google Play**. 
+
 Nowadays, more and more people follow a particular diet, with different dietary restrictions linked to their allergies, beliefs or moral sense.
 
 They need to know easily if the products they want to consume are in accordance with their diet, without wasting their time checking each ingredient one by one on a label sometimes difficult to read.
