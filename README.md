@@ -2,7 +2,13 @@
 
 ___TODO: update then translate this documentation in english___
 
-[ ] Deployment on the **App Store** and **Google Play**. 
+- [ ] Finalize login and personal accounts
+- [ ] Deployment on the **App Store** and **Google Play**. 
+- [ ] Cleaning code.
+- [ ] Add unit testing to front.
+- [ ] Add automation test, and deployment pipeline.
+- [ ] Describe the testing and deployment plan.
+- [ ] Update ReadMe. 
 
 Nowadays, more and more people follow a particular diet, with different dietary restrictions linked to their allergies, beliefs or moral sense.
 
