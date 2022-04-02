@@ -8,9 +8,10 @@ export const retrieveProductInformation = async (
 	try {
 		const endpointUrl =
 			'https://ucare-backend.herokuapp.com/products/' + codeBar + '.json';
+		/*
 		console.log(
 			'Console Log before calling Ucare Product API at : ' + endpointUrl
-		);
+		);*/
 		await fetch(endpointUrl).then((response) =>
 			response
 				.json()
@@ -20,7 +21,6 @@ export const retrieveProductInformation = async (
 				}))
 				.then((res) => {
 					json = res.data;
-					console.log(json.nustriscore_grade);
 				})
 		);
 	} catch (error) {
@@ -42,11 +42,11 @@ export const retrieveAlternativeInformation = async (
 	try {
 		const endpointUrl =
 			'https://ucare-backend.herokuapp.com/category/' + firstCategory;
-		console.log(
+		/*console.log(
 			'-------------------------------------------------------------------------------------------------\n' +
 				'Calling the following category API :  ' +
 				endpointUrl
-		);
+		);*/
 		await fetch(endpointUrl).then((response) =>
 			response
 				.json()
