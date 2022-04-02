@@ -9,7 +9,7 @@ export function randomIntFromInterval(min, max) {
 export const parseValuableInformation = (
   productInformation: string,
 ): productFormated => {
-  let productInformationJSON = JSON.parse(productInformation);
+  const productInformationJSON = JSON.parse(productInformation);
 
   let productInformationFormated: productFormated = {} as productFormated;
   productInformationFormated = productInformationJSON;
@@ -29,7 +29,7 @@ export const parseValuableInformation = (
 export const parseValuableInformationAlternative = (
   productInformation: string,
 ): alternativeFormated => {
-  let productInformationJSON = JSON.parse(productInformation);
+  const productInformationJSON = JSON.parse(productInformation);
 
   let productInformationFormated: alternativeFormated =
     {} as alternativeFormated;
