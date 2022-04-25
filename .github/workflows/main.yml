@@ -19,11 +19,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Going in the backend directory
-        run: cd back-end
-      - name: Install modules
-        run: npm install
-      - name: Run ESLint
-        run: npm run lint:fix
-      - name: Run Jest
-        run: npm run test:cov
+      - name: Back-end bash -> Install modules
+        run: |
+          cd back-end 
+          npm install
+      - name: Back-end bash -> Run ESLint
+        run: |
+          cd back-end 
+          npm run lint:fix
+      - name: Back-end bash -> Run Jest
+        run: |
+          cd back-end  
+          npm run test:cov
