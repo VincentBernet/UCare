@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 # Workflow for the backEnd
 jobs:
-  back-end batch:
+  back-end_batch:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -30,7 +30,7 @@ jobs:
       - name: Back-end bash -> Run Jest
         run: npm run test:cov
   
-  front-end batch:
+  front-end_batch:
     runs-on: ubuntu-latest
     defaults:
       run:
