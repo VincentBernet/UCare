@@ -17,17 +17,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: back-end
     steps:
       - uses: actions/checkout@v2
       - name: Back-end bash -> Install modules
-        run: |
-          cd back-end 
-          npm install
+        run: npm install
       - name: Back-end bash -> Run ESLint
-        run: |
-          cd back-end 
-          npm run lint:fix
+        run: npm run lint:fix
       - name: Back-end bash -> Run Jest
-        run: |
-          cd back-end  
-          npm run test:cov
+        run: npm run test:cov
