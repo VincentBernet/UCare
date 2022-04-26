@@ -32,13 +32,24 @@ This application will be intended for all those who find themselves in these nee
 ## Table des matières
 
 -  **[Installation](#Installation)**
+-  **[Code Quality & Testing Plan & CI / CD](#GoodPractice)**
 -  **[Stack](#Stack)**
 -  **[Fonctionnalité](#Fonctionnalité)**
 -  **[Équipe & Contact](#Equipe)**
 -  **[Licence](#Licences)**
 
 ---
+<a name='GoodPractice'></a>
 
+## Code Quality
+
+In the intent of improving code quality of this application, i implemented severals tools :
+- first i used esLint on the front & the back-end part. I used AirBnB configuration.
+- then i add husly to ensure that on every commit the linter as been runned, so the linter update will be done piece by piece
+
+**eslint, jest, husky, github actions**
+
+---
 <a name='Installation'></a>
 
 ## Installation
