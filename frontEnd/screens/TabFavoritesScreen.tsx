@@ -8,11 +8,11 @@ import { RootTabScreenProps } from '../types';
 import { styles } from './style/TabFavoritesScreen_StyleSheet';
 
 export default function TabFavoritesScreen({
-	navigation,
+  navigation,
 }: RootTabScreenProps<'TabFavorites'>) {
-	return (
-		<View style={styles.container}>
-			<FavoriteProductEditModule path="/screens/TabFavoritesScreen.tsx" />
-		</View>
-	);
+  return (
+    <View style={styles.container}>
+      <FavoriteProductEditModule path="/screens/TabFavoritesScreen.tsx" />
+    </View>
+  );
 }
