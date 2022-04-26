@@ -4,9 +4,9 @@ ___TODO: update then translate this documentation in english___
 
 - [ ] Finalize login and personal accounts
 - [ ] Deployment on the **App Store** and **Google Play**. 
-- [ ] Cleaning code.
-- [ ] Add unit testing to front.
-- [ ] Add automation test, and deployment pipeline.
+- [x] Cleaning code.
+- [x] Add unit testing to front.
+- [x] Add automation test, and deployment pipeline.
 - [ ] Describe the testing and deployment plan.
 - [ ] Update ReadMe. 
 
