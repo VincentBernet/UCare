@@ -21,10 +21,10 @@ This application will be intended for all those who find themselves in these nee
 ## Application
 
 <p style="display: flex;">
-    <img width="200" height="auto" src="ressource/index2.png"\>
-    <img width="200" height="auto"  src="ressource/favoris.png"\>
-    <img width="200" height="auto"  src="ressource/currentProduct.png"\>
-    <img width="181" height="auto"  src="ressource/currentProduct2.png"\>
+    <img width="200" height="auto" src="screenshot/index2.png"\>
+    <img width="200" height="auto"  src="screenshot/favoris.png"\>
+    <img width="200" height="auto"  src="screenshot/currentProduct.png"\>
+    <img width="181" height="auto"  src="screenshot/currentProduct2.png"\>
 </p>
 
 ---
