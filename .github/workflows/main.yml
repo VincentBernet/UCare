@@ -29,15 +29,3 @@ jobs:
         run: npm run lint:fix
       - name: Back-end bash -> Run Jest
         run: npm run test:cov
-
-# Workflow for the frontEnd
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: frontEnd
-    steps:
-      - uses: actions/checkout@v2
-      - name: Back-end bash -> Install modules
-        run: npm install
