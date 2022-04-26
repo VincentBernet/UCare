@@ -1,4 +1,4 @@
-// TODO: 
+// TODO:
 const svgDico = {
-    messageErreur: 'Une erreur est survenue',
-}
+  messageErreur: 'Une erreur est survenue',
+};

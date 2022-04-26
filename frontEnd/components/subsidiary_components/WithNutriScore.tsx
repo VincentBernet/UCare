@@ -8,47 +8,47 @@ import { styles } from '../style/WithNutriscore_StyleSheet';
 
 import { Text, View } from '../Themed';
 
-const WithNutriScoreComponent = ({
-	currentProductJson,
+function WithNutriScoreComponent({
+  currentProductJson,
 }: {
 	currentProductJson: productAttributes;
-}) => {
-	return (
-		<>
-			{currentProductJson.vegan ||
-			currentProductJson.vegetarian ||
-			currentProductJson.palmOilFree ? (
-				<>
-					<Text style={styles.textForEmojee}>Friendly</Text>
-					<Card.Image
-						source={{
-							uri: 'http://clipart-library.com/image_gallery2/Wink-Emoji-PNG.png',
-						}}
-						style={styles.emojee}
-					/>
-				</>
-			) : (
-				<>
-					<Text style={styles.textForEmojeeAngry}>Unfriendly</Text>
-					<Card.Image
-						source={require('./../../assets/images/Icon-Product/emojeeAngry.png')}
-						style={styles.emojee}
-					/>
-				</>
-			)}
-			{currentProductJson.nustriscore_grade ? (
-				<Image
-					source={{
-						uri:
-							'https://static.openfoodfacts.org/images/attributes/nutriscore-' +
-							currentProductJson.nustriscore_grade +
-							'.png',
-					}}
-					style={styles.nutriscoreImage}
-				/>
-			) : null}
-		</>
-	);
-};
+}) {
+  return (
+    <>
+      {currentProductJson.vegan
+			|| currentProductJson.vegetarian
+			|| currentProductJson.palmOilFree ? (
+  <>
+    <Text style={styles.textForEmojee}>Friendly</Text>
+    <Card.Image
+      source={{
+						  uri: 'http://clipart-library.com/image_gallery2/Wink-Emoji-PNG.png',
+      }}
+      style={styles.emojee}
+    />
+  </>
+			  ) : (
+  <>
+    <Text style={styles.textForEmojeeAngry}>Unfriendly</Text>
+    <Card.Image
+      source={require('../../assets/images/Icon-Product/emojeeAngry.png')}
+      style={styles.emojee}
+    />
+  </>
+			  )}
+      {currentProductJson.nustriscore_grade ? (
+        <Image
+          source={{
+					  uri:
+							`https://static.openfoodfacts.org/images/attributes/nutriscore-${
+							  currentProductJson.nustriscore_grade
+							}.png`,
+          }}
+          style={styles.nutriscoreImage}
+        />
+      ) : null}
+    </>
+  );
+}
 
 export default WithNutriScoreComponent;
