@@ -40,6 +40,6 @@ jobs:
       - name: Front-end bash -> Install modules
         run: npm install
       - name: Front-end bash -> Run ESLint
-        run: npm run lint:fix
+        #run: npm run lint:fix
       - name: Front-end bash -> Run Jest
         run: npm run test:cov
