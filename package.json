@@ -1,0 +1,22 @@
+{
+  "name": "ucare",
+  "version": "2.0.0",
+  "description": "UCare is an indispensable mobile application for keeping control of what you consume 🌱🤙",
+  "main": "index.ts",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VincentBernet/UCare.git"
+  },
+  "keywords": [
+    "food-app",
+    "react-native"
+  ],
+  "author": "Vincent Bernet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/VincentBernet/UCare/issues"
+  },
+  "homepage": "https://github.com/VincentBernet/UCare#readme"
+}
