@@ -4,6 +4,7 @@
   "description": "UCare is an indispensable mobile application for keeping control of what you consume 🌱🤙",
   "main": "index.ts",
   "scripts": {
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/VincentBernet/UCare/issues"
   },
-  "homepage": "https://github.com/VincentBernet/UCare#readme"
+  "homepage": "https://github.com/VincentBernet/UCare#readme",
+  "devDependencies": {
+    "husky": "^7.0.4"
+  }
 }
