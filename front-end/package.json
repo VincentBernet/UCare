@@ -6,7 +6,7 @@
 		"ios": "expo start --ios",
 		"web": "expo start --web",
 		"eject": "expo eject",
-		"test": "jest --watchAll",
+		"test": "jest",
 		"test:cov": "jest --coverage",
 		"lint": "eslint . --ext .ts,.tsx",
 		"lint:fix": "eslint --fix . --ext .ts,.tsx"

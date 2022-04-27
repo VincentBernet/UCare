@@ -4,5 +4,5 @@
 cd back-end
 npm run test
 
-cd../front-end
+cd ../front-end
 npm run test
