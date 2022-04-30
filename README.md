@@ -34,8 +34,7 @@ This application will be intended for all those who find themselves in these nee
 -  **[Installation](#Installation)**
 -  **[Code Quality & Testing Plan & CI / CD](#GoodPractice)**
 -  **[Stack](#Stack)**
--  **[Fonctionnalité](#Fonctionnalité)**
--  **[Équipe & Contact](#Equipe)**
+-  **[Functionalities](#Functionalities)**
 -  **[Licence](#Licences)**
 
 ---
@@ -105,9 +104,9 @@ OpenFoodFact : https://fr.openfoodfacts.org/produit/7613037398083/le-bon-vegetal
 
 ---
 
-<a name='Fonctionnalité'></a>
+<a name='Functionalities'></a>
 
-## Fonctionnalité
+## Functionalities
 
 Sur cette application, nous avons implémenté de multiples fonctionnalités telles que :
 
@@ -115,20 +114,6 @@ Sur cette application, nous avons implémenté de multiples fonctionnalités tel
 -  Analyse du produit (vegan, végétarien, sans huile de palme, nutriscore)
 -  Recherche et proposition d'alternative au produit consulté
 -  Ajout, suppression et consultation de produit sous forme de favoris
-
----
-
-<a name='Equipe'></a>
-
-## Équipe & Contact
-
-> Cette application a été réalisée par 7 étudiants dans le cadre de leur cursus d'ingénieur à l'EFREI PARIS : <br>
-
--  **[Diogo Gabriel](https://www.linkedin.com/in/diogo-branco-gabriel-06133613b/)** & **[Thomas Damasse](https://www.linkedin.com/in/thomas-damasse-651650185/)**
--  **[Matthieu Gédéon](https://www.linkedin.com/in/matthieu-g%C3%A9d%C3%A9on-6015621a0/)** & **[Marie Léonie](https://www.linkedin.com/in/marie-l%C3%A9onie-serizot/)** & **[Maria Sadek](https://www.linkedin.com/in/maria-sadek-4624651a1/)**
--  **[Vincent Bernet](https://www.linkedin.com/in/vincent-bernet/)** & **[Vincent Lacrouts](https://www.linkedin.com/in/vincent-lacrouts/)**
-
-> N'hésitez pas à nous contacter !
 
 ---
 
