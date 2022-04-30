@@ -14,8 +14,8 @@ on:
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
-# Workflow for the backEnd
 jobs:
+  # Job workflow for the back-end repo
   back-end_batch:
     runs-on: ubuntu-latest
     defaults:
@@ -30,6 +30,7 @@ jobs:
       - name: Back-end bash -> Run Jest
         run: npm run test:cov
   
+  # Job workflow for the front-end repo
   front-end_batch:
     runs-on: ubuntu-latest
     defaults:
@@ -39,7 +40,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Front-end bash -> Install modules
         run: npm install
-      #- name: Front-end bash -> Run ESLint
-        #run: npm run lint:fix
+    # - name: Front-end bash -> Run ESLint
+    #   run: npm run lint:fix
       - name: Front-end bash -> Run Jest
         run: npm run test:cov

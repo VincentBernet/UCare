@@ -1,6 +1,6 @@
 {
-  "name": "ucare",
-  "version": "2.0.0",
+  "name": "ucare_mono_repo",
+  "version": "1.0.0",
   "description": "UCare is an indispensable mobile application for keeping control of what you consume 🌱🤙",
   "main": "index.ts",
   "scripts": {

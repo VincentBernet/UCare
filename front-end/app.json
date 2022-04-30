@@ -1,11 +1,11 @@
 {
 	"expo": {
-		"name": "my-project",
-		"slug": "my-project",
+		"name": "UCare",
+		"slug": "UCare",
 		"version": "1.0.0",
 		"orientation": "portrait",
 		"icon": "./assets/images/Icon-Splash/icon.png",
-		"scheme": "myapp",
+		"scheme": "ucare",
 		"userInterfaceStyle": "automatic",
 		"splash": {
 			"image": "./assets/images/Icon-Splash/splash.png",
