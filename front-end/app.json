@@ -1,32 +1,35 @@
 {
-	"expo": {
-		"name": "UCare",
-		"slug": "UCare",
-		"version": "1.0.0",
-		"orientation": "portrait",
-		"icon": "./assets/images/Icon-Splash/icon.png",
-		"scheme": "ucare",
-		"userInterfaceStyle": "automatic",
-		"splash": {
-			"image": "./assets/images/Icon-Splash/splash.png",
-			"resizeMode": "contain",
-			"backgroundColor": "#ffffff"
-		},
-		"updates": {
-			"fallbackToCacheTimeout": 0
-		},
-		"assetBundlePatterns": ["**/*"],
-		"ios": {
-			"supportsTablet": true
-		},
-		"android": {
-			"adaptiveIcon": {
-				"foregroundImage": "./assets/images/Icon-Splash/adaptive-icon.png",
-				"backgroundColor": "#ffffff"
-			}
-		},
-		"web": {
-			"favicon": "./assets/images/Icon-Splash/favicon.png"
-		}
-	}
+  "expo": {
+    "name": "UCare",
+    "slug": "UCare",
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/images/Icon-Splash/icon.png",
+    "scheme": "ucare",
+    "userInterfaceStyle": "automatic",
+    "splash": {
+      "image": "./assets/images/Icon-Splash/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/Icon-Splash/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.vincentbernet.UCare"
+    },
+    "web": {
+      "favicon": "./assets/images/Icon-Splash/favicon.png"
+    }
+  }
 }
