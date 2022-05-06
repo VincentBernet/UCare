@@ -78,7 +78,7 @@ Apple : https://apps.apple.com/us/app/expo-go/id982107779
 
 ---
 
-1] Run la commande suivante pour lancer le frontEnd :
+1] Run la commande suivante pour lancer le front-end :
 ```
 npm start
 ```
