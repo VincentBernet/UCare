@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { StyleSheet } from 'react-native';
 
 import { useState, useEffect } from 'react';
 import { Button, ActivityIndicator } from 'react-native';
@@ -6,7 +7,6 @@ import { BarCodeScanner } from 'expo-barcode-scanner';
 import { useNavigation } from '@react-navigation/native';
 import { Text, View } from '../components/Themed';
 import { retrieveProductInformation } from '../commons/callApi.utils';
-
 import { styles } from './style/TabScannerScreen_StyleSheet';
 
 export default function TabScannerScreen() {

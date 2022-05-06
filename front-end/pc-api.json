@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "pc-api-6234475662717983232-60",
+  "private_key_id": "387d6c570dc4bbc6dc3a4bb2ba360d27936c3190",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDDALQTfXG9OrEk\np1pjzlHdkydFck1CnfPHOmclbX6By5CeTvcvcqq27nWJfq273j4TrsoqLnYfvNpb\n1ZfZC1vJco+5OOYrutag/U9uVCTDqPsjPuVwT92pV6URfnNRq229lAUqu/enIB/i\nOv/zbQGTYZFoWpFzQ9I5alaLvBUqZcq9pBXk3q+aXxCNwhQFEJbpT3CTABNxpbtL\ngLUtX0zkW26fr8IJX01BSdtSgHV4T3LolNkgwGHJyrHkGU820WMc7dFbRcYAEDTt\nraN7RPMxBugaVZ0Kud0Fx8HScfxR5pmWrbmJ8+3JeUWEm1hW4cLEQJnvAOdRPICV\nPCC8XU1XAgMBAAECggEAGgqOAcxO1CZyYaK3v3xeEmkEZZHOH4dYdtKl06m7qzm0\nJnAFMqDti2Bs8d+o893KDHbbKKbrv3FI99qeXK3XpB9YcjPXCR/6aaVqZiF2h2qZ\nnytXGJiR0XuS37MzU0TBcv/BcOOJPxhbKasXYzq7ayMsd/MgWXRFLsW0qRSE/xQ9\nEzJ9+rwIbx7tn1/EChYNy1/j/Bz9qYmc1LYm1/VzaNo63ep47FpvJmUGz6SedEBU\nqfta36t7PtLSunxrVWbCH+taNx8i+aMNZvX2tf0YmICXYylrlT8nHRL8B9en/Ha+\nncmVPP19evWjsnF/dC9gVboiYFfyNqxUQOQI2AXTgQKBgQDxnJjWiKyKbyljUnA5\nMIMalcMZYVgwz+Uxp8lgMzAmHsLvufGice4YJV0PgKUb/wGpwIWtoR+ppxw96BC3\nCV6HVVsUTBHhmFKl2x6ZbmPbI1wKOWrtwF5A+qVq8YdScZeDimDDKbvIbQqIq9zn\njwpu1R7gNS1mcuHh9TC2lgz4SwKBgQDOnYvqQ5EO2KACdW3V3K570Qq4qAh6E0Pc\nhpzJGS5Z1ZO08rDRs+R4AofJz6aFNQKk0XozmaZ77dpmfbJPlUj8WELhfdjNrytV\nrsZVDMSWQGlZUp5vrjKIB5AOBVA55uXtqrccj2iDLvHRq6nK8JeL8hoAFqhfNmHJ\nw17nORKvpQKBgQC9CGM//mDYUo6UKeypof4BL8kcM2A3mIBecEMK5CG4wXqM6vNV\nwEOjWqBLv7/ufn6DnKA6L4TBTIC5IrbpLghqY+rFn5qh4XZQU3bGXmr8Cdc6HKA/\ncbGMr036tQvGAh+kCAEa0K0d68pBEg3ckbp86nukuZZSwHFgQ2CgiheNrwKBgGNp\noIGGIwx+pHaqY7+r3/RJP5xblUCPdm5sApIr4IZu4hQFVZiAsuQfa5BprhiXyf7d\nn6umOVmVtyjrP9lU3fo0yXFPqPpGV1ZxspIHg6s7sLS+sObRbRTQdrqYSeKiO21g\nX5yJT+MWulmE/DxeCLzYLzRtsnOlaeW3cDlW16vVAoGAfZs85xDlgtEtOLc6yWAh\noxhxzeg0zdN2cCYeEu4jh/0ilpt8xl27Ovzrg/s9Y8yEc1K+eM90ojkXxuXXFKFv\nibV+6BrPcvJZYt7Bv8cJ+Qgz9C8xYqHyG+0EHFsF+LBZnq1Id5MzOoI6Lv2hsqur\nwvGo3mS+LAnuJ/MM7F4Cs3g=\n-----END PRIVATE KEY-----\n",
+  "client_email": "ucare-app-expo-535@pc-api-6234475662717983232-60.iam.gserviceaccount.com",
+  "client_id": "104634801060203419024",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/ucare-app-expo-535%40pc-api-6234475662717983232-60.iam.gserviceaccount.com"
+}
