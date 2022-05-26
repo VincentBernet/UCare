@@ -43,10 +43,19 @@ UCare is available on Google play just there : https://play.google.com/store/app
 ## Code Quality
 
 In the intent of improving code quality of this application, i implemented severals tools :
-- first i used esLint on the front & the back-end part. I used AirBnB configuration.
+- first i used esLint as a linter on the front & the back-end part. I used AirBnB configuration, that is well known.
 - then i add husly to ensure that on every commit the linter as been runned, so the linter update will be done piece by piece
 
+On the front part, i tried to segment my code in as many react component as possible, to reuse them on multiple pages, and unit test them easely. 
+All of functions have been extract has much as possible, again to ensure easy Unit testing, and have been put in a utility folder within a named accordly named with the domain. 
+
 **eslint, jest, husky, github actions**
+
+## Testing Plan
+Jest
+
+## Deployment process
+Strongly encourage you to follow the expo documentation : https://docs.expo.dev/submit/android/ 
 
 ---
 <a name='Installation'></a>
