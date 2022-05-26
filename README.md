@@ -2,8 +2,7 @@
 
 ___TODO: update then translate this documentation in english___
 
-- [ ] Finalize login and personal accounts
-- [ ] Deployment on the **App Store** and **Google Play**. Almost finished the deployment on GooglePlay, waiting approval
+- [x] Deployment on the **App Store** and **Google Play**. Almost finished the deployment on GooglePlay, waiting approval
 - [x] Cleaning code.
 - [x] Add unit testing to front.
 - [x] Add automation test, and deployment pipeline.
@@ -15,6 +14,8 @@ Nowadays, more and more people follow a particular diet, with different dietary 
 They need to know easily if the products they want to consume are in accordance with their diet, without wasting their time checking each ingredient one by one on a label sometimes difficult to read.
 
 This application will be intended for all those who find themselves in these needs and will be available on phone.
+
+UCare is available on Google play just there : https://play.google.com/store/apps/details?id=com.ucareapp.app
 
 ---
 
@@ -30,11 +31,10 @@ This application will be intended for all those who find themselves in these nee
 ---
 
 ## Table des matières
-
--  **[Installation](#Installation)**
 -  **[Code Quality & Testing Plan & CI / CD](#GoodPractice)**
--  **[Stack](#Stack)**
+-  **[Technical Stack](#Stack)**
 -  **[Functionalities](#Functionalities)**
+-  **[Installation for Dev](#Installation)**
 -  **[Licence](#Licences)**
 
 ---
