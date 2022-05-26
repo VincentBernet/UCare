@@ -43,11 +43,14 @@ UCare is available on Google play just there : https://play.google.com/store/app
 ## Code Quality
 
 In the intent of improving code quality of this application, i implemented severals tools :
-- first i used esLint as a linter on the front & the back-end part. I used AirBnB configuration, that is well known.
-- then i add husly to ensure that on every commit the linter as been runned, so the linter update will be done piece by piece
+- firsty i used ESLint as a linter on the front & the back-end part. I used AirBnB configuration, to replicate professional rules.
+- secondly for the testing part, i used Jest (again on the front & back-end part), i cover the critical part of the application and tried to maximize the testing coverage.
+- thirdly i add husly to ensure that on every commit the linter as been runned, so the linter update will be done piece by piece, and on each push jest is also runned, if at least a test fail then the push is canceled.
+- finaly i used github actions, to run the whole linter & testing process when a pull request or somoene is pushing on the main branch.
 
-On the front part, i tried to segment my code in as many react component as possible, to reuse them on multiple pages, and unit test them easely. 
-All of functions have been extract has much as possible, again to ensure easy Unit testing, and have been put in a utility folder within a named accordly named with the domain. 
+Concept and patern i followed during the development :
+- On the front part, i tried to segment my code in as many react component as possible, to reuse them on multiple pages, and unit test them easely
+- All of functions have been extract has much as possible, again to ensure easy Unit testing, and have been put in a utility folder within a named accordly named with their functional part and domain
 
 **eslint, jest, husky, github actions**
 
