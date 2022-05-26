@@ -16,7 +16,7 @@ export default function MyAccountScreen({ route }: { route: any }) {
   return (
     <View>
       {/* Use a light status bar on iOS to account for the black space above the modal */}
-      <MyAccountEditModule currentUserJson={currentUserInformation} />
+      {/*<MyAccountEditModule currentUserJson={currentUserInformation} />*/}
       <StatusBar style={Platform.OS === 'ios' ? 'light' : 'auto'} />
     </View>
   );
