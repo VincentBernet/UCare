@@ -2,7 +2,7 @@
   "expo": {
     "name": "UCare",
     "slug": "UCare",
-    "version": "1.0.8",
+    "version": "1.0.9",
     "orientation": "portrait",
     "icon": "./assets/images/Icon-Splash/icon.png",
     "scheme": "ucare",
@@ -22,7 +22,7 @@
       "supportsTablet": true
     },
     "android": {
-      "versionCode": 8,
+      "versionCode": 9,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/Icon-Splash/adaptive-icon.png",
         "backgroundColor": "#ffffff"
