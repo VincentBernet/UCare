@@ -24,7 +24,6 @@ This application will be intended for all those who find themselves in these nee
     <img width="195" height="auto" src="screenshot/screenAccueil_1.png"\>
     <img width="195" height="auto"  src="screenshot/screenCurrentProduct_1.png"\>
     <img width="195" height="auto"  src="screenshot/screenCurrentProduct_2.png"\>
-    <img width="195" height="auto"  src="screenshot/screenCurrentProduct_3.png"\>
     <img width="195" height="auto"  src="screenshot/screenFavoris_1.png"\>
 </p>
 
