@@ -6,7 +6,7 @@ They need to know easily if the products they want to consume are in accordance 
 
 This application will be intended for all those who find themselves in these needs and will be available on phone.
 
-UCare is available on Google play just there : https://play.google.com/store/apps/details?id=com.ucareapp.app
+UCare is available on Google play just there : ***https://play.google.com/store/apps/details?id=com.vincentbernet.UCare***
 
 ---
 
@@ -56,7 +56,21 @@ Concept and patern i followed during the development :
 - Host on Heroku
 ```
 
+Implemented a swagger to have an easy documentation on how to use UCare backend API.
 OpenFoodFact : https://fr.openfoodfacts.org/produit/7613037398083/le-bon-vegetal-hache-cru-soja-a-cuisiner-herta
+
+---
+
+<a name='Functionalities'></a>
+
+## Functionalities
+
+On this application, we have implemented multiple features such as :
+
+- Scan of a product
+- Analysis of the product (vegan, vegetarian, without palm oil, nutriscore)
+- Search and proposal of alternative to the consulted product
+- Addition, deletion and consultation of products in the form of favorites
 
 ---
 <a name='Installation'></a>
@@ -94,19 +108,6 @@ npm start
 ## Deployment process
 
 Strongly encourage you to follow the expo documentation : https://docs.expo.dev/submit/android/ 
-
----
-
-<a name='Functionalities'></a>
-
-## Functionalities
-
-On this application, we have implemented multiple features such as :
-
-- Scan of a product
-- Analysis of the product (vegan, vegetarian, without palm oil, nutriscore)
-- Search and proposal of alternative to the consulted product
-- Addition, deletion and consultation of products in the form of favorites
 
 ---
 
