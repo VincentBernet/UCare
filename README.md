@@ -36,7 +36,7 @@ UCare is available on Google play just there : ***https://play.google.com/store/
 
 In the intent of improving code quality of this application, i implemented severals tools :
 - Used **ESLint** as a linter on the front & the back-end part with the AirBnB configuration, to replicate professional rules.
-- For the testing part, i used **Jest** (again on both front & back), to cover the critical part of the application and i tried to maximize the app testing coverage.
+- For the testing part, i used **Jest** (again on both front & back) for unit testing and tried to maximize the app testing coverage.
 - Then i choosed **Husky** to ensure that on every commit the linter as been runned, so the linter update will be done piece by piece, and on each push Jest unit test are also runned, if at least a test fail then the push is canceled.
 - Finally i implemented **Github Actions**, to use it as a workflow to run the whole linter & testing process when a pull request or someone is trying to merge and push on main branch.
 
