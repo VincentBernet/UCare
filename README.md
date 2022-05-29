@@ -58,8 +58,8 @@ Concept and patern i followed during the development :
 - Host on Heroku
 ```
 
-Implemented a swagger to have an easy documentation on how to use UCare backend API.
-OpenFoodFact : https://fr.openfoodfacts.org/produit/7613037398083/le-bon-vegetal-hache-cru-soja-a-cuisiner-herta
+Implemented a swagger to have an easy documentation on how to use UCare backend API. <br>
+OpenFoodFact API to retrieve product informations : https://openfoodfacts.github.io/api-documentation/
 
 ---
 
