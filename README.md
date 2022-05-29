@@ -22,7 +22,7 @@ UCare is available on Google play just there : ***https://play.google.com/store/
 ---
 
 ## Table of Contents
-[<img align="right" src="screenshot/UCare_teasing.png">][redirection_Playstore]
+[<img align="right" height="150" width="auto" src="screenshot/UCare_teasing.png">][redirection_Playstore]
 -  **[Code Quality & Testing Plan](#GoodPractice)**
 -  **[Technical Stack & Code Architecture](#Stack)**
 -  **[Functionalities](#Functionalities)**
