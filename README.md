@@ -40,9 +40,10 @@ In the intent of improving code quality of this application, i implemented sever
 - Finally i implemented **Github Actions**, to use it as a workflow to run the whole linter & testing process when a pull request or someone is trying to merge and push on main branch.
 
 Concept and patern i followed during the development :
-- On the front part, i tried to segment my code in as many react component as possible, to reuse them on multiple pages, and unit test them easely
-- All of functions have been extract has much as possible, again to ensure easy Unit testing, and have been put in a utility folder within a named accordly named with their functional part and domain
-- All the stylesheet in a eponym files for each component and pages, same to define interface in specific files, used Dictionnary aswell to quick and easely update the wording.
+- All of **functions have been extracted** has much as possible, again to ensure easy unit testing, better readability and to reduce complexity, put them in a utility folder within a named accordly named with their functional part and domain
+- On the front part, i tried to **segment my code** in as many react component as possible, to reuse them on multiple pages, and unit test them easely
+- All the stylesheet in a specific eponym files for each component and pages, with a global variable stylesheet import in each stylesheet to ensure coherence in styles (same value padding, marging, colors etc...)
+- Define **interface** in specific files aswell, and used **dictionnary** to quick and easely update the wording of the app.
 
 ---
 <a name='Stack'></a>
