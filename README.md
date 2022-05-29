@@ -22,6 +22,7 @@ UCare is available on Google play just there : ***https://play.google.com/store/
 ---
 
 ## Table of Contents
+[<img align="right" width="100" height="100" src="http://www.fillmurray.com/100/100">][redirection_Playstore]
 -  **[Code Quality & Testing Plan](#GoodPractice)**
 -  **[Technical Stack & Code Architecture](#Stack)**
 -  **[Functionalities](#Functionalities)**
@@ -120,3 +121,6 @@ Strongly encourage you to follow the expo documentation : https://docs.expo.dev/
 
 -  **[MIT license](http://opensource.org/licenses/mit-license.php)**
 -  Copyright 2021 © **[UCare's Team](#Equipe)**.
+
+
+[redirection_Playstore]: https://play.google.com/store/apps/details?id=com.vincentbernet.UCare
