@@ -90,7 +90,7 @@ git remote add origin https://github.com/VincentBernet/UCare
 git pull origin main
 ```
 
-Then install all the necessary dependencies for the application:
+Then go to the front-end directory, install all the necessary dependencies for the application:
 ```
 npm install
 ```
